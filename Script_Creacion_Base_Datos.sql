@@ -1898,21 +1898,21 @@ CREATE INDEX `fk_AlianzasEstrategicas_ConBieneUniv1_idx` ON `mydb`.`AlianzasEstr
 -- -----------------------------------------------------
 -- Table `mydb`.`Programa Área Deportes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Programa Área Deportes` ;
+DROP TABLE IF EXISTS `mydb`.`ProgramaAreaDeportes` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Programa Área Deportes` (
+CREATE TABLE IF NOT EXISTS `mydb`.`ProgramaAreaDeportes` (
   `idNombrePrograma` VARCHAR(70) NOT NULL,
-  `Extensión` INT NOT NULL,
-  `Actividad Física y Deportes_idNombreArea` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idNombrePrograma`, `Actividad Física y Deportes_idNombreArea`),
-  CONSTRAINT `fk_Programa Área Deportes_Actividad Física y Deportes1`
-    FOREIGN KEY (`Actividad Física y Deportes_idNombreArea`)
-    REFERENCES `mydb`.`Actividad Física y Deportes` (`idArea`)
+  `Extension` INT NOT NULL,
+  `ActividadFisicaDeportes_idNombreArea` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`idNombrePrograma`, `ActividadFisicaDeportes_idNombreArea`),
+  CONSTRAINT `fk_ProgramaAreaDeportes_ActividadFisicaDeportes1`
+    FOREIGN KEY (`ActividadFisicaDeportes_idNombreArea`)
+    REFERENCES `mydb`.`ActividadFisicaDeportes` (`idArea`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Programa Área Deportes_Actividad Física y Deportes1_idx` ON `mydb`.`Programa Área Deportes` (`Actividad Física y Deportes_idNombreArea` ASC) VISIBLE;
+CREATE INDEX `fk_ProgramaAreaDeportes_Actividad FísicaDeportes1_idx` ON `mydb`.`ProgramaAreaDeportes` (`ActividadFisicaDeportes_idNombreArea` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
