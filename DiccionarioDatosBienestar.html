@@ -91,7 +91,7 @@
 <li><a href='#Discapacidad'>Discapacidad</a></li>
 <li><a href='#Docente'>Docente</a></li>
 <li><a href='#Enfermedad'>Enfermedad</a></li>
-<li><a href='#EnfermedadesDeFamiliares'>EnfermedadesDeFamiliares</a></li>
+<li><a href='#EnfermedadDeFamiliar'>EnfermedadDeFamiliar</a></li>
 <li><a href='#Estudiante'>Estudiante</a></li>
 <li><a href='#EvaluacionFisica'>EvaluacionFisica</a></li>
 <li><a href='#Evento/Taller'>Evento/Taller</a></li>
@@ -129,7 +129,6 @@
 <li><a href='#RecGeneralBienUniv'>RecGeneralBienUniv</a></li>
 <li><a href='#RepEmpFacultad'>RepEmpFacultad</a></li>
 <li><a href='#ReprEstudiantil'>ReprEstudiantil</a></li>
-<li><a href='#Resultados'>Resultados</a></li>
 <li><a href='#TarjetaPremiumPass'>TarjetaPremiumPass</a></li>
 <li><a href='#TiendaBienestarUN'>TiendaBienestarUN</a></li>
 <li><a href='#TorneoInterno'>TorneoInterno</a></li>
@@ -138,7 +137,7 @@
 <li><a href='#estFormaEquipoFomEmp'>estFormaEquipoFomEmp</a></li>
 <li><a href='#estTieneRepEst'>estTieneRepEst</a></li>
 <li><a href='#gaiTieneActividad'>gaiTieneActividad</a></li>
-<li><a href='#gaiTieneActividad'>gaiTieneActividad</a></li>
+<li><a href='#gaiTieneEstudiante'>gaiTieneEstudiante</a></li>
 <li><a href='#perAsisteEveCul'>perAsisteEveCul</a></li>
 <li><a href='#perGestionaEveCul'>perGestionaEveCul</a></li>
 <li><a href='#perParticipaEveCul'>perParticipaEveCul</a></li>
@@ -239,6 +238,7 @@
     <td></td>
 </tr>
 <table id='ActividadOrganizadores'>
+    <p>Actividad para distintos tipos de programas.</p>
 <caption>ActividadOrganizadores</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -281,6 +281,7 @@
     <td></td>
 </tr>
 <table id='ActividadParticipantes'>
+    <p>Relacion entre actividad y su organizador.</p>
 <caption>ActividadParticipantes</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -323,6 +324,7 @@
     <td></td>
 </tr>
 <table id='AlianzasEstrategicas'>
+    <p>Relacion entre actividad y su participante.</p>
 <caption>AlianzasEstrategicas</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -697,7 +699,7 @@
 </tr>
 <table id='Area_ofrece_Programa'>
     <p>Son las subdivisiones de bienestar universitario, encargadas de ofrecer diferentes programas enmarcadas dentro del acompanamiento
-        integral y la actividad lUdico deportiva,<br>
+        integral y la actividad ludico deportiva,<br>
 <caption>Area_ofrece_Programa</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -2356,9 +2358,9 @@
     <td></td>
     <td></td>
 </tr>
-<table id='EnfermedadesDeFamiliares'>
+<table id='EnfermedadDeFamiliar'>
     <p>Enfermedad de algun paciente</p>
-<caption>EnfermedadesDeFamiliares</caption>
+<caption>EnfermedadDeFamiliar</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -3299,6 +3301,7 @@
     <td></td>
 </tr>
 <table id='Gerente'>
+    <p>Relacion entre convocatoria de GAI y estudiante aspirante.</p>
 <caption>Gerente</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -5314,63 +5317,8 @@
     <td></td>
     <td></td>
 </tr>
-<table id='Resultados'>
-    <p>Representante estudiantil.</p>
-<caption>Resultados</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>PerfilRiesgoIntegral_id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>resPregunta</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>resRespuesta</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
 <table id='TarjetaPremiumPass'>
+    <p>Representante estudiantil.</p>
 <caption>TarjetaPremiumPass</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -5547,6 +5495,7 @@
     <td></td>
 </tr>
 <table id='TorneoInterno'>
+    <p>Tienda de bienestar universitario.</p>
 <caption>TorneoInterno</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -5980,6 +5929,7 @@
     <td></td>
 </tr>
 <table id='estTieneRepEst'>
+    <p>Relacion entre estudiante y ser parte de un equipo de fomento de emprendimeinto.</p>
 <caption>estTieneRepEst</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -6064,8 +6014,9 @@
     <td></td>
     <td></td>
 </tr>
-<table id='gaiTieneActividad'>
-<caption>gaiTieneActividad</caption>
+<table id='gaiTieneEstudiante'>
+    <p>Relacion entre convocatoria de GAI y actividad.</p>
+<caption>gaiTieneEstudiante</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -6120,6 +6071,7 @@
     <td></td>
 </tr>
 <table id='perAsisteEveCul'>
+    <p>Relacion entre convocatoria de GAI y estudiante.</p>
 <caption>perAsisteEveCul</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -6175,6 +6127,7 @@
     <td></td>
 </tr>
 <table id='perGestionaEveCul'>
+    <p>Relacion entre persona y su asistencia a un evento cultural.</p>
 <caption>perGestionaEveCul</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -6230,6 +6183,7 @@
     <td></td>
 </tr>
 <table id='perParticipaEveCul'>
+    <p>Relacion entre persona y su gestion en un evento cultural.</p>
 <caption>perParticipaEveCul</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -6285,6 +6239,7 @@
     <td></td>
 </tr>
 <table id='tiendBienOfrProd'>
+    <p>Relacion entre persona y su participacion en un evento cultural.</p>
 <caption>tiendBienOfrProd</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
@@ -6340,5 +6295,6 @@
     <td></td>
 </tr>
 </table>
+<p>Relacion entre tienda de bienestar universitario y producto ofrecido.</p>
 </body>
 </html>
