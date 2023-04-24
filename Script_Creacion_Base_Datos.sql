@@ -6,6 +6,119 @@ CREATE SCHEMA bienestar DEFAULT CHARACTER SET utf8 ;
 USE bienestar ;
 
 -- -----------------------------------------------------
+-- Table bienestar.`TiendabienestarUN`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS bienestar.`TiendabienestarUN` ;
+
+CREATE TABLE IF NOT EXISTS bienestar.`TiendabienestarUN` (
+  `tiendBienID` INT NOT NULL,
+  `tiendBienCiudad` VARCHAR(45) NOT NULL,
+  `tiendBienDireccion` VARCHAR(50) NOT NULL,
+  `tiendBienHorario` VARCHAR(45) NOT NULL,
+  `tiendBienDescripcion` VARCHAR(45) NOT NULL,
+  `directorID` INT NOT NULL,
+  `coordID` INT NOT NULL,
+  `conBieneUnivID` INT NOT NULL,
+  PRIMARY KEY (`tiendBienID`),
+  CONSTRAINT `fk_TiendabienestarUN_Persona1`
+    FOREIGN KEY (`directorID`)
+    REFERENCES bienestar.`Persona` (`perID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TiendabienestarUN_Persona2`
+    FOREIGN KEY (`coordID`)
+    REFERENCES bienestar.`Persona` (`perID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TiendabienestarUN_ConBieneUniv1`
+    FOREIGN KEY (`conBieneUnivID`)
+    REFERENCES bienestar.`ConBieneUniv` (`idConBieneUniv`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_TiendabienestarUN_Persona1_idx` ON bienestar.`TiendabienestarUN` (`directorID` ASC) VISIBLE;
+
+CREATE INDEX `fk_TiendabienestarUN_Persona2_idx` ON bienestar.`TiendabienestarUN` (`coordID` ASC) VISIBLE;
+
+CREATE INDEX `fk_TiendabienestarUN_ConBieneUniv1_idx` ON bienestar.`TiendabienestarUN` (`conBieneUnivID` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table bienestar.`Persona`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS bienestar.`Persona` ;
+
+CREATE TABLE IF NOT EXISTS bienestar.`Persona` (
+  `perID` INT NOT NULL auto_increment,
+  `perNombre` VARCHAR(45) NOT NULL,
+  `perApellido` VARCHAR(45) NOT NULL,
+  `perDireccion` VARCHAR(45) NOT NULL,
+  `perBarrio` VARCHAR(45) NOT NULL,
+  `perCiudad` VARCHAR(45) NOT NULL,
+  `perTipoVivienda` ENUM("Casa", "Apartamento", "Apartaestudio", "Finca") NOT NULL,
+  `perLocalidad` VARCHAR(45) NOT NULL,
+  `perEmail` VARCHAR(20) NOT NULL,
+  `perEntidadSalud` VARCHAR(45) NOT NULL,
+  `perProcedencia` VARCHAR(45) NOT NULL,
+  `perSede` VARCHAR(20) NOT NULL,
+  `perIDTrabTienda` INT NULL,
+  `perAreNombre` VARCHAR(100) NULL,
+  PRIMARY KEY (`perID`),
+  CONSTRAINT `fk_Persona_TiendabienestarUN1`
+    FOREIGN KEY (`perIDTrabTienda`)
+    REFERENCES bienestar.`TiendabienestarUN` (`tiendBienID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Persona_Area1`
+    FOREIGN KEY (`perAreNombre`)
+    REFERENCES bienestar.`Area` (`areNombre`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_Persona_TiendabienestarUN1_idx` ON bienestar.`Persona` (`perIDTrabTienda` ASC) VISIBLE;
+
+CREATE INDEX `fk_Persona_Area1_idx` ON bienestar.`Persona` (`perAreNombre` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table bienestar.`Docente`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS bienestar.`Docente` ;
+
+CREATE TABLE IF NOT EXISTS bienestar.`Docente` (
+  `docID` INT NOT NULL,
+  `docTenerTarjeta` TINYINT NOT NULL,
+  `docFacultad` VARCHAR(45) NOT NULL,
+  `docEsRepprofesoral` TINYINT NOT NULL,
+  `docEsDecano` TINYINT NOT NULL,
+  `conbienestarUniv` INT NULL,
+  `comitNacMatriculaID` INT NULL,
+  PRIMARY KEY (`docID`),
+  CONSTRAINT `fk_Docente/Administrativo_Persona1`
+    FOREIGN KEY (`docID`)
+    REFERENCES bienestar.`Persona` (`perID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Docente_ConBieneUniv1`
+    FOREIGN KEY (`conbienestarUniv`)
+    REFERENCES bienestar.`ConBieneUniv` (`idConBieneUniv`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Docente_ComitNacMatricula1`
+    FOREIGN KEY (`comitNacMatriculaID`)
+    REFERENCES bienestar.`ComitNacMatricula` (`comiNacDirectoresID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_Docente_ConBieneUniv1_idx` ON bienestar.`Docente` (`conbienestarUniv` ASC) VISIBLE;
+
+CREATE INDEX `fk_Docente_ComitNacMatricula1_idx` ON bienestar.`Docente` (`comitNacMatriculaID` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
 -- Table bienestar.`RecGeneralBienUniv`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS bienestar.`RecGeneralBienUniv` ;
@@ -266,42 +379,6 @@ CREATE INDEX `fk_ComitNacMatricula_ReprEstudiantil1_idx` ON bienestar.`ComitNacM
 
 
 -- -----------------------------------------------------
--- Table bienestar.`Docente`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS bienestar.`Docente` ;
-
-CREATE TABLE IF NOT EXISTS bienestar.`Docente` (
-  `docID` INT NOT NULL,
-  `docTenerTarjeta` TINYINT NOT NULL,
-  `docFacultad` VARCHAR(45) NOT NULL,
-  `docEsRepprofesoral` TINYINT NOT NULL,
-  `docEsDecano` TINYINT NOT NULL,
-  `conbienestarUniv` INT NULL,
-  `comitNacMatriculaID` INT NULL,
-  PRIMARY KEY (`docID`),
-  CONSTRAINT `fk_Docente/Administrativo_Persona1`
-    FOREIGN KEY (`docID`)
-    REFERENCES bienestar.`Persona` (`perID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Docente_ConBieneUniv1`
-    FOREIGN KEY (`conbienestarUniv`)
-    REFERENCES bienestar.`ConBieneUniv` (`idConBieneUniv`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Docente_ComitNacMatricula1`
-    FOREIGN KEY (`comitNacMatriculaID`)
-    REFERENCES bienestar.`ComitNacMatricula` (`comiNacDirectoresID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_Docente_ConBieneUniv1_idx` ON bienestar.`Docente` (`conbienestarUniv` ASC) VISIBLE;
-
-CREATE INDEX `fk_Docente_ComitNacMatricula1_idx` ON bienestar.`Docente` (`comitNacMatriculaID` ASC) VISIBLE;
-
-
--- -----------------------------------------------------
 -- Table bienestar.`ComitSedeDirectores`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS bienestar.`ComitSedeDirectores` ;
@@ -446,45 +523,6 @@ CREATE INDEX `fk_ConBieneUniv_Directorbienestar1_idx` ON bienestar.`ConBieneUniv
 
 
 -- -----------------------------------------------------
--- Table bienestar.`TiendabienestarUN`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS bienestar.`TiendabienestarUN` ;
-
-CREATE TABLE IF NOT EXISTS bienestar.`TiendabienestarUN` (
-  `tiendBienID` INT NOT NULL,
-  `tiendBienCiudad` VARCHAR(45) NOT NULL,
-  `tiendBienDireccion` VARCHAR(50) NOT NULL,
-  `tiendBienHorario` VARCHAR(45) NOT NULL,
-  `tiendBienDescripcion` VARCHAR(45) NOT NULL,
-  `directorID` INT NOT NULL,
-  `coordID` INT NOT NULL,
-  `conBieneUnivID` INT NOT NULL,
-  PRIMARY KEY (`tiendBienID`),
-  CONSTRAINT `fk_TiendabienestarUN_Persona1`
-    FOREIGN KEY (`directorID`)
-    REFERENCES bienestar.`Persona` (`perID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TiendabienestarUN_Persona2`
-    FOREIGN KEY (`coordID`)
-    REFERENCES bienestar.`Persona` (`perID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TiendabienestarUN_ConBieneUniv1`
-    FOREIGN KEY (`conBieneUnivID`)
-    REFERENCES bienestar.`ConBieneUniv` (`idConBieneUniv`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_TiendabienestarUN_Persona1_idx` ON bienestar.`TiendabienestarUN` (`directorID` ASC) VISIBLE;
-
-CREATE INDEX `fk_TiendabienestarUN_Persona2_idx` ON bienestar.`TiendabienestarUN` (`coordID` ASC) VISIBLE;
-
-CREATE INDEX `fk_TiendabienestarUN_ConBieneUniv1_idx` ON bienestar.`TiendabienestarUN` (`conBieneUnivID` ASC) VISIBLE;
-
-
--- -----------------------------------------------------
 -- Table bienestar.`Area`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS bienestar.`Area` ;
@@ -496,45 +534,6 @@ CREATE TABLE IF NOT EXISTS bienestar.`Area` (
   `areExtension` INT NOT NULL,
   PRIMARY KEY (`areNombre`))
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table bienestar.`Persona`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS bienestar.`Persona` ;
-
-CREATE TABLE IF NOT EXISTS bienestar.`Persona` (
-  `perID` INT NOT NULL auto_increment,
-  `perNombre` VARCHAR(45) NOT NULL,
-  `perApellido` VARCHAR(45) NOT NULL,
-  `perDireccion` VARCHAR(45) NOT NULL,
-  `perBarrio` VARCHAR(45) NOT NULL,
-  `perCiudad` VARCHAR(45) NOT NULL,
-  `perTipoVivienda` ENUM("Casa", "Apartamento", "Apartaestudio", "Finca") NOT NULL,
-  `perLocalidad` VARCHAR(45) NOT NULL,
-  `perEmail` VARCHAR(20) NOT NULL,
-  `perEntidadSalud` VARCHAR(45) NOT NULL,
-  `perProcedencia` VARCHAR(45) NOT NULL,
-  `perSede` VARCHAR(20) NOT NULL,
-  `perIDTrabTienda` INT NULL,
-  `perAreNombre` VARCHAR(100) NULL,
-  PRIMARY KEY (`perID`),
-  CONSTRAINT `fk_Persona_TiendabienestarUN1`
-    FOREIGN KEY (`perIDTrabTienda`)
-    REFERENCES bienestar.`TiendabienestarUN` (`tiendBienID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Persona_Area1`
-    FOREIGN KEY (`perAreNombre`)
-    REFERENCES bienestar.`Area` (`areNombre`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_Persona_TiendabienestarUN1_idx` ON bienestar.`Persona` (`perIDTrabTienda` ASC) VISIBLE;
-
-CREATE INDEX `fk_Persona_Area1_idx` ON bienestar.`Persona` (`perAreNombre` ASC) VISIBLE;
-
 
 -- -----------------------------------------------------
 -- Table bienestar.`Ambulancia`
