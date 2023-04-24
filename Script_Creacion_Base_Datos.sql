@@ -504,7 +504,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS bienestar.`Persona` ;
 
 CREATE TABLE IF NOT EXISTS bienestar.`Persona` (
-  `perID` INT NOT NULL,
+  `perID` INT NOT NULL auto_increment,
   `perNombre` VARCHAR(45) NOT NULL,
   `perApellido` VARCHAR(45) NOT NULL,
   `perDireccion` VARCHAR(45) NOT NULL,
@@ -2091,3 +2091,9 @@ ENGINE = InnoDB;
 CREATE INDEX `fk_table1_Persona1_idx` ON bienestar.`AntencionEnSalud` (`Persona_id` ASC) VISIBLE;
 
 USE bienestar ;
+
+commit;
+
+###Inserts###
+
+insert into bienestar.`Persona`  () values ();
