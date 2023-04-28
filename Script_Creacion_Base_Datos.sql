@@ -16,33 +16,9 @@ CREATE TABLE IF NOT EXISTS bienestar.`TiendabienestarUN` (
   `tiendBienDireccion` VARCHAR(50) NOT NULL,
   `tiendBienHorario` VARCHAR(45) NOT NULL,
   `tiendBienDescripcion` VARCHAR(45) NOT NULL,
-  `directorID` INT NOT NULL,
-  `coordID` INT NOT NULL,
-  `conBieneUnivID` INT NOT NULL,
-  PRIMARY KEY (`tiendBienID`),
-  CONSTRAINT `fk_TiendabienestarUN_Persona1`
-    FOREIGN KEY (`directorID`)
-    REFERENCES bienestar.`Persona` (`perID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TiendabienestarUN_Persona2`
-    FOREIGN KEY (`coordID`)
-    REFERENCES bienestar.`Persona` (`perID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TiendabienestarUN_ConBieneUniv1`
-    FOREIGN KEY (`conBieneUnivID`)
-    REFERENCES bienestar.`ConBieneUniv` (`idConBieneUniv`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`tiendBienID`)
+)
 ENGINE = InnoDB;
-
-CREATE INDEX `fk_TiendabienestarUN_Persona1_idx` ON bienestar.`TiendabienestarUN` (`directorID` ASC) VISIBLE;
-
-CREATE INDEX `fk_TiendabienestarUN_Persona2_idx` ON bienestar.`TiendabienestarUN` (`coordID` ASC) VISIBLE;
-
-CREATE INDEX `fk_TiendabienestarUN_ConBieneUniv1_idx` ON bienestar.`TiendabienestarUN` (`conBieneUnivID` ASC) VISIBLE;
-
 
 -- -----------------------------------------------------
 -- Table bienestar.`Persona`
