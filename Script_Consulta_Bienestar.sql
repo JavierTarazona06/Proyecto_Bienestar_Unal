@@ -3,5 +3,13 @@
 
 select * from Persona;
 
+select * from estudiante;
+
+select * from carrera;
+
+select * from area;
+
+select * from programa;
+
 #----------------------------------------------------------------------
 #----------------------------------------------------------------------
