@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS Bienestar.Persona ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.Persona (
-  perID INT UNSIGNED NOT NULL auto_increment,
+  perID INT UNSIGNED NOT NULL,
   perNombre VARCHAR(45) NOT NULL,
   perApellido VARCHAR(45) NOT NULL,
   perDireccion VARCHAR(45) NOT NULL DEFAULT 'Sin Dirección',
