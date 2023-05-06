@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS Bienestar.Persona ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.Persona (
-  perID INT UNSIGNED NOT NULL,
+  perID INT UNSIGNED NOT NULL auto_increment,
   perNombre VARCHAR(45) NOT NULL,
   perApellido VARCHAR(45) NOT NULL,
   perDireccion VARCHAR(45) NOT NULL DEFAULT 'Sin Dirección',
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.Persona (
   perCiudad VARCHAR(45) NOT NULL DEFAULT 'Bogotá',
   perTipoVivienda ENUM("Casa", "Apartamento", "Apartaestudio", "Finca") NOT NULL DEFAULT 'Casa',
   perLocalidad VARCHAR(45) NOT NULL DEFAULT 'Sin Localidad',
-  perEmail VARCHAR(20) NULL,
+  perEmail VARCHAR(150) NULL,
   perEntidadSalud VARCHAR(45) NOT NULL DEFAULT 'N.E',
   perProcedencia VARCHAR(45) NOT NULL DEFAULT 'N.E',
   perSede VARCHAR(20) NOT NULL DEFAULT 'Bogotá',
