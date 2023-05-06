@@ -1,1 +1,3 @@
 Matriz de perfiles de usuarios vs tablas: https://docs.google.com/spreadsheets/d/159a7acncNQkrsuWPEucdmqWqznMrQWc4WU4pov9mQUk/edit?usp=sharing
+
+Documentación y consultas AR: https://docs.google.com/document/d/1bBilvQ41IfzALpGAWKGPhs8lEqmS2Ska6Ddk8dXBMVs/edit?usp=sharing
