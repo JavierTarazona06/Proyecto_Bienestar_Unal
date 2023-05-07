@@ -19,8 +19,8 @@ CREATE user 'direccion_cultural'@'localhost' identified by 'root';
 #Javier
 #--------------------------------------------------------------------
 
-grant update on bienestar.persona to 'estudiante'@'localhost';
-grant update on bienestar.estudiante to 'estudiante'@'localhost';
+grant select,update on bienestar.persona to 'estudiante'@'localhost';
+grant select,update on bienestar.estudiante to 'estudiante'@'localhost';
 
 grant select on bienestar.Carrera to 'estudiante'@'localhost';
 grant select on bienestar.Area to 'estudiante'@'localhost';
@@ -53,7 +53,7 @@ grant select on bienestar.vw_info_factura to 'estudiante'@'localhost';
 
 #---------------
 
-grant update on bienestar.persona to 'no_estudiante'@'localhost';
+grant select,update on bienestar.persona to 'no_estudiante'@'localhost';
 
 grant select on bienestar.Area to 'no_estudiante'@'localhost';
 grant select on bienestar.Programa to 'no_estudiante'@'localhost';

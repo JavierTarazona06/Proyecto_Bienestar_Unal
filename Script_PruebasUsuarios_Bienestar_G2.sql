@@ -1,5 +1,3 @@
-#Pruebas en Estudiante:
-
 use bienestar;
 
 #Pruebas en Estudiante:
@@ -14,5 +12,5 @@ update convocatoriagestionalimentaria set cgaComida = Cena where cgaLugar = 'Com
 
 select * from vw_info_estudiante;
 insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (1,'36','17','Ingeniería','73','Regular','0');
-update estudiante set perDireccion='Dirección Modificada' where estID=4;
+update vw_info_estudiante set perDireccion='Dirección Modificada' where estID=4;
 select * from vw_info_estudiante;
