@@ -25,7 +25,7 @@ select estID,perNombre,perApellido,perEmail,estPBM,estFacultad,carreNombre,carre
 #Vista de facturas con sus productos y tienda:
 
 select factID,factFecha,factHora,factDetalle,prodID,prodPrecio,prodDetalle,clienteID,perNombre,perApellido,perEmail,tieID,tieDireccion,tieCiudad from factura join factura_producto using (factID) join producto using (prodID) join persona on (clienteID=perID) join tiendabienestar using (tieID);
-drop view vw_info_factura;
+drop view if exists vw_info_factura;
 create view vw_info_factura as select factID,factFecha,factHora,factDetalle,prodID,prodPrecio,prodDetalle,clienteID,perNombre,perApellido,perEmail,tieID,tieDireccion,tieCiudad from factura join factura_producto using (factID) join producto using (prodID) join persona on (clienteID=perID) join tiendabienestar using (tieID);
 select * from vw_info_factura;
 
