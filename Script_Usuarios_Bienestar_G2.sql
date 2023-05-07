@@ -3,24 +3,33 @@ CREATE ROLE 'estudiante','no_estudiante','secretaria','direccion_economica','dir
 
 drop user if exists 'juanEstudiante'@'localhost';
 create user 'juanEstudiante'@'localhost' identified by 'root@1234';
+grant 'estudiante' to 'juanEstudiante'@'localhost';
+
+SHOW GRANTS FOR 'juanEstudiante'@'localhost';
 
 drop user if exists 'mariaPersona'@'localhost';
 create user 'mariaPersona'@'localhost' identified by 'root@1234';
+grant 'no_estudiante' to 'mariaPersona'@'localhost';
 
 drop user if exists 'jeisonSecretario'@'localhost';
 create user 'jeisonSecretario'@'localhost' identified by 'root@1234';
+grant 'secretaria' to 'jeisonSecretario'@'localhost';
 
-drop user if exists 'marioDirEco'@'localhost';
-create user 'marioDirEco'@'localhost' identified by 'root@1234';
+drop user if exists 'elizabethGodDirEco'@'localhost';
+create user 'elizabethGodDirEco'@'localhost' identified by 'root@1234';
+grant 'direccion_economica' to 'elizabethGodDirEco'@'localhost';
 
 drop user if exists 'juanaDirSalud'@'localhost';
 create user 'juanaDirSalud'@'localhost' identified by 'root@1234';
+grant 'direccion_salud' to 'juanaDirSalud'@'localhost';
 
 drop user if exists 'estebanDirDeporte'@'localhost';
 create user 'estebanDirDeporte'@'localhost' identified by 'root@1234';
+grant 'direccion_deporte' to 'estebanDirDeporte'@'localhost';
 
 drop user if exists 'sabrinaDirCultural'@'localhost';
 create user 'sabrinaDirCultural'@'localhost' identified by 'root@1234';
+grant 'direccion_cultural' to 'sabrinaDirCultural'@'localhost';
 
 #-------------------------------------------------------------------
 #Javier
