@@ -1,5 +1,5 @@
 #------------------------------------------------------------------
-#Javier
+#								Javier
 #------------------------------------------------------------------
 
 #Vista de información completa de estudiantes:
@@ -34,18 +34,54 @@ select * from vw_info_factura;
 #------------------------------------------------------------------
 
 #------------------------------------------------------------------
-#Valeria
+#								Valeria
 #------------------------------------------------------------------
 
+# Ver que la especializacion de los medicos que le han recetado cada procedimiento a un usuario
+DROP VIEW IF EXISTS vw_doctor_procedimiento;
+
+SELECT idCitaMedica AS cita, pacienteID AS paciente, salEspecializacion AS especializacion, ordExamen AS procedimiento
+	FROM citamedica JOIN personalsalud ON (doctorID = perID) LEFT JOIN ordenmedica ON (CitaMedica_id=idCitaMedica);
+
+CREATE VIEW vw_doctor_procedimiento AS
+	SELECT idCitaMedica AS cita, pacienteID AS paciente, salEspecializacion AS especializacion, medNombre AS medicamento
+	FROM citamedica JOIN personalsalud ON (doctorID = perID) LEFT JOIN medicamentos ON (CitaMedica_id=idCitaMedica);
 
 
+# Ver las citas medicas disponibles
+DROP VIEW IF EXISTS vw_citamedica_disponible;
 
+SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor
+	FROM citamedica JOIN personalsalud ON (perID=doctorID) NATURAL JOIN persona
+	WHERE pacienteID IS NULL;
+
+CREATE VIEW vw_citamedica_disponible AS
+	SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor
+	FROM citamedica JOIN personalsalud ON (perID=doctorID) NATURAL JOIN persona
+	WHERE pacienteID IS NULL;
+
+
+# Ver la cantidad de medicamentos diferentes que ha dado cada medico y la cantidad total de ellos
+DROP VIEW IF EXISTS vw_medicamentos_solicitados;
+
+SELECT perNombre AS doctor, perID AS id, COUNT(medNombre) AS cantidad, SUM(medCantidad) AS cantidad_pastillas
+	FROM citamedica JOIN personalsalud ON (perID=doctorID)
+    JOIN medicamentos ON (CitaMedica_id=idCitaMedica)
+    NATURAL JOIN persona
+    GROUP BY (perID);
+
+CREATE VIEW vw_medicamentos_solicitados AS
+	SELECT perNombre AS doctor, perID AS id, COUNT(medNombre) AS cantidad, SUM(medCantidad) AS cantidad_pastillas
+	FROM citamedica JOIN personalsalud ON (perID=doctorID)
+    JOIN medicamentos ON (CitaMedica_id=idCitaMedica)
+    NATURAL JOIN persona
+    GROUP BY (perID);
 
 #------------------------------------------------------------------
 #------------------------------------------------------------------
 
 #------------------------------------------------------------------
-#Carlos
+#								Carlos
 #------------------------------------------------------------------
 
 
