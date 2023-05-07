@@ -3,16 +3,17 @@ select * from estudiante;
 select * from carrera;
 select * from area;
 select * from programa;
-select * from tiendabienestar;
-select * from producto;
-select * from factura;
-select * from factura_producto;
 select * from fallaalimentacion;
 select * from actividadcorresp;
 select * from convocatoria;
 select * from convocatoriagestionalimentaria;
 select * from convocatoriagestionalojamiento;
 select * from convocatoriagestioneconomica;
+select * from tiendabienestar;
+select * from factura;
+select * from producto;
+select * from factura_producto;
+select * from convocatoria;
 
 
 #Javier

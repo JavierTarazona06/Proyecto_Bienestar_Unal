@@ -24,16 +24,12 @@ select estID,perNombre,perApellido,perEmail,estPBM,estFacultad,carreNombre,carre
 
 #Vista de facturas con sus productos y tienda:
 
+select factID,factFecha,factHora,factDetalle,prodID,prodPrecio,prodDetalle,clienteID,perNombre,perApellido,perEmail,tieID,tieDireccion,tieCiudad from factura join factura_producto using (factID) join producto using (prodID) join persona on (clienteID=perID) join tiendabienestar using (tieID);
+drop view vw_info_factura;
+create view vw_info_factura as select factID,factFecha,factHora,factDetalle,prodID,prodPrecio,prodDetalle,clienteID,perNombre,perApellido,perEmail,tieID,tieDireccion,tieCiudad from factura join factura_producto using (factID) join producto using (prodID) join persona on (clienteID=perID) join tiendabienestar using (tieID);
+select * from vw_info_factura;
 
 
-select * from tiendabienestar;
-select * from factura;
-select * from producto;
-select * from factura_producto;
-select * from convocatoria;
-select * from estudiante_toma_convocatoria;
-select * from estudiante;
-select * from carrera;
 #------------------------------------------------------------------
 #------------------------------------------------------------------
 
