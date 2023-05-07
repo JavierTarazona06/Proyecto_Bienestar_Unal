@@ -1,6 +1,26 @@
 drop role if exists 'estudiante','no_estudiante','secretaria','direccion_economica','direccion_salud','direccion_deporte','direccion_cultural';
 CREATE ROLE 'estudiante','no_estudiante','secretaria','direccion_economica','direccion_salud','direccion_deporte','direccion_cultural';
 
+drop user if exists 'juanEstudiante'@'localhost';
+create user 'juanEstudiante'@'localhost' identified by 'root@1234';
+
+drop user if exists 'mariaPersona'@'localhost';
+create user 'mariaPersona'@'localhost' identified by 'root@1234';
+
+drop user if exists 'jeisonSecretario'@'localhost';
+create user 'jeisonSecretario'@'localhost' identified by 'root@1234';
+
+drop user if exists 'marioDirEco'@'localhost';
+create user 'marioDirEco'@'localhost' identified by 'root@1234';
+
+drop user if exists 'juanaDirSalud'@'localhost';
+create user 'juanaDirSalud'@'localhost' identified by 'root@1234';
+
+drop user if exists 'estebanDirDeporte'@'localhost';
+create user 'estebanDirDeporte'@'localhost' identified by 'root@1234';
+
+drop user if exists 'sabrinaDirCultural'@'localhost';
+create user 'sabrinaDirCultural'@'localhost' identified by 'root@1234';
 
 #-------------------------------------------------------------------
 #Javier
@@ -136,11 +156,6 @@ grant all on vw_info_convocatoria_estudiante to 'direccion_economica';
 grant all on vw_info_factura to 'direccion_economica';
 
 #--------------------------------------------------------------------
-
-
-
-
-
 
 #-------------------------------------------------------------------
 #Valeria
