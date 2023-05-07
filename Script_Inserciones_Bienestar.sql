@@ -1,4 +1,4 @@
-use bienestar;
+use Bienestar;
 
 #Javier
 #------------------------------------------------------------------
@@ -1478,3 +1478,109 @@ en madera con cámara de aire y/o linóleo.","Expresión Talentos","Trabajo de e
 (3,"Mínimo 10 m fondo por 12 m de ancho","Danzas Folclóricas","Tradiciones y Culturas de Colombia","José David Ramírez","Amplificación para reproducir pistas. Idealmente, piso
 en madera con cámara de aire y/o linóleo","Expresión Talentos","Trabajo de investigación, rescate y difusión de las manifestaciones folklóricas de distintas regiones colombianas. A través de un lenguaje moderno, valiéndose de recursos teatrales y de las artes escénicas, busca ser una expresión auténtica de la nación, y ofrece un trabajo profundamente enraizado en los valores del pueblo, en la rica tradición popular.
  En su repertorio involucra danzas y juegos coreográficos.",4);
+ 
+-- Insercion area de deportes:
+
+INSERT INTO Bienestar.Area 
+(areID, areNombre, 
+areTelefono, 
+areCorreoElectronico, areExtension, areEdificio, areDescripcion) values (17, "Actividad Fisica & Deporte",  3165000, "divrecd_bog@unal.edu.co", 17207,"No. 103 Polideportivo","Area encargada de la actividad deportiva en la UNAL.");
+
+
+INSERT INTO Bienestar.Programa (progID, progNombre, Area_areID) values (1701, "Actividad ludico deportiva", 17);
+INSERT INTO Bienestar.Programa (progID, progNombre, Area_areID) values (1702, "Acondicionamiento físico e instruccion", 17);
+INSERT INTO Bienestar.Programa (progID, progNombre, Area_areID) values (1703, "Deporte de competencia", 17);
+INSERT INTO Bienestar.Programa (progID, progNombre, Area_areID) values (1704, "Deporte de alto rendimiento", 17);
+INSERT INTO Bienestar.Programa (progID, progNombre, Area_areID) values (1705, "Proyectos estratégicos", 17);
+ 
+ -- Inserciones torneos internos:
+
+INSERT INTO Bienestar.TorneoInterno (toridTorneoInterno, torPeriodo, torSedeFacultad, torDeporte, torNombreTorneo, torEstado, torModalidad, torRama, torNivel, torFechaInicio, torFechaFinalizacion, Programa_progID) VALUES (1011, '2022-1', 'Facultad de Ingeniería', 'Futbol', 'Copa Ingenieria', 1, 'Eliminacion directa', 'Masculino', 'Intermedio', '2022-06-01', '2022-06-30',1701);
+INSERT INTO Bienestar.TorneoInterno (toridTorneoInterno, torPeriodo, torSedeFacultad, torDeporte, torNombreTorneo, torEstado, torModalidad, torRama, torNivel, torFechaInicio, torFechaFinalizacion, Programa_progID) VALUES (1012, '2022-2', 'Facultad de Ciencias Humanas', 'Voleibol', 'Torneo de Voleibol Artes y Humanidades', 1, 'Todos contra todos', 'Femenino', 'Basico', '2022-09-01', '2022-09-30', 1701);
+INSERT INTO Bienestar.TorneoInterno (toridTorneoInterno, torPeriodo, torSedeFacultad, torDeporte, torNombreTorneo, torEstado, torModalidad, torRama, torNivel, torFechaInicio, torFechaFinalizacion, Programa_progID) VALUES (1013, '2022-1', 'Facultad de Ciencias', 'Baloncesto', 'Torneo de Baloncesto Física', 0, 'Eliminación directa', 'Masculino', 'Avanzado', '2022-07-01', '2022-07-31', 1701);
+INSERT INTO Bienestar.TorneoInterno (toridTorneoInterno, torPeriodo, torSedeFacultad, torDeporte, torNombreTorneo, torEstado, torModalidad, torRama, torNivel, torFechaInicio, torFechaFinalizacion, Programa_progID) VALUES (1014, '2023-1', 'Facultad de Salud', 'Futbol Sala', 'Liga de Fútbol Medicina', 1, 'Todos contra todos', 'Masculino', 'Intermedio', '2023-05-01', '2023-05-31', 1701);
+INSERT INTO Bienestar.TorneoInterno (toridTorneoInterno, torPeriodo, torSedeFacultad, torDeporte, torNombreTorneo, torEstado, torModalidad, torRama, torNivel, torFechaInicio, torFechaFinalizacion, Programa_progID) VALUES (1015, '2023-2', 'Facultad de Ciencias Económicas', 'Tenis de Mesa', 'Torneo de Tenis de Mesa Economia', 1, 'Eliminación directa', 'Mixto', 'Basico', '2023-10-01', '2023-10-03', 1701);
+
+INSERT INTO Bienestar.TorneoInterno VALUES (1016, '2022-1', 'Facultad de Ciencias', 'Fútbol', 'Torneo de Futbol de la Facultad de Ciencias', 1, 'Eliminación Simple', 'Masculino', 'Principiante', '2022-05-10', '2022-06-15', 1701);
+INSERT INTO Bienestar.TorneoInterno VALUES (1017, '2022-1', 'Facultad de Ingenieria', 'Voleibol', 'Torneo de Voleibol de la Facultad de Ingenieria', 1, 'Eliminación Simple', 'Femenino', 'Intermedio', '2022-06-01', '2022-07-10', 1701);
+INSERT INTO Bienestar.TorneoInterno VALUES (1018, '2022-2', 'Facultad de Medicina', 'Baloncesto', 'Torneo de Baloncesto de la Facultad de Medicina', 1, 'Liga', 'Masculino', 'Avanzado', '2022-09-01', '2022-11-10', 1701);
+INSERT INTO Bienestar.TorneoInterno VALUES (1019, '2022-2', 'Facultad de Ciencias Humanas', 'Ajedrez', 'Torneo de integracion ajedrez', 1, 'Eliminación Simple', 'Mixto', 'Principiante', '2022-10-01', '2022-10-15', 1701);
+INSERT INTO Bienestar.TorneoInterno VALUES (10110, '2023-1', 'Facultad de Ciencias', 'Tenis', 'Torneo de Tenis de la Facultad de Derecho', 0, NULL, 'Femenino', 'Intermedio', '2023-03-01', '2023-04-01', 1701);
+
+-- Inserciones convocatorias de area de deportes:
+
+select * from Convocatoria;
+-- cursos libres
+INSERT INTO Bienestar.Convocatoria (conv_id, convNombre, convFechaApertura, convFechaCierre, convEstado, convPeriodo, Programa_progID)
+VALUES
+(201, 'Convocatoria Deporte 2021-1', '2021-01-01', '2021-01-31', 1, '2021-1', 1702),
+(202, 'Convocatoria Deporte 2021-2', '2021-06-01', '2021-06-30', 1, '2021-2', 1702),
+(203, 'Convocatoria Deporte 2022-1', '2022-01-01', '2022-01-31', 1, '2022-1', 1702),
+(204, 'Convocatoria Deporte 2022-2', '2022-06-01', '2022-06-30', 1, '2022-2', 1702),
+(205, 'Convocatoria Deporte 2023-1', '2023-01-01', '2023-01-31', 1, '2023-1', 1702),
+(206, 'Convocatoria Deporte 2023-2', '2023-06-01', '2023-06-30', 1, '2023-2', 1702),
+(207, 'Convocatoria Deporte 2024-1', '2024-01-01', '2024-01-31', 1, '2024-2', 1702),
+(208, 'Convocatoria Deporte 2024-2', '2024-06-01', '2024-06-30', 1, '2024-2', 1702),
+(209, 'Convocatoria Deporte 2025-1', '2025-01-01', '2025-01-31', 1, '2025-1', 1702),
+(200, 'Convocatoria Deporte 2025-2', '2025-06-01', '2025-06-30', 1, '2025-2', 1702);
+
+-- selecciones deportivas
+INSERT INTO Bienestar.Convocatoria (conv_id, convNombre, convFechaApertura, convFechaCierre, convEstado, convPeriodo, Programa_progID) VALUES 
+(210, 'Convocatoria Deporte 2022-2', '2022-07-01', '2022-07-31', 1, '2022-2', 1703),
+(211, 'Convocatoria Deporte 2023-1', '2023-01-01', '2023-01-31', 1, '2023-1', 1703),
+(212, 'Convocatoria Deporte 2023-2', '2023-07-01', '2023-07-31', 0, '2023-2', 1703),
+(213, 'Convocatoria Deporte 2024-1', '2024-01-01', '2024-01-31', 0, '2024-1', 1703),
+(214, 'Convocatoria Deporte 2024-2', '2024-07-01', '2024-07-31', 0, '2024-2', 1703),
+(215, 'Convocatoria Deporte 2025-1', '2025-01-01', '2025-01-31', 0, '2025-1', 1703),
+(216, 'Convocatoria Deporte 2025-2', '2025-07-01', '2025-07-31', 0, '2025-2', 1703),
+(217, 'Convocatoria Deporte 2026-1', '2026-01-01', '2026-01-31', 0, '2026-1', 1703),
+(218, 'Convocatoria Deporte 2026-2', '2026-07-01', '2026-07-31', 0, '2026-2', 1703),
+(219, 'Convocatoria Deporte 2027-1', '2027-01-01', '2027-01-31', 0, '2027-1', 1703);
+
+-- Inserciones convocatorias cursos libres:
+
+INSERT INTO Bienestar.ConvocatoriaCursoLibre (Convocatoria_conv_id, curNombre, curTipoCurso, curCondicion)
+VALUES
+  (201, 'Fútbol', 'Deporte', 'Abierto'),
+  (202, 'Tenis', 'Deporte', 'Abierto'),
+  (203, 'Natación', 'Deporte', 'Abierto'),
+  (204, 'Vóley', 'Deporte', 'Abierto'),
+  (205, 'Baloncesto', 'Deporte', 'Abierto'),
+  (206, 'Karate', 'Deporte', 'Abierto'),
+  (207, 'Pilates', 'Libre', 'Abierto'),
+  (208, 'Yoga', 'Libre', 'Abierto'),
+  (209, 'Entrenamiento Funcional', 'Libre', 'Abierto'),
+  (200, 'Judo', 'Fitness', 'Abierto');
+
+
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (42,'Convocatoria curso de ajedrez','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (43,'Convocatoria curso de futbol sala','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (44,'Convocatoria curso de tenis','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (45,'Convocatoria curso de tenis de mesa','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (46,'Convocatoria curso de tejo','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (47,'Convocatoria curso de voleibol','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (48,'Convocatoria curso de futbol','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (49,'Convocatoria curso de basquetbol','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (50,'Convocatoria curso de yoga','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (51,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
+
+
+select * from Convocatoria;
+
+
+-- Inserciones convocatorias selecciones deportivas:
+INSERT INTO Bienestar.ConvocatoriaSeleccion (Convocatoria_conv_id, Convocatoria_Programa_progID, convDeporte, convLugar, convHora) VALUES 
+(210, 1703, 'Futbol', 'Estadio', '15:00:00'),
+(211, 1703, 'Baloncesto', 'Cancha 2', '10:00:00'),
+(212, 1703, 'Tenis', 'Cancha de tenis 3', '08:00:00'),
+(213, 1703, 'Voleibol', 'Cancha 1', '14:00:00'),
+(214, 1703, 'Tenis de mesa', 'Estadio', '16:00:00'),
+(215, 1703, 'Karate', 'Polideportivo', '07:00:00'),
+(216, 1703, 'Judo', 'Polideportivo', '18:00:00'),
+(217, 1703, 'Futbol Sala', 'Cancha 2', '11:00:00'),
+(218, 1703, 'Ciclismo', 'Anillo vial', '20:00:00'),
+(219, 1703, 'Atletismo', 'Polideportivo', '09:00:00');
+
+
+
+
