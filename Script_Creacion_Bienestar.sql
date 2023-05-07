@@ -626,9 +626,8 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
   cgalLocalidadAlojamiento VARCHAR(100) NOT NULL DEFAULT 'Teusaquillo',
   cgalCobertura FLOAT UNSIGNED NOT NULL DEFAULT 0,
   cgalTipoVivienda ENUM('Hotel', 'Casa', 'Apartamento', 'Vivienda familiar', 'Residencia Universitaria', 'Apartaestudio', 'Habitación', 'otro') NOT NULL DEFAULT 'Habitación',
-  cgalDescripcion VARCHAR(150) NOT NULL DEFAULT 'N.A',
+  cgalDescripcion VARCHAR(200) NOT NULL DEFAULT 'N.A',
   cgalCosto FLOAT UNSIGNED NOT NULL DEFAULT 0,
-  imgCvGesAlojamiento TEXT NOT NULL,
   PRIMARY KEY (conv_id),
   CONSTRAINT fk_CvGesAlojamiento_Convocatoria1
     FOREIGN KEY (conv_id)
