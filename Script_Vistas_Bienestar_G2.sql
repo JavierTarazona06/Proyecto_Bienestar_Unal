@@ -41,7 +41,6 @@ select * from vw_info_factura;
 
 
 
-
 #------------------------------------------------------------------
 #------------------------------------------------------------------
 
@@ -50,7 +49,28 @@ select * from vw_info_factura;
 #------------------------------------------------------------------
 
 
+#Vista de grupos artisticos institucionales y sus convocatorias.
 
+select gaiNombre, gaiDisciplina, convFechaApertura, convFechaApertura,convGaiEntrevista, convFechaCierre, convEstado, convPeriodo from GrupoArtisticoInstitucional join ConvocatoriaGAI on (GAI_id = GrupoArtisticoInstitucional_GAI_id) join Convocatoria on (Convocatoria_conv_id = conv_id);
+drop view if exists vw_info_gai_convocatoria;
+create view vw_info_gai_convocatoria as select gaiNombre, gaiDisciplina convFechaApertura, convFechaCierre, convGaiEntrevista, convEstado, convPeriodo from GrupoArtisticoInstitucional join ConvocatoriaGAI on (GAI_id = GrupoArtisticoInstitucional_GAI_id) join Convocatoria on (Convocatoria_conv_id = conv_id);
+select * from vw_info_gai_convocatoria;
+
+
+#Vista de convocatorias a selecciones deportivas.
+
+select progNombre, convNombre, convFechaApertura, convFechaCierre, convPeriodo, convDeporte, convLugar, convHora from Programa join Convocatoria on (Programa_progID = progID) join ConvocatoriaSeleccion on (Convocatoria_conv_id = conv_id);
+drop view if exists vw_info_seleccion_convocatoria;
+create view vw_info_seleccion_convocatoria as select progNombre, convNombre, convFechaApertura, convFechaCierre, convPeriodo, convDeporte, convLugar, convHora from Programa join Convocatoria on (Programa_progID = progID) join ConvocatoriaSeleccion on (Convocatoria_conv_id = conv_id);
+select * from vw_info_seleccion_convocatoria;
+
+
+#Vista de convocatorias a cursos libres de deportes.
+
+select progNombre, convNombre, curNombre, curTipoCurso, curCondicion, convFechaApertura, convFechaCierre, convPeriodo  from Programa join Convocatoria on (Programa_progID = progID) join ConvocatoriaCursoLibre on (Convocatoria_conv_id = conv_id);
+drop view if exists vw_info_curso_libre_convocatoria;
+create view vw_info_curso_libre_convocatoria as select progNombre, convNombre, curNombre, curTipoCurso, curCondicion, convFechaApertura, convFechaCierre, convPeriodo from Programa join Convocatoria on (Programa_progID = progID) join ConvocatoriaCursoLibre on (Convocatoria_conv_id = conv_id);
+select * from vw_info_curso_libre_convocatoria;
 
 
 
