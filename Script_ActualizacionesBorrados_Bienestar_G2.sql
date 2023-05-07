@@ -1,7 +1,3 @@
-#----------------------------------------------------------------------
-#Javier
-#----------------------------------------------------------------------
-
 select * from convocatoriagestionalimentaria;
 update convocatoriagestionalimentaria set cgaComida = 'Cena' where cgaLugar = 'Comedor Central';
 
@@ -26,3 +22,21 @@ SET foreign_key_checks = 0;
 select * from producto;
 delete from producto where prodPrecio<100000;
 SET foreign_key_checks = 1;
+
+# --------------------------------------------- AREA DE SALUD ---------------------------------------------------
+SELECT * FROM citamedica;
+UPDATE citamedica SET citDiagnostico = 'reservado' WHERE citDiagnostico = 'muerte';
+SELECT * FROM citamedica;
+
+SELECT * FROM medicamentos;
+DELETE FROM medicamentos WHERE medNombre = 'Noxpirin';
+SELECT * FROM medicamentos;
+
+SELECT * FROM personalsalud;
+UPDATE personalsalud SET salEspecializacion = 'Jefe' WHERE perID = 10;
+SELECT * FROM personalsalud;
+
+SELECT * FROM discapacidad;
+UPDATE discapacidad SET disVerificado = 1 WHERE perID = 12;
+DELETE FROM discapacidad WHERE perID = 200;
+SELECT * FROM discapacidad;
