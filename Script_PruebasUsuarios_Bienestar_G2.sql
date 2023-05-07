@@ -8,7 +8,7 @@ insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,c
 select * from convocatoriagestionalimentaria;
 insert into convocatoriagestionalimentaria values (5,'Cena','Comedor Central');
 select * from convocatoriagestionalimentaria;
-update convocatoriagestionalimentaria set cgaComida = Cena where cgaLugar = 'Comedor Central';
+update convocatoriagestionalimentaria set cgaComida = 'Cena' where cgaLugar = 'Comedor Central';
 
 select * from vw_info_estudiante;
 insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (1,'36','17','Ingeniería','73','Regular','0');
