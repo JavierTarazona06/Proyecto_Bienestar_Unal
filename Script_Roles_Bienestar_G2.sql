@@ -1,19 +1,19 @@
 use bienestar;
 
-drop user if exists 'estudiante'@'localhost';
-drop user if exists 'no_estudiante'@'localhost';
-drop user if exists 'secretaria'@'localhost';
-drop user if exists 'direccion_economica'@'localhost';
-drop user if exists 'direccion_salud'@'localhost';
-drop user if exists 'direccion_deporte'@'localhost';
-drop user if exists 'direccion_cultural'@'localhost';
-CREATE user 'estudiante'@'localhost' identified by 'root';
-CREATE user 'no_estudiante'@'localhost' identified by 'root';
-CREATE user 'secretaria'@'localhost' identified by 'root';
-CREATE user 'direccion_economica'@'localhost' identified by 'root';
-CREATE user 'direccion_salud'@'localhost' identified by 'root';
-CREATE user 'direccion_deporte'@'localhost' identified by 'root';
-CREATE user 'direccion_cultural'@'localhost' identified by 'root';
+drop role if exists 'estudiante'@'localhost';
+drop role if exists 'no_estudiante'@'localhost';
+drop role if exists 'secretaria'@'localhost';
+drop role if exists 'direccion_economica'@'localhost';
+drop role if exists 'direccion_salud'@'localhost';
+drop role if exists 'direccion_deporte'@'localhost';
+drop role if exists 'direccion_cultural'@'localhost';
+CREATE ROLE 'estudiante'@'localhost';
+CREATE ROLE 'no_estudiante'@'localhost';
+CREATE ROLE 'secretaria'@'localhost';
+CREATE ROLE 'direccion_economica'@'localhost';
+CREATE ROLE 'direccion_salud'@'localhost';
+CREATE ROLE 'direccion_deporte'@'localhost';
+CREATE ROLE 'direccion_cultural'@'localhost';
 
 #-------------------------------------------------------------------
 #Javier
@@ -216,10 +216,37 @@ grant all on bienestar.vw_info_convocatoria_estudiante to 'direccion_cultural'@'
 
 FLUSH PRIVILEGES;
 
-show grants for 'estudiante'@'localhost';
-show grants for 'no_estudiante'@'localhost';
-show grants for 'secretaria'@'localhost';
-show grants for 'direccion_economica'@'localhost';
-show grants for 'direccion_salud'@'localhost';
-show grants for 'direccion_deporte'@'localhost';
-show grants for 'direccion_cultural'@'localhost';
+
+drop user if exists 'juanEstudiante'@'localhost';
+create user 'juanEstudiante'@'localhost' identified by 'root@1234';
+grant 'estudiante'@'localhost' to 'juanEstudiante'@'localhost';
+
+SHOW GRANTS FOR 'juanEstudiante'@'localhost';
+
+drop user if exists 'mariaPersona'@'localhost';
+create user 'mariaPersona'@'localhost' identified by 'root@1234';
+grant 'no_estudiante'@'localhost' to 'mariaPersona'@'localhost';
+
+SHOW GRANTS FOR 'mariaPersona'@'localhost';
+
+drop user if exists 'jeisonSecretario'@'localhost';
+create user 'jeisonSecretario'@'localhost' identified by 'root@1234';
+grant 'secretaria'@'localhost' to 'jeisonSecretario'@'localhost';
+
+drop user if exists 'elizabethGodDirEco'@'localhost';
+create user 'elizabethGodDirEco'@'localhost' identified by 'root@1234';
+grant 'direccion_economica'@'localhost' to 'elizabethGodDirEco'@'localhost';
+
+drop user if exists 'juanaDirSalud'@'localhost';
+create user 'juanaDirSalud'@'localhost' identified by 'root@1234';
+grant 'direccion_salud'@'localhost' to 'juanaDirSalud'@'localhost';
+
+drop user if exists 'estebanDirDeporte'@'localhost';
+create user 'estebanDirDeporte'@'localhost' identified by 'root@1234';
+grant 'direccion_deporte'@'localhost' to 'estebanDirDeporte'@'localhost';
+
+drop user if exists 'sabrinaDirCultural'@'localhost';
+create user 'sabrinaDirCultural'@'localhost' identified by 'root@1234';
+grant 'direccion_cultural'@'localhost' to 'sabrinaDirCultural'@'localhost';
+
+FLUSH PRIVILEGES;
