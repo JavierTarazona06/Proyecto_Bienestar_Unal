@@ -31,6 +31,27 @@ facultades_unal = ['Artes', 'Ciencias', 'Ciencias Agrarias', 'Ciencias Económic
 
 admision = ["PEAMA","Regular"]
 
+viviendasAlojamiento = ['Hotel', 'Casa', 'Apartamento', 'Vivienda familiar', 'Residencia Universitaria', 'Apartaestudio', 'Habitación', 'otro']
+
+def convocatoriaAlojamiento():
+    for i in range(5,16):
+        id = i
+        dir = dir_carrera[random.randint(0,100)%5]+" "+str(random.randint(1,180))+" "+letras[random.randint(0,100)%20]+" No. "+str(random.randint(1,99))+"-"+str(random.randint(1,99))
+        localidad = localidades[random.randint(0,200)%20]
+        costo = random.randint(500000,5000000)
+        cobertura = costo/(random.randint(1,4))
+        vivienda = viviendasAlojamiento[random.randint(0,7)]
+        descripcion = 'N.A'
+        print(f"insert into convocatoriagestionalojamiento values ({id},'{dir}','{localidad}',{cobertura},'{vivienda}','{descripcion}',{costo});")
+
+def estudiante_tomaConv():
+    for i in range(0,20):
+        print(f"insert into estudiante_toma_convocatoria values ({random.randint(1,30)},{random.randint(1,15)});") #est,conv_id
+
+
+estudiante_tomaConv()
+
+
 class Persona:
     def __init__(self) -> None:
         nombre1 = nombres[random.randint(0,200)%30]
@@ -244,7 +265,7 @@ def factura_producto():
     with open('factura_productos.csv', 'a', newline='') as f:
         df.to_csv(f, header=False, index=False)
 
-factura_producto()
+
 
 
 '''
