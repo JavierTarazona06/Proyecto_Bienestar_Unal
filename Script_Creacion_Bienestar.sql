@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.PersonalSalud (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_PersonalSalud_Ambulancia1_idx ON Bienestar.PersonalSalud (Ambulancia_id ASC) VISIBLE;
+#CREATE INDEX fk_PersonalSalud_Ambulancia1_idx ON Bienestar.PersonalSalud (Ambulancia_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
