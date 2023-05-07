@@ -158,8 +158,26 @@ insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,c
 insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (13,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
 insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (14,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
 insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (15,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (16,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
 
-#insert into convocatoriagestioneconomica ()
+insert into convocatoriagestioneconomica values (1,500000);
+insert into convocatoriagestioneconomica values (16,1000000);
+
+insert into convocatoriagestionalimentaria values (2,'Desayuno','Comedor central');
+insert into convocatoriagestionalimentaria values (3,'Almuerzo','Matemáticas');
+insert into convocatoriagestionalimentaria values (4,'Cena','Biología');
+
+insert into convocatoriagestionalojamiento values (5,'AK 119 t No. 71-39','Usme',1213485.3333333333,'Residencia Universitaria','N.A',3640456);
+insert into convocatoriagestionalojamiento values (6,'KR 71 h No. 87-43','Barrios Unidos',2052035.0,'Habitación','N.A',4104070);
+insert into convocatoriagestionalojamiento values (7,'AK 16 i No. 41-39','Usme',292882.0,'Apartamento','N.A',585764);
+insert into convocatoriagestionalojamiento values (8,'KR 121 g No. 6-85','Antonio Nariño',526832.6666666666,'Hotel','N.A',1580498);
+insert into convocatoriagestionalojamiento values (9,'AK 11 j No. 30-36','Teusaquillo',880453.5,'otro','N.A',3521814);
+insert into convocatoriagestionalojamiento values (10,'AK 4 d No. 42-60','Bosa',1954658.5,'Hotel','N.A',3909317);
+insert into convocatoriagestionalojamiento values (11,'TV 103 s No. 81-41','Engativá',1621723.0,'Apartaestudio','N.A',3243446);
+insert into convocatoriagestionalojamiento values (12,'AC 29 c No. 72-52','Bosa',610463.3333333334,'Habitación','N.A',1831390);
+insert into convocatoriagestionalojamiento values (13,'KR 172 m No. 98-27','Chapinero',1016121.0,'Residencia Universitaria','N.A',3048363);
+insert into convocatoriagestionalojamiento values (14,'TV 156 k No. 30-17','Fontibón',1948563.0,'Residencia Universitaria','N.A',3897126);
+insert into convocatoriagestionalojamiento values (15,'TV 20 q No. 42-58','Ciudad Bolívar',2479522.0,'Vivienda familiar','N.A',4959044);
 
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Comedor central','2023-05-19');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-02-12');
