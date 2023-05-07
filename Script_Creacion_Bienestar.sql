@@ -501,7 +501,7 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaSeleccion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaSeleccion (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
+  Convocatoria_Programa_progID INT NOT NULL,
   convDeporte VARCHAR(45) NOT NULL,
   convLugar VARCHAR(50) NOT NULL,
   convHora TIME NOT NULL,
@@ -956,7 +956,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS Bienestar.TiendaBienestar ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.TiendaBienestar (
-  tieID INT ZEROFILL NOT NULL AUTO_INCREMENT,
+  tieID INT NOT NULL AUTO_INCREMENT,
   tieCiudad VARCHAR(45) NOT NULL DEFAULT 'Bogotá',
   tieDireccion VARCHAR(50) NOT NULL DEFAULT 'N.E',
   tieHorInicio TIME NOT NULL DEFAULT '08:00:00',
@@ -993,7 +993,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.Factura (
   factFecha DATE NOT NULL,
   factHora TIME NOT NULL DEFAULT '08:00:00',
   factDetalle VARCHAR(100) NOT NULL DEFAULT 'N:A',
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   clienteID INT UNSIGNED NOT NULL,
   PRIMARY KEY (factID),
   CONSTRAINT fk_Factura_copy1_TiendaBienestar_copy11
@@ -1036,7 +1036,7 @@ CREATE UNIQUE INDEX prodID_UNIQUE ON Bienestar.Producto (prodID ASC) VISIBLE;
 DROP TABLE IF EXISTS Bienestar.empleado_tiendaUN ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.empleado_tiendaUN (
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   empleadoID INT UNSIGNED NOT NULL,
   PRIMARY KEY (tieID, empleadoID),
   CONSTRAINT fk_TiendaBienestar_copy1_has_Persona_copy1_TiendaBienestar_co1
@@ -1088,7 +1088,7 @@ CREATE INDEX fk_Producto_copy1_has_Factura_copy1_Producto_copy11_idx ON Bienesta
 DROP TABLE IF EXISTS Bienestar.producto_tiendaUN ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.producto_tiendaUN (
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   prodID INT UNSIGNED NOT NULL,
   PRIMARY KEY (tieID, prodID),
   CONSTRAINT fk_TiendaBienestar_copy1_has_Producto_copy1_TiendaBienestar_c1
@@ -1319,7 +1319,7 @@ DROP TABLE IF EXISTS `Bienestar`.`Asesoria` ;
 
 CREATE TABLE IF NOT EXISTS `Bienestar`.`Asesoria` (
   `asID` INT NOT NULL,
-  `asTipo` LONGTEXT NOT NULL,
+  `asTipo` MEDIUMTEXT NOT NULL,
   `asArea` VARCHAR(45) NOT NULL,
   `asFecha` DATETIME NOT NULL,
   `asLugar` VARCHAR(45) NOT NULL,
