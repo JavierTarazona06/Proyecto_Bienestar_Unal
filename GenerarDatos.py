@@ -31,8 +31,20 @@ facultades_unal = ['Artes', 'Ciencias', 'Ciencias Agrarias', 'Ciencias Económic
 
 admision = ["PEAMA","Regular"]
 
+viviendasAlojamiento = ['Hotel', 'Casa', 'Apartamento', 'Vivienda familiar', 'Residencia Universitaria', 'Apartaestudio', 'Habitación', 'otro']
+
 def convocatoriaAlojamiento():
-    pass
+    for i in range(5,16):
+        id = i
+        dir = dir_carrera[random.randint(0,100)%5]+" "+str(random.randint(1,180))+" "+letras[random.randint(0,100)%20]+" No. "+str(random.randint(1,99))+"-"+str(random.randint(1,99))
+        localidad = localidades[random.randint(0,200)%20]
+        costo = random.randint(500000,5000000)
+        cobertura = costo/(random.randint(1,4))
+        vivienda = viviendasAlojamiento[random.randint(0,7)]
+        descripcion = 'N.A'
+        print(f"insert into convocatoriagestionalojamiento values ({id},'{dir}','{localidad}',{cobertura},'{vivienda}','{descripcion}',{costo});")
+
+convocatoriaAlojamiento()
 
 
 class Persona:
