@@ -374,13 +374,13 @@ DROP TABLE IF EXISTS Bienestar.Convocatoria ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.Convocatoria (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
+  convNombre VARCHAR(70) NOT NULL,
   convFechaApertura DATE NOT NULL,
   convFechaCierre DATE NOT NULL,
   convEstado TINYINT NOT NULL,
   convPeriodo VARCHAR(25) NULL,
   Programa_progID INT UNSIGNED NOT NULL,
-  PRIMARY KEY (conv_id, progNombre, Programa_progID),
+  PRIMARY KEY (conv_id, Programa_progID),
   CONSTRAINT fk_Convocatoria_Programa1
     FOREIGN KEY (Programa_progID)
     REFERENCES Bienestar.Programa (progID)
@@ -429,10 +429,10 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGAI (
   convGaiNombre VARCHAR(50) NOT NULL,
   convGaiDisciplina VARCHAR(45) NOT NULL,
   convGaiEntrevista DATE NOT NULL,
-  PRIMARY KEY (Convocatoria_conv_id, Convocatoria_Programa_progNombre, GrupoArtisticoInstitucional_GAI_id),
+  PRIMARY KEY (Convocatoria_conv_id, GrupoArtisticoInstitucional_GAI_id),
   CONSTRAINT fk_ConvGAI_Convocatoria1
-    FOREIGN KEY (Convocatoria_conv_id , Convocatoria_Programa_progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (Convocatoria_conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT fk_ConvocatoriaGAI_GrupoArtisticoInstitucional1
@@ -483,14 +483,13 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaCursoLibre ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaCursoLibre (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
   curNombre VARCHAR(45) NOT NULL,
   curTipoCurso VARCHAR(45) NOT NULL,
   curCondicion VARCHAR(45) NOT NULL,
-  PRIMARY KEY (Convocatoria_conv_id, Convocatoria_Programa_progNombre),
+  PRIMARY KEY (Convocatoria_conv_id),
   CONSTRAINT fk_ConvocatoriaCursoLibre_Convocatoria1
-    FOREIGN KEY (Convocatoria_conv_id , Convocatoria_Programa_progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (Convocatoria_conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -507,10 +506,10 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaSeleccion (
   convDeporte VARCHAR(45) NOT NULL,
   convLugar VARCHAR(50) NOT NULL,
   convHora TIME NOT NULL,
-  PRIMARY KEY (Convocatoria_conv_id, Convocatoria_Programa_progNombre),
+  PRIMARY KEY (Convocatoria_conv_id),
   CONSTRAINT fk_ConvocatoriaSeleccion_Convocatoria1
-    FOREIGN KEY (Convocatoria_conv_id , Convocatoria_Programa_progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (Convocatoria_conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -625,6 +624,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
   conv_id INT NOT NULL,
   progNombre VARCHAR(70) NOT NULL,
   cgalDireccionAlojamiento VARCHAR(100) NOT NULL DEFAULT 'Bogota',
+  cgalLocalidadAlojamiento VARCHAR(100) NOT NULL DEFAULT 'Teusaquillo',
   cgalCobertura FLOAT UNSIGNED NOT NULL DEFAULT 0,
   cgalTipoVivienda ENUM('Hotel', 'Casa', 'Apartamento', 'Vivienda familiar', 'Residencia Universitaria', 'Apartaestudio', 'Habitación', 'otro') NOT NULL DEFAULT 'Habitación',
   cgalDescripcion VARCHAR(150) NOT NULL DEFAULT 'N.A',
@@ -632,8 +632,8 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
   imgCvGesAlojamiento TEXT NOT NULL,
   PRIMARY KEY (conv_id, progNombre),
   CONSTRAINT fk_CvGesAlojamiento_Convocatoria1
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -653,8 +653,8 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionTransporte (
   cgtTipoTransporte ENUM('Transporte público masivo', 'otro') NOT NULL DEFAULT 'otro',
   PRIMARY KEY (conv_id, progNombre),
   CONSTRAINT fk_ConvocatoriaGestionTransporte_Convocatoria1
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -670,10 +670,10 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlimentaria (
   progNombre VARCHAR(70) NOT NULL,
   cgaComida ENUM('Desayuno', 'Almuerzo', 'Cena') NOT NULL DEFAULT 'Almuerzo',
   cgaLugar ENUM('Comedor central', 'Hemeroteca', 'Odontología', 'Agronomía', 'Biología', 'Ciencias Humanas', 'Ciencias Económicas', 'Matemáticas', 'otro') NOT NULL DEFAULT 'Comedor central',
-  PRIMARY KEY (conv_id, progNombre),
+  PRIMARY KEY (conv_id),
   CONSTRAINT fk_ConvocatoriaGestionAlimentaria_Convocatoria1
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -708,7 +708,6 @@ CREATE TABLE IF NOT EXISTS Bienestar.ActividadCorresp (
   estID INT UNSIGNED NOT NULL,
   actCorActividad ENUM('académica', 'deportiva', 'cultural', 'comunitaria', 'acompañamiento', 'desarrollo institucional', 'otra') NOT NULL DEFAULT 'académica',
   actCorHoras TINYINT NOT NULL,
-  actCorActividadCorrespcol VARCHAR(45) NULL,
   PRIMARY KEY (actCorID),
   CONSTRAINT fk_ActividadCorresp_Estudiante1
     FOREIGN KEY (estID)
@@ -851,21 +850,20 @@ DROP TABLE IF EXISTS Bienestar.Estudiante_Toma_Convocatoria ;
 CREATE TABLE IF NOT EXISTS Bienestar.Estudiante_Toma_Convocatoria (
   idEst INT UNSIGNED NOT NULL,
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
-  PRIMARY KEY (idEst, conv_id, progNombre),
+  PRIMARY KEY (idEst, conv_id),
   CONSTRAINT fk_Estudiante_copy1_has_Convocatoria_Estudiante_copy11
     FOREIGN KEY (idEst)
     REFERENCES Bienestar.Estudiante (estID)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT fk_Estudiante_copy1_has_Convocatoria_Convocatoria1
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC, progNombre ASC) VISIBLE;
 
 CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Estudiante_copy11_idx ON Bienestar.Estudiante_Toma_Convocatoria (idEst ASC) VISIBLE;
 
@@ -879,10 +877,10 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionEconomica (
   conv_id INT NOT NULL,
   progNombre VARCHAR(70) NOT NULL,
   cgeCobertura FLOAT NOT NULL DEFAULT 0,
-  PRIMARY KEY (conv_id, progNombre),
+  PRIMARY KEY (conv_id),
   CONSTRAINT fk_ConvocatoriaGestionTransporte_Convocatoria10
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -950,10 +948,10 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaFomentoEmprendimeinto (
   cgemNombreEmprend VARCHAR(60) NOT NULL,
   cgemTema VARCHAR(50) NOT NULL,
   cgemDescripcion VARCHAR(200) NOT NULL,
-  PRIMARY KEY (conv_id, progNombre),
+  PRIMARY KEY (conv_id),
   CONSTRAINT fk_ConvocatoriaGestionTransporte_Convocatoria100
-    FOREIGN KEY (conv_id , progNombre)
-    REFERENCES Bienestar.Convocatoria (conv_id , progNombre)
+    FOREIGN KEY (conv_id)
+    REFERENCES Bienestar.Convocatoria (conv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
