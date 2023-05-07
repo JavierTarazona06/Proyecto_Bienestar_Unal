@@ -1,6 +1,26 @@
 drop role if exists 'estudiante','no_estudiante','secretaria','direccion_economica','direccion_salud','direccion_deporte','direccion_cultural';
 CREATE ROLE 'estudiante','no_estudiante','secretaria','direccion_economica','direccion_salud','direccion_deporte','direccion_cultural';
 
+drop user if exists 'juanEstudiante'@'localhost';
+create user 'juanEstudiante'@'localhost' identified by 'root@1234';
+
+drop user if exists 'mariaPersona'@'localhost';
+create user 'mariaPersona'@'localhost' identified by 'root@1234';
+
+drop user if exists 'jeisonSecretario'@'localhost';
+create user 'jeisonSecretario'@'localhost' identified by 'root@1234';
+
+drop user if exists 'marioDirEco'@'localhost';
+create user 'marioDirEco'@'localhost' identified by 'root@1234';
+
+drop user if exists 'juanaDirSalud'@'localhost';
+create user 'juanaDirSalud'@'localhost' identified by 'root@1234';
+
+drop user if exists 'estebanDirDeporte'@'localhost';
+create user 'estebanDirDeporte'@'localhost' identified by 'root@1234';
+
+drop user if exists 'sabrinaDirCultural'@'localhost';
+create user 'sabrinaDirCultural'@'localhost' identified by 'root@1234';
 
 #-------------------------------------------------------------------
 #Javier
@@ -155,6 +175,9 @@ grant all on Proyecto to 'direccion_salud';
 grant all on Convocatoria to 'direccion_salud';
 grant all on Estudiante_toma_convocatoria to 'direccion_salud';
 
+grant all on vw_info_estudiante to 'direccion_salud';
+grant all on vw_info_convocatoria_estudiante to 'direccion_salud';
+
 #--------------------------------------------------------------------
 
 
@@ -176,6 +199,9 @@ grant all on Proyecto to 'direccion_deporte';
 grant all on Convocatoria to 'direccion_deporte';
 grant all on Estudiante_toma_convocatoria to 'direccion_deporte';
 
+grant all on vw_info_estudiante to 'direccion_deporte';
+grant all on vw_info_convocatoria_estudiante to 'direccion_deporte';
+
 grant all on Persona to 'direccion_cultural';
 grant all on persona_cargo to 'direccion_cultural';
 grant all on Cargo to 'direccion_cultural';
@@ -189,5 +215,8 @@ grant all on Programa_tiene_proyecto to 'direccion_cultural';
 grant all on Proyecto to 'direccion_cultural';
 grant all on Convocatoria to 'direccion_cultural';
 grant all on Estudiante_toma_convocatoria to 'direccion_cultural';
+
+grant all on vw_info_estudiante to 'direccion_cultural';
+grant all on vw_info_convocatoria_estudiante to 'direccion_cultural';
 
 #--------------------------------------------------------------------
