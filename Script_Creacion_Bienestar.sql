@@ -622,7 +622,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGestionAlojamiento ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
   cgalDireccionAlojamiento VARCHAR(100) NOT NULL DEFAULT 'Bogota',
   cgalLocalidadAlojamiento VARCHAR(100) NOT NULL DEFAULT 'Teusaquillo',
   cgalCobertura FLOAT UNSIGNED NOT NULL DEFAULT 0,
@@ -630,7 +629,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
   cgalDescripcion VARCHAR(150) NOT NULL DEFAULT 'N.A',
   cgalCosto FLOAT UNSIGNED NOT NULL DEFAULT 0,
   imgCvGesAlojamiento TEXT NOT NULL,
-  PRIMARY KEY (conv_id, progNombre),
+  PRIMARY KEY (conv_id),
   CONSTRAINT fk_CvGesAlojamiento_Convocatoria1
     FOREIGN KEY (conv_id)
     REFERENCES Bienestar.Convocatoria (conv_id)
@@ -638,7 +637,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC, progNombre ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -648,10 +647,9 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGestionTransporte ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionTransporte (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
   cgtCobertura FLOAT NOT NULL DEFAULT 0,
   cgtTipoTransporte ENUM('Transporte público masivo', 'otro') NOT NULL DEFAULT 'otro',
-  PRIMARY KEY (conv_id, progNombre),
+  PRIMARY KEY (conv_id),
   CONSTRAINT fk_ConvocatoriaGestionTransporte_Convocatoria1
     FOREIGN KEY (conv_id)
     REFERENCES Bienestar.Convocatoria (conv_id)
@@ -667,7 +665,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGestionAlimentaria ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlimentaria (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
   cgaComida ENUM('Desayuno', 'Almuerzo', 'Cena') NOT NULL DEFAULT 'Almuerzo',
   cgaLugar ENUM('Comedor central', 'Hemeroteca', 'Odontología', 'Agronomía', 'Biología', 'Ciencias Humanas', 'Ciencias Económicas', 'Matemáticas', 'otro') NOT NULL DEFAULT 'Comedor central',
   PRIMARY KEY (conv_id),
@@ -875,7 +872,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGestionEconomica ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionEconomica (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
   cgeCobertura FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (conv_id),
   CONSTRAINT fk_ConvocatoriaGestionTransporte_Convocatoria10
@@ -943,7 +939,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaFomentoEmprendimeinto ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaFomentoEmprendimeinto (
   conv_id INT NOT NULL,
-  progNombre VARCHAR(70) NOT NULL,
   cgemCobertura FLOAT NOT NULL DEFAULT 0,
   cgemNombreEmprend VARCHAR(60) NOT NULL,
   cgemTema VARCHAR(50) NOT NULL,

@@ -31,6 +31,10 @@ facultades_unal = ['Artes', 'Ciencias', 'Ciencias Agrarias', 'Ciencias Económic
 
 admision = ["PEAMA","Regular"]
 
+def convocatoriaAlojamiento():
+    pass
+
+
 class Persona:
     def __init__(self) -> None:
         nombre1 = nombres[random.randint(0,200)%30]
@@ -244,7 +248,7 @@ def factura_producto():
     with open('factura_productos.csv', 'a', newline='') as f:
         df.to_csv(f, header=False, index=False)
 
-factura_producto()
+
 
 
 '''
