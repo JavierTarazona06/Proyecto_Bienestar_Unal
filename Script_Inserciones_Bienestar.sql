@@ -2,8 +2,6 @@ use bienestar;
 
 #Javier
 #------------------------------------------------------------------
-DELETE FROM persona;
-SELECT * FROM persona;
 insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1,'Ana José','Ramírez Mendoza','CL 120 s No. 81-31','Guayabal','Barranquilla','Apartaestudio','Otra','ARamírezM@unal.edu.co','Sura EPS','Medicina');
 insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (2,'Gabriela Andrés','Pérez Núñez','KR 125 j No. 43-65','Las Acacias','Barranquilla','Apartaestudio','Engativá','GPérezN@unal.edu.co','Colmedica','Ciencias');
 insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (3,'Ricardo Felipe','Sánchez Gómez','TV 72 h No. 43-30','San Antonio','Cartagena','Finca','Usaquén','RSánchezG@unal.edu.co','Colmedica','Ciencias Veterinarias y de Zootecnia');
@@ -587,7 +585,7 @@ INSERT INTO ambulancia VALUES
 	('ABC123'), ('DEF456'), ('HIJ789');
 
 DELETE FROM personalsalud;
-INSERT INTO personalsalud (perID, salProfesion, salEspecializacion,salTipo, Ambulancia_id) VALUES
+INSERT INTO personalsalud (perID, salProfesion, salEspecializacion,salTipo, salAmbulancia) VALUES
 	(10, 'Enfermeria', 'Ninguna', 'General', 'ABC123'),
     (20, 'Enfermeria', 'Jefe', 'General', 'HIJ789'),
     (30, 'Medico', 'General', 'General', 'ABC123'),
