@@ -780,7 +780,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   cucNombre VARCHAR(50) NOT NULL,
   cucObjetivo LONGTEXT NOT NULL,
   cucHorario VARCHAR(60) NOT NULL,
-  cucLugar VARCHAR(60) NOT NULL,
+  cucLugar VARCHAR(100) NOT NULL,
   cucCupoMinimo TINYINT(30) NOT NULL,
   cucCupoMaximo TINYINT(30) NOT NULL,
   cucCategoria VARCHAR(60) NOT NULL,
