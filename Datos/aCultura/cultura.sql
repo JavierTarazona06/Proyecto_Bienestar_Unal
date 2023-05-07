@@ -46,3 +46,19 @@ rudimentos técnicos de la actuación, mediante la auto observación, el acondic
 juegos de improvisación.", "lunes de 4 a 6 p.m. y jueves de 4:30 a 6:30 p.m","Auditorio Colegio IPARM (lunes) y salón 18 del Colegio IPARM (jueves)",20,25,"Artes escénicas", 1,2);
 
 
+
+insert into bienestar.grupoartisticoinstitucional values
+(1, "Mínimo 5 m fondo por 12 m de ancho","Teatro Experimental","Creación Experimental
+y Contemporánea","Mauricio Córdoba", "Amplificación para reproducir pistas, consola de sonido y micrófonos inalámbricos y/o de solapa, consola
+de luces pares y otras (condiciones ideales, según la
+obra por presentar). Idealmente, piso de madera con
+cámara de aire","Expresión Talentos","Se enfoca en la formación de los estudiantes desde las artes escénicas. Trabaja con un repertorio del teatro universal y nacional.
+ El grupo prepara piezas teatrales que, por su contenido dramático, promuevan en los espectadores la reflexión crítica sobre aspectos claves de determinada coyuntura.
+ Los procesos de montaje se asumen como un taller permanente de formación integral de actores, con conocimientos técnicos básicos sobre escenografía, iluminación, vestuario y maquillaje.",4),
+ (2,"Mínimo 5 m fondo por 8 m de ancho", "Danza Contemporánea", "Creación Experimental
+y Contemporánea","Astergio Pinto","Amplificación para reproducir pistas. Idealmente, piso
+en madera con cámara de aire y/o linóleo.","Expresión Talentos","Trabajo de exploración corporal que recurre a un conjunto de técnicas del movimiento, muy cercanas a las tendencias, estilos y dinámicas de las artes escénicas. La expresividad del cuerpo es un recurso que se explota,
+ hasta un nivel protagónico, así como la música que acompaña el movimiento",4),
+(3,"Mínimo 10 m fondo por 12 m de ancho","Danzas Folclóricas","Tradiciones y Culturas de Colombia","José David Ramírez","Amplificación para reproducir pistas. Idealmente, piso
+en madera con cámara de aire y/o linóleo","Expresión Talentos","Trabajo de investigación, rescate y difusión de las manifestaciones folklóricas de distintas regiones colombianas. A través de un lenguaje moderno, valiéndose de recursos teatrales y de las artes escénicas, busca ser una expresión auténtica de la nación, y ofrece un trabajo profundamente enraizado en los valores del pueblo, en la rica tradición popular.
+ En su repertorio involucra danzas y juegos coreográficos.",4);
