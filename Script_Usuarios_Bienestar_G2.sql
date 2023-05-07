@@ -137,6 +137,11 @@ grant all on vw_info_factura to 'direccion_economica';
 
 #--------------------------------------------------------------------
 
+
+
+
+
+
 #-------------------------------------------------------------------
 #Valeria
 #--------------------------------------------------------------------
@@ -154,6 +159,9 @@ grant all on Programa_tiene_proyecto to 'direccion_salud';
 grant all on Proyecto to 'direccion_salud';
 grant all on Convocatoria to 'direccion_salud';
 grant all on Estudiante_toma_convocatoria to 'direccion_salud';
+
+grant all on vw_info_estudiante to 'direccion_salud';
+grant all on vw_info_convocatoria_estudiante to 'direccion_salud';
 
 #--------------------------------------------------------------------
 
@@ -176,6 +184,9 @@ grant all on Proyecto to 'direccion_deporte';
 grant all on Convocatoria to 'direccion_deporte';
 grant all on Estudiante_toma_convocatoria to 'direccion_deporte';
 
+grant all on vw_info_estudiante to 'direccion_deporte';
+grant all on vw_info_convocatoria_estudiante to 'direccion_deporte';
+
 grant all on Persona to 'direccion_cultural';
 grant all on persona_cargo to 'direccion_cultural';
 grant all on Cargo to 'direccion_cultural';
@@ -189,5 +200,8 @@ grant all on Programa_tiene_proyecto to 'direccion_cultural';
 grant all on Proyecto to 'direccion_cultural';
 grant all on Convocatoria to 'direccion_cultural';
 grant all on Estudiante_toma_convocatoria to 'direccion_cultural';
+
+grant all on vw_info_estudiante to 'direccion_cultural';
+grant all on vw_info_convocatoria_estudiante to 'direccion_cultural';
 
 #--------------------------------------------------------------------
