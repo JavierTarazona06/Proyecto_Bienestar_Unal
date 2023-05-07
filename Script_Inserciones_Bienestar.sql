@@ -179,6 +179,27 @@ insert into convocatoriagestionalojamiento values (13,'KR 172 m No. 98-27','Chap
 insert into convocatoriagestionalojamiento values (14,'TV 156 k No. 30-17','Fontibón',1948563.0,'Residencia Universitaria','N.A',3897126);
 insert into convocatoriagestionalojamiento values (15,'TV 20 q No. 42-58','Ciudad Bolívar',2479522.0,'Vivienda familiar','N.A',4959044);
 
+insert into estudiante_toma_convocatoria values (30,9);
+insert into estudiante_toma_convocatoria values (16,1);
+insert into estudiante_toma_convocatoria values (22,2);
+insert into estudiante_toma_convocatoria values (26,14);
+insert into estudiante_toma_convocatoria values (24,3);
+insert into estudiante_toma_convocatoria values (27,8);
+insert into estudiante_toma_convocatoria values (2,8);
+insert into estudiante_toma_convocatoria values (14,3);
+insert into estudiante_toma_convocatoria values (9,1);
+insert into estudiante_toma_convocatoria values (13,1);
+insert into estudiante_toma_convocatoria values (27,5);
+insert into estudiante_toma_convocatoria values (6,5);
+insert into estudiante_toma_convocatoria values (27,15);
+insert into estudiante_toma_convocatoria values (24,1);
+insert into estudiante_toma_convocatoria values (7,11);
+insert into estudiante_toma_convocatoria values (24,12);
+insert into estudiante_toma_convocatoria values (29,7);
+insert into estudiante_toma_convocatoria values (21,14);
+insert into estudiante_toma_convocatoria values (4,7);
+insert into estudiante_toma_convocatoria values (2,15);
+
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Comedor central','2023-05-19');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-02-12');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-05-12');

@@ -44,7 +44,12 @@ def convocatoriaAlojamiento():
         descripcion = 'N.A'
         print(f"insert into convocatoriagestionalojamiento values ({id},'{dir}','{localidad}',{cobertura},'{vivienda}','{descripcion}',{costo});")
 
-convocatoriaAlojamiento()
+def estudiante_tomaConv():
+    for i in range(0,20):
+        print(f"insert into estudiante_toma_convocatoria values ({random.randint(1,30)},{random.randint(1,15)});") #est,conv_id
+
+
+estudiante_tomaConv()
 
 
 class Persona:
