@@ -402,9 +402,9 @@ CREATE TABLE IF NOT EXISTS Bienestar.GrupoArtisticoInstitucional (
   gaiNombre VARCHAR(45) NOT NULL,
   gaiDisciplina VARCHAR(60) NOT NULL,
   gaiNombreDirector VARCHAR(60) NOT NULL,
-  gaiRequerimientoTecnico VARCHAR(45) NOT NULL,
+  gaiRequerimientoTecnico longtext NOT NULL,
   eveCulTipo ENUM("Evento", "Actividad Lúdica", "Instrucción", "Promoción Interculturalidad", "Expresión Talentos") NOT NULL,
-  eveCulDescripcion VARCHAR(60) NOT NULL,
+  eveCulDescripcion longtext NOT NULL,
   progID INT UNSIGNED NOT NULL,
   PRIMARY KEY (GAI_id, progID),
   CONSTRAINT fk_GrupoArtisticoInstitucional_Programa1
