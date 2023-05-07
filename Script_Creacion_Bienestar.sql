@@ -501,7 +501,7 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaSeleccion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaSeleccion (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
+  Convocatoria_Programa_progID INT NOT NULL,
   convDeporte VARCHAR(45) NOT NULL,
   convLugar VARCHAR(50) NOT NULL,
   convHora TIME NOT NULL,
