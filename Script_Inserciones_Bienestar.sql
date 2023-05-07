@@ -587,7 +587,7 @@ INSERT INTO ambulancia VALUES
 	('ABC123'), ('DEF456'), ('HIJ789');
 
 DELETE FROM personalsalud;
-INSERT INTO personalsalud (perID, salProfesion, salEspecializacion,salTipo, Ambulancia_id) VALUES
+INSERT INTO personalsalud (perID, salProfesion, salEspecializacion,salTipo, salAmbulancia) VALUES
 	(10, 'Enfermeria', 'Ninguna', 'General', 'ABC123'),
     (20, 'Enfermeria', 'Jefe', 'General', 'HIJ789'),
     (30, 'Medico', 'General', 'General', 'ABC123'),
