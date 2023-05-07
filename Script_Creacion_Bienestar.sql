@@ -334,12 +334,11 @@ DROP TABLE IF EXISTS Bienestar.Area ;
 CREATE TABLE IF NOT EXISTS Bienestar.Area (
   areID INT UNSIGNED NOT NULL AUTO_INCREMENT,
   areNombre VARCHAR(45) NOT NULL,
-  areTelefono INT NOT NULL,
+  areTelefono bigint NOT NULL,
   areCorreoElectronico VARCHAR(60) NOT NULL,
   areExtension INT NOT NULL,
-  areEdificio VARCHAR(45) NOT NULL,
+  areEdificio VARCHAR(100) NOT NULL,
   areDescripcion LONGTEXT NOT NULL,
-  areNormatividad LONGTEXT NOT NULL,
   PRIMARY KEY (areID))
 ENGINE = InnoDB;
 
@@ -354,11 +353,6 @@ DROP TABLE IF EXISTS Bienestar.Programa ;
 CREATE TABLE IF NOT EXISTS Bienestar.Programa (
   progID INT UNSIGNED NOT NULL AUTO_INCREMENT,
   progNombre VARCHAR(45) NOT NULL,
-  progExtension INT NULL,
-  progCorreoElectronico VARCHAR(60) NULL,
-  progTelefono INT NULL,
-  progEdificio VARCHAR(50) NULL,
-  progOficina VARCHAR(10) NULL,
   Area_areID INT UNSIGNED NOT NULL,
   PRIMARY KEY (progID),
   CONSTRAINT fk_Programa_Area1
