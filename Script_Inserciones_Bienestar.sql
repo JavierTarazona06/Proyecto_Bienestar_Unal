@@ -1,3 +1,5 @@
+use bienestar;
+
 #Javier
 #------------------------------------------------------------------
 
@@ -112,25 +114,91 @@ insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision
 insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (29,'20','28','Ciencias Veterinarias y de Zootecnia','90','PEAMA','0');
 insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (30,'29','30','Ciencias','96','PEAMA','0');
 
-insert into area values ('Gestión y Fomento Socieconómico',32132,'economicaagfse_bog@unal.edu.co',1,'Unidad Camilo Torres','El Área de Gestión y Fomento Socioeconómico promueve el mejoramiento de las condiciones socioeconómicas y el desarrollo personal y profesional de la comunidad estudiantil.','http://bienestar.bogota.unal.edu.co/gestion_actas.php#docs');
+insert into bienestar.area values
+(1, "Salud", 5713165000, "areasalud_bog@unal.edu.co", 21072, "CAN Bloque 3, Edificio 933",
+"El Área de Salud promueve el mejoramiento permanente de las condiciones físicas, psíquicas, mentales, sociales y ambientales en las que se desarrolla la vida universitaria, mediante programas formativos, preventivos y correctivos que incidan en la calidad de vida y hábitos de vida saludable.
+Protegemos y promocionamos la salud integral de la comunidad universitaria a partir de la caracterización del riesgo individual y grupal, la prevención de la enfermedad, la gestión en salud y la atención de emergencias."),
+(2,"Cultura", 5713165194, "culturabien_bog@unal.edu.co", 17248, "Edificio No. 103
+Polideportivo Primer Piso / antiguas oficinas División de archivo", 
+"El Área de Cultura promueve en la comunidad universitaria el desarrollo de aptitudes estéticas y artísticas en su formación, expresión y divulgación, atendiendo la diversidad cultural de la misma.
+Estimulamos la formación y la proyección artística de la comunidad universitaria, en diversas expresiones modernas, contemporáneas, urbanas y representativas del folclor nacional, cultivando el respeto por el patrimonio
+ cultural material e inmaterial, el reconocimiento de la diversidad y la creación e investigación de nuevas prácticas del saber."),
+ (3,"Actividad física y Deporte",3165000, "divrecd_bog@unal.edu.co", 17207, "Edificio No. 103 Polideportivo",
+ "El Área de Actividad Física y Deporte estimula la práctica de actividades de tipo recreativo, formativo y competitivo, en el marco del sano esparcimiento, la promoción de la salud, la utilización racional y formativa del tiempo libre y la implementación del deporte universitario.
+Fomentamos la actividad física, el acondicionamiento físico dirigido y el rendimiento deportivo mediante la articulación de las actividades deportivas con la vida académica para apoyar la formación integral y afirmar el sentido de pertenencia hacia la Universidad."),
+(4, "Acompañamiento integral", 3165000, "aaintegral@unal.edu.co", 17171, "Ciudad Universitaria - Edificio 103 - Polideportivo Segundo piso",
+"El Área de Acompañamiento Integral desarrolla acciones orientadas a los miembros de la comunidad para apoyar su paso por la Universidad, facilitar el conocimiento de sí mismo y de los demás; desarrollar el sentido de pertenencia,
+ el compromiso individual, la construcción de un tejido social incluyente y el fortalecimiento de las relaciones humanas.
+Un equipo humano interdisciplinario que orienta el fortalecimiento del potencial de los miembros de la comunidad universitaria en los cambios y retos que le impone su tránsito por la institución."),
+(5,"Gestión y fomento socieconómico", 3165000, "economicaagfse_bog@unal.edu.co", 10652, "Unidad Camilo Torres Bloque B 7, Oficina: 201", 
+"El Área de Gestión y Fomento Socioeconómico promueve el mejoramiento de las condiciones socioeconómicas y el desarrollo personal y profesional de la comunidad estudiantil."),
+(6, "Unidades especiales", 3165000, "obsdiscap_nal@unal.edu.co", 10574, "Unidad Camilo Torres (Calle 44 No. 45 - 67), Bloque B, Módulo 8, Oficina 703",
+"Los programas de Admisión Especial son creados por la Universidad Nacional de Colombia atendiendo a uno de sus fines misionales, el cual es proyectarse al territorio nacional y contribuir con la unidad nacional, la igualdad de oportunidades de acceso a la educación superior y la promoción del desarrollo de la comunidad académica nacional.");
 
-insert into programa (progID,progNombre,Area_areID) values (1,'Fomento Económico Estudiantes',1);
 
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (1,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (2,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (3,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (4,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (5,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (6,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (7,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (8,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (9,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (10,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (11,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (12,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (13,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (14,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,progNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (15,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into programa (progID,progNombre,Area_areID) values (1,'Fomento Económico Estudiantes',5);
+insert into bienestar.programa values
+(2, "Cita medica", 1), 
+(3, "CursoCultural", 2),
+(4, "Grupo artistico institucional", 2),
+(5, "Urgencia",  1);
+
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (1,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (2,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (3,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (4,'Fomento Económico Estudiantes Alimentación','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (5,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (6,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (7,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (8,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (9,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (10,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (11,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (12,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (13,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (14,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (15,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (16,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
+
+insert into convocatoriagestioneconomica values (1,500000);
+insert into convocatoriagestioneconomica values (16,1000000);
+
+insert into convocatoriagestionalimentaria values (2,'Desayuno','Comedor central');
+insert into convocatoriagestionalimentaria values (3,'Almuerzo','Matemáticas');
+insert into convocatoriagestionalimentaria values (4,'Cena','Biología');
+
+insert into convocatoriagestionalojamiento values (5,'AK 119 t No. 71-39','Usme',1213485.3333333333,'Residencia Universitaria','N.A',3640456);
+insert into convocatoriagestionalojamiento values (6,'KR 71 h No. 87-43','Barrios Unidos',2052035.0,'Habitación','N.A',4104070);
+insert into convocatoriagestionalojamiento values (7,'AK 16 i No. 41-39','Usme',292882.0,'Apartamento','N.A',585764);
+insert into convocatoriagestionalojamiento values (8,'KR 121 g No. 6-85','Antonio Nariño',526832.6666666666,'Hotel','N.A',1580498);
+insert into convocatoriagestionalojamiento values (9,'AK 11 j No. 30-36','Teusaquillo',880453.5,'otro','N.A',3521814);
+insert into convocatoriagestionalojamiento values (10,'AK 4 d No. 42-60','Bosa',1954658.5,'Hotel','N.A',3909317);
+insert into convocatoriagestionalojamiento values (11,'TV 103 s No. 81-41','Engativá',1621723.0,'Apartaestudio','N.A',3243446);
+insert into convocatoriagestionalojamiento values (12,'AC 29 c No. 72-52','Bosa',610463.3333333334,'Habitación','N.A',1831390);
+insert into convocatoriagestionalojamiento values (13,'KR 172 m No. 98-27','Chapinero',1016121.0,'Residencia Universitaria','N.A',3048363);
+insert into convocatoriagestionalojamiento values (14,'TV 156 k No. 30-17','Fontibón',1948563.0,'Residencia Universitaria','N.A',3897126);
+insert into convocatoriagestionalojamiento values (15,'TV 20 q No. 42-58','Ciudad Bolívar',2479522.0,'Vivienda familiar','N.A',4959044);
+
+insert into estudiante_toma_convocatoria values (30,9);
+insert into estudiante_toma_convocatoria values (16,1);
+insert into estudiante_toma_convocatoria values (22,2);
+insert into estudiante_toma_convocatoria values (26,14);
+insert into estudiante_toma_convocatoria values (24,3);
+insert into estudiante_toma_convocatoria values (27,8);
+insert into estudiante_toma_convocatoria values (2,8);
+insert into estudiante_toma_convocatoria values (14,3);
+insert into estudiante_toma_convocatoria values (9,1);
+insert into estudiante_toma_convocatoria values (13,1);
+insert into estudiante_toma_convocatoria values (27,5);
+insert into estudiante_toma_convocatoria values (6,5);
+insert into estudiante_toma_convocatoria values (27,15);
+insert into estudiante_toma_convocatoria values (24,1);
+insert into estudiante_toma_convocatoria values (7,11);
+insert into estudiante_toma_convocatoria values (24,12);
+insert into estudiante_toma_convocatoria values (29,7);
+insert into estudiante_toma_convocatoria values (21,14);
+insert into estudiante_toma_convocatoria values (4,7);
+insert into estudiante_toma_convocatoria values (2,15);
 
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Comedor central','2023-05-19');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-02-12');
@@ -159,6 +227,83 @@ insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) va
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (1,'Desayuno','otro','2023-04-23');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (13,'Almuerzo','Odontología','2023-03-18');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Ciencias Humanas','2023-06-17');
+
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (0,18,'comunitaria',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (1,27,'cultural',8);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (2,9,'acompañamiento',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (3,24,'académica',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (4,23,'académica',5);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (5,23,'cultural',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (6,5,'académica',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (7,7,'acompañamiento',5);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (8,26,'otra',7);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (9,5,'otra',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (10,5,'comunitaria',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (11,30,'desarrollo institucional',8);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (12,17,'otra',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (13,2,'desarrollo institucional',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (14,30,'académica',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (15,13,'comunitaria',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (16,26,'deportiva',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (17,25,'comunitaria',4);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (18,1,'acompañamiento',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (19,24,'acompañamiento',7);
+
+insert into tiendabienestar values (1,'Bogotá','Ciudad Universitaria','08:00:00','17:00:00',1,2);
+insert into tiendabienestar values (2,'Bogotá','Feria del libro','10:00:00','19:00:00',3,4);
+
+insert into factura values (1,'2023-05-18','13:00:00','N.A',1,29);
+insert into factura values (2,'2023-04-15','13:00:00','N.A',1,3);
+insert into factura values (3,'2023-05-11','15:00:00','N.A',2,11);
+insert into factura values (4,'2023-05-3','16:00:00','N.A',1,29);
+insert into factura values (5,'2023-03-21','18:00:00','N.A',1,9);
+insert into factura values (6,'2023-01-6','18:00:00','N.A',1,2);
+insert into factura values (7,'2023-06-1','10:00:00','N.A',1,5);
+insert into factura values (8,'2023-02-27','11:00:00','N.A',1,3);
+insert into factura values (9,'2023-04-10','10:00:00','N.A',2,6);
+insert into factura values (10,'2023-02-2','18:00:00','N.A',2,10);
+insert into factura values (11,'2023-02-21','10:00:00','N.A',2,14);
+insert into factura values (12,'2023-03-23','11:00:00','N.A',2,15);
+insert into factura values (13,'2023-02-13','17:00:00','N.A',2,27);
+insert into factura values (14,'2023-04-29','13:00:00','N.A',2,10);
+insert into factura values (15,'2023-05-21','17:00:00','N.A',1,7);
+
+insert into producto values (1,83000.0,'Producto1');
+insert into producto values (2,88000.0,'Producto2');
+insert into producto values (3,93000.0,'Producto3');
+insert into producto values (4,98000.0,'Producto4');
+insert into producto values (5,103000.0,'Producto5');
+insert into producto values (6,108000.0,'Producto6');
+insert into producto values (7,113000.0,'Producto7');
+insert into producto values (8,118000.0,'Producto8');
+insert into producto values (9,123000.0,'Producto9');
+insert into producto values (10,128000.0,'Producto10');
+insert into producto values (11,133000.0,'Producto11');
+insert into producto values (12,138000.0,'Producto12');
+insert into producto values (13,143000.0,'Producto13');
+insert into producto values (14,148000.0,'Producto14');
+insert into producto values (15,153000.0,'Producto15');
+
+insert into factura_producto values (4,13);
+insert into factura_producto values (8,1);
+insert into factura_producto values (3,12);
+insert into factura_producto values (9,7);
+insert into factura_producto values (7,11);
+insert into factura_producto values (15,9);
+insert into factura_producto values (7,6);
+insert into factura_producto values (10,8);
+insert into factura_producto values (4,5);
+insert into factura_producto values (3,5);
+insert into factura_producto values (6,2);
+insert into factura_producto values (13,7);
+insert into factura_producto values (4,14);
+insert into factura_producto values (3,10);
+insert into factura_producto values (6,11);
+insert into factura_producto values (6,7);
+insert into factura_producto values (13,10);
+insert into factura_producto values (15,10);
+insert into factura_producto values (2,8);
+insert into factura_producto values (1,7);
 
 #------------------------------------------------------------------
 #------------------------------------------------------------------
