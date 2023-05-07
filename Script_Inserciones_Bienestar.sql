@@ -160,5 +160,82 @@ insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) va
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (13,'Almuerzo','Odontología','2023-03-18');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Ciencias Humanas','2023-06-17');
 
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (0,18,'comunitaria',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (1,27,'cultural',8);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (2,9,'acompañamiento',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (3,24,'académica',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (4,23,'académica',5);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (5,23,'cultural',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (6,5,'académica',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (7,7,'acompañamiento',5);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (8,26,'otra',7);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (9,5,'otra',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (10,5,'comunitaria',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (11,30,'desarrollo institucional',8);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (12,17,'otra',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (13,2,'desarrollo institucional',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (14,30,'académica',6);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (15,13,'comunitaria',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (16,26,'deportiva',2);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (17,25,'comunitaria',4);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (18,1,'acompañamiento',3);
+insert into actividadcorresp (actCorID,estID,actCorActividad,actCorHoras) values (19,24,'acompañamiento',7);
+
+insert into tiendabienestar values (1,'Bogotá','Ciudad Universitaria','08:00:00','17:00:00',1,2);
+insert into tiendabienestar values (2,'Bogotá','Feria del libro','10:00:00','19:00:00',3,4);
+
+insert into factura values (1,'2023-05-18','13:00:00','N.A',1,29);
+insert into factura values (2,'2023-04-15','13:00:00','N.A',1,3);
+insert into factura values (3,'2023-05-11','15:00:00','N.A',2,11);
+insert into factura values (4,'2023-05-3','16:00:00','N.A',1,29);
+insert into factura values (5,'2023-03-21','18:00:00','N.A',1,9);
+insert into factura values (6,'2023-01-6','18:00:00','N.A',1,2);
+insert into factura values (7,'2023-06-1','10:00:00','N.A',1,5);
+insert into factura values (8,'2023-02-27','11:00:00','N.A',1,3);
+insert into factura values (9,'2023-04-10','10:00:00','N.A',2,6);
+insert into factura values (10,'2023-02-2','18:00:00','N.A',2,10);
+insert into factura values (11,'2023-02-21','10:00:00','N.A',2,14);
+insert into factura values (12,'2023-03-23','11:00:00','N.A',2,15);
+insert into factura values (13,'2023-02-13','17:00:00','N.A',2,27);
+insert into factura values (14,'2023-04-29','13:00:00','N.A',2,10);
+insert into factura values (15,'2023-05-21','17:00:00','N.A',1,7);
+
+insert into producto values (1,83000.0,'Producto1');
+insert into producto values (2,88000.0,'Producto2');
+insert into producto values (3,93000.0,'Producto3');
+insert into producto values (4,98000.0,'Producto4');
+insert into producto values (5,103000.0,'Producto5');
+insert into producto values (6,108000.0,'Producto6');
+insert into producto values (7,113000.0,'Producto7');
+insert into producto values (8,118000.0,'Producto8');
+insert into producto values (9,123000.0,'Producto9');
+insert into producto values (10,128000.0,'Producto10');
+insert into producto values (11,133000.0,'Producto11');
+insert into producto values (12,138000.0,'Producto12');
+insert into producto values (13,143000.0,'Producto13');
+insert into producto values (14,148000.0,'Producto14');
+insert into producto values (15,153000.0,'Producto15');
+
+insert into factura_producto values (4,13);
+insert into factura_producto values (8,1);
+insert into factura_producto values (3,12);
+insert into factura_producto values (9,7);
+insert into factura_producto values (7,11);
+insert into factura_producto values (15,9);
+insert into factura_producto values (7,6);
+insert into factura_producto values (10,8);
+insert into factura_producto values (4,5);
+insert into factura_producto values (3,5);
+insert into factura_producto values (6,2);
+insert into factura_producto values (13,7);
+insert into factura_producto values (4,14);
+insert into factura_producto values (3,10);
+insert into factura_producto values (6,11);
+insert into factura_producto values (6,7);
+insert into factura_producto values (13,10);
+insert into factura_producto values (15,10);
+insert into factura_producto values (2,8);
+insert into factura_producto values (1,7);
+
 #------------------------------------------------------------------
 #------------------------------------------------------------------
