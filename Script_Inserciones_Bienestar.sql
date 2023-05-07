@@ -159,6 +159,8 @@ insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,c
 insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (14,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
 insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (15,'Gestión Alojamiento','2023-01-15','2023-02-1',1,1);
 
+#insert into convocatoriagestioneconomica ()
+
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (23,'Almuerzo','Comedor central','2023-05-19');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-02-12');
 insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values (9,'Desayuno','Ciencias Económicas','2023-05-12');
