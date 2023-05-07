@@ -154,22 +154,84 @@ grant all on bienestar.vw_info_factura to 'direccion_economica'@'localhost';
 #Valeria
 #--------------------------------------------------------------------
 
-grant all on bienestar.Persona to 'direccion_salud'@'localhost';
-grant all on bienestar.persona_cargo to 'direccion_salud'@'localhost';
-grant all on bienestar.Cargo to 'direccion_salud'@'localhost';
-grant all on bienestar.Estudiante to 'direccion_salud'@'localhost';
-grant all on bienestar.Carrera to 'direccion_salud'@'localhost';
-grant all on bienestar.Area to 'direccion_salud'@'localhost';
-grant all on bienestar.Programa to 'direccion_salud'@'localhost';
-grant all on bienestar.Programa_tiene_EventoTaller to 'direccion_salud'@'localhost';
-grant all on bienestar.EventoTaller to 'direccion_salud'@'localhost';
-grant all on bienestar.Programa_tiene_proyecto to 'direccion_salud'@'localhost';
-grant all on bienestar.Proyecto to 'direccion_salud'@'localhost';
-grant all on bienestar.Convocatoria to 'direccion_salud'@'localhost';
-grant all on bienestar.Estudiante_toma_convocatoria to 'direccion_salud'@'localhost';
+GRANT SELECT, UPDATE ON perfilriesgointegral TO 'estudiante';
+GRANT SELECT ON historiaclinica TO 'estudiante';
+GRANT SELECT ON personalsalud TO 'estudiante';
+GRANT SELECT ON ordenmedica TO 'estudiante';
+GRANT SELECT ON medicamentos TO 'estudiante';
+GRANT SELECT, UPDATE ON citamedica TO 'estudiante';
 
-grant all on bienestar.vw_info_estudiante to 'direccion_salud'@'localhost';
-grant all on bienestar.vw_info_convocatoria_estudiante to 'direccion_salud'@'localhost';
+GRANT SELECT, UPDATE ON vw_citamedica_disponible TO 'estudiante';
+GRANT SELECT ON vw_doctor_procedimiento TO 'estudiante';
+# -----------------------------------------------------------------------------
+
+GRANT SELECT, UPDATE ON perfilriesgointegral TO 'no_estudiante';
+GRANT SELECT ON historiaclinica TO 'no_estudiante';
+GRANT SELECT ON personalsalud TO 'no_estudiante';
+GRANT SELECT ON ordenmedica TO 'no_estudiante';
+GRANT SELECT ON medicamentos TO 'no_estudiante';
+GRANT SELECT, UPDATE ON citamedica TO 'no_estudiante';
+
+GRANT SELECT, UPDATE ON vw_citamedica_disponible TO 'no_estudiante';
+GRANT SELECT ON vw_doctor_procedimiento TO 'no_estudiante';
+# -----------------------------------------------------------------------------
+
+GRANT SELECT, UPDATE ON discapacidad TO 'secretaria';
+GRANT SELECT, UPDATE ON incapacidad TO 'secretaria';
+GRANT SELECT, UPDATE ON atencionensalud TO 'secretaria';
+GRANT SELECT, UPDATE ON perfilriesgointegral TO 'secretaria';
+GRANT SELECT, INSERT, UPDATE ON historiaclinica TO 'secretaria';
+GRANT ALL ON enfermedad TO 'secretaria';
+GRANT SELECT, UPDATE ON personalsalud TO 'secretaria';
+GRANT ALL ON citamedica TO 'secretaria';
+GRANT SELECT, INSERT, UPDATE ON ordenmedica TO 'secretaria';
+GRANT SELECT, INSERT, UPDATE ON medicamentos TO 'secretaria';
+GRANT SELECT, INSERT, UPDATE ON evaluacionfisica TO 'secretaria';
+GRANT SELECT, INSERT, UPDATE ON urgencia TO 'secretaria';
+GRANT SELECT, UPDATE ON ambulancia TO 'secretaria';
+
+GRANT ALL ON vw_citamedica_disponible TO 'secretaria';
+GRANT SELECT ON vw_medicamentos_solicitados TO 'secretaria';
+GRANT SELECT, UPDATE ON vw_doctor_procedimiento TO 'secretaria';
+
+# -----------------------------------------------------------------------------
+
+grant all on Persona to 'direccion_salud';
+grant all on persona_cargo to 'direccion_salud';
+grant all on Cargo to 'direccion_salud';
+grant all on Estudiante to 'direccion_salud';
+grant all on Carrera to 'direccion_salud';
+grant all on Area to 'direccion_salud';
+grant all on Programa to 'direccion_salud';
+grant all on Programa_tiene_EventoTaller to 'direccion_salud';
+grant all on EventoTaller to 'direccion_salud';
+grant all on Programa_tiene_proyecto to 'direccion_salud';
+grant all on Proyecto to 'direccion_salud';
+grant all on Convocatoria to 'direccion_salud';
+grant all on Estudiante_toma_convocatoria to 'direccion_salud';
+
+GRANT ALL ON Discapacidad TO 'direccion_salud';
+GRANT ALL ON Incapacidad TO 'direccion_salud';
+GRANT ALL ON AtencionEnSalud TO 'direccion_salud';
+GRANT ALL ON PerfilRiesgoIntegral TO 'direccion_salud';
+GRANT ALL ON HistoriaClinica TO 'direccion_salud';
+GRANT ALL ON Enfermedad TO 'direccion_salud';
+GRANT ALL ON PersonalSalud TO 'direccion_salud';
+GRANT ALL ON CitaMedica TO 'direccion_salud';
+GRANT ALL ON OrdenMedica TO 'direccion_salud';
+GRANT ALL ON Medicamentos TO 'direccion_salud';
+GRANT ALL ON EvaluacionFisica TO 'direccion_salud';
+GRANT ALL ON Urgencia TO 'direccion_salud';
+GRANT ALL ON Ambulancia TO 'direccion_salud';
+
+grant all on vw_info_estudiante to 'direccion_salud';
+grant all on vw_info_convocatoria_estudiante to 'direccion_salud';
+
+#--------------------------------------------------------------------
+
+GRANT ALL ON vw_citamedica_disponible TO 'direccion_salud';
+GRANT ALL ON vw_medicamentos_solicitados TO 'direccion_salud';
+GRANT ALL ON vw_doctor_procedimiento TO 'direccion_salud';
 
 #--------------------------------------------------------------------
 
