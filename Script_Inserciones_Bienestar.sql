@@ -658,3 +658,136 @@ en madera con cámara de aire y/o linóleo.","Expresión Talentos","Trabajo de e
 (3,"Mínimo 10 m fondo por 12 m de ancho","Danzas Folclóricas","Tradiciones y Culturas de Colombia","José David Ramírez","Amplificación para reproducir pistas. Idealmente, piso
 en madera con cámara de aire y/o linóleo","Expresión Talentos","Trabajo de investigación, rescate y difusión de las manifestaciones folklóricas de distintas regiones colombianas. A través de un lenguaje moderno, valiéndose de recursos teatrales y de las artes escénicas, busca ser una expresión auténtica de la nación, y ofrece un trabajo profundamente enraizado en los valores del pueblo, en la rica tradición popular.
  En su repertorio involucra danzas y juegos coreográficos.",4);
+ 
+
+#------------------------------------------------------------------
+# Acompañamiento Integral
+#------------------------------------------------------------------
+
+INSERT INTO bienestar.programa values
+(6, "Inclusión y desarrollo del potencial humano", 4),
+(7, "Acompañamiento para la vida universitaria", 4),
+(8, "Inducción y preparación para el cambio", 4),
+(9, "Gestión de proyectos", 4),
+(10, "Convivencia y cotidianidad", 4);
+
+insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values 
+(17,"Promotores de Convivencia","2023-05-15 08:00:00","2023-05-30 18:00:00",1,10),
+(18,"Promotores de Convivencia","2023-06-15 08:00:00","2023-06-30 18:00:00",1,10),
+(19,"Promotores de Convivencia","2023-07-15 08:00:00","2023-07-30 18:00:00",1,10);
+
+INSERT INTO proyectoestudiantil (peID, peNombre, peDescripcion, peObjetivos, peInicio, peFinalizacion) VALUES
+(1, "Matemáticas para Todos",  "Curso en línea gratuito sobre matemáticas básicas para estudiantes de secundaria", "Ayudar a estudiantes de secundaria a mejorar sus habilidades matemáticas y prepararlos para el éxito académico.",  "2022-01-01", "2022-06-30"),
+(2, "Arte en la Calle", "Exposición de arte callejero en los espacios de la universidad", "Fomentar la apreciación del arte urbano y la revitalización del centro histórico de la ciudad.", "2022-07-01", "2022-09-30"),
+(3, "Jóvenes Líderes", "Taller para enseñar habilidades de liderazgo y trabajo en equipo a jóvenes de escasos recursos", "Ayudar a los jóvenes a desarrollar habilidades importantes para su futuro académico y profesional.", "2022-10-01", "2022-12-31"),
+(4, "Historia de la Educación en el País",  "Libro sobre la historia de la educación en el país", "Dar a conocer la historia de la educación en el país y su impacto en la sociedad actual.", "2023-01-01", "2023-12-31"),
+(5, "App de Planificación de Actividades", "Creación de una aplicación móvil para ayudar a las personas a planificar y llevar a cabo actividades de ocio de manera efectiva", "Facilitar la planificación y realización de actividades de ocio para mejorar la calidad de vida de las personas.",  "2023-07-01", "2024-06-30");
+
+INSERT INTO grupoproyectoestudiantil (gpID, gpNombre, gpLineadeAccion, proyectoID) VALUES
+(1, "Conexión comunitaria", "Desarrollo humano-extensión a la comunidad", 3),
+(2, "YourTime", "Manejo del tiempo libre", 5),
+(3,  "Mundo Escrito", "Publicaciones", 4),
+(4, "ComUN", "Contribución académica", 1),
+(5, "ExpresARTE", "Expresión artística y cultural", 2);
+
+INSERT INTO apoyogp (apID, apTipo, apValor, GrupoID) VALUES
+(1, "Logístico", 180000, 5),
+(2, "Logístico", 150000, 1),
+(3, "Económico", 300000, 4),
+(4, "Económico", 500000, 3),
+(5, "Económico", 450000, 2);
+
+INSERT INTO integrantegpe (EstudianteID, GrupoID) VALUES
+(5, 1),
+(8, 1),
+(3, 1),
+(15, 1),
+(7, 2),
+(26, 2),
+(6, 2),
+(29, 2),
+(12, 3),
+(22, 3),
+(21, 3),
+(5, 4),
+(2, 4),
+(10, 4),
+(15, 5),
+(26, 5),
+(25, 5);
+
+INSERT INTO actividadai (actID, actNombre, actTipo, actFecha, actLugar, actDescripcion, ProgramaID) VALUES
+(1, "Bienvenida a nuevos estudiantes", "Inducción",  "2023-08-01 09:00:00", "Plaza Central", "Inducción para estudiantes nuevos con información sobre los servicios universitarios y consejos para una vida universitaria exitosa", 8),
+(2, "Descubriendo mi poder interior", "Taller", "2023-06-01 10:00:00", "453 - Auditorio A", "Taller enfocado en el desarrollo de habilidades sociales y emocionales para el crecimiento personal", 6),
+(3, "Encendiendo la llama del cambio",  "Taller",  "2023-09-01 14:00:00", "454 - Auditorio", "Taller enfocado en habilidades y estrategias para adaptarse al cambio y manejar situaciones de incertidumbre", 7),
+(4, "Proyectando hacia el futuro", "Taller", "2023-10-01 15:30:00", "310 - Sala de informática 3", "Taller enfocado en herramientas y técnicas para la gestión de proyectos y su implementación en el ámbito universitario", 7),
+(5, "Cultivando la armonía", "Campaña", "2023-11-01 07:00:00", "401", "Campaña enfocada en habilidades sociales para una convivencia armoniosa en el ámbito universitario", 10),
+(6, "Jornada de integración", "Jornada", "2023-07-10 10:00:00", "Concha Acústica", "Jornada deportiva y cultural para fomentar la integración y la convivencia entre estudiantes de distintas carreras", 10),
+(7, "Feria de emprendimiento", "Feria", "2023-08-20 11:00:00", "Plaza Central", "Feria de emprendimiento para que los estudiantes de distintas carreras presenten sus proyectos y den a conocer sus habilidades empresariales", 9),
+(8, "Taller de habilidades sociales", "Taller", "2023-06-15 14:00:00", "453 - Salón 205", "Taller práctico para mejorar habilidades sociales y comunicativas de los estudiantes", 6);
+
+INSERT INTO participacionactividadai (ActividadID, EstudianteID) VALUES
+(2, 16), 
+(5, 28), 
+(3, 14), 
+(7, 2), 
+(8, 21), 
+(1, 6), 
+(4, 29), 
+(6, 18), 
+(2, 7), 
+(5, 26), 
+(3, 10), 
+(7, 1), 
+(8, 19), 
+(1, 5), 
+(4, 27), 
+(6, 15), 
+(2, 3), 
+(5, 24), 
+(3, 12), 
+(7, 4);
+
+INSERT INTO asesoria(asID, asTipo, asArea, asFecha, asLugar, ProgramaID, EstudianteID, AsesorID) VALUES
+(1, "Toma de decisiones en normas y trámites académico-administrativos", "Académica", "2022-01-15 10:00:00", "Salón 201", 6, 12, 52),
+(2, "Crisis emocional o socioafectiva", "Bienestar", "2022-02-02 15:30:00", "Consultorio de psicología", 7, 24, 65),
+(3, "Habilidades académicas y sociales", "Académica", "2022-03-10 14:00:00", "Salón 305", 9, 10, 78),
+(4, "Escuela de Padres", "Familia", "2022-04-23 08:00:00", "Auditorio B", 6, 8, 70),
+(5, "Tutorías", "Académica", "2022-05-05 16:00:00", "Biblioteca", 8, 20, 95),
+(6, "Acompañamiento y seguimiento especializado para poblaciones especiales", "Bienestar", "2022-06-14 09:00:00", "Consultorio de psicología", 10, 16, 85),
+(7, "Conformación de grupos y formulación de los proyectos", "Proyección social", "2022-07-21 13:30:00", "Salón 102", 9, 3, 53),
+(8, "Toma de decisiones en normas y trámites académico-administrativos", "Académica", "2022-08-03 11:00:00", "Salón 210", 6, 18, 75),
+(9, "Crisis emocional o socioafectiva", "Bienestar", "2022-09-12 10:30:00", "Consultorio de psicología", 7, 6, 98),
+(10, "Habilidades académicas y sociales", "Académica", "2022-10-29 14:00:00", "Salón 305", 10, 15, 51),
+(11, "Escuela de Padres", "Familia", "2022-11-18 08:00:00", "Salón 311", 8, 2, 68),
+(12, "Tutorías", "Académica", "2022-12-07 16:00:00", "Biblioteca", 7, 25, 77),
+(13, "Acompañamiento y seguimiento especializado para poblaciones especiales", "Bienestar", "2023-01-17 09:00:00", "Consultorio de psicología", 9, 19, 80),
+(14, "Conformación de grupos y formulación de los proyectos", "Proyección social", "2023-02-20 13:30:00", "Salón 102", 10, 13, 92),
+(15, "Toma de decisiones en normas y trámites académico-administrativos", "Académica", "2023-03-05 11:00:00", "Salón 210", 8, 1, 59);
+
+INSERT INTO convocatoriapromotorconvivencia (convID, pcEstimuloEconomico, pcHorasRequeridas, pcDuracionVinculacion, pcCupos, pcDescripcion) VALUES
+(17, 580000, 7, "3 meses", 30, " Apoyar el desarrollo de herramientas virtuales, elaboración de piezas y estrategias comunicativas dirigidas a la comunidad."),
+(18, 580000, 5, "4 meses", 25, "Apoyar la planeación y ejecución de la Semana de Inducción."),
+(19, 580000, 8, "2 meses", 35, "Apoyar la planeación y ejecución de las actividades de los proyectos dirigidos a estudiantes de admisión especial: PAES, PEAMA y víctimas del conflicto armado.");
+
+INSERT INTO promotorconvivencia (ConvocatoriaID, EstudianteID) VALUES
+(17, 23),
+(19, 29),
+(17, 13),
+(19, 8),
+(18, 22),
+(19, 26),
+(17, 4),
+(17, 15),
+(17, 21),
+(18, 27),
+(18, 12),
+(18, 8),
+(19, 10),
+(19, 17),
+(18, 2),
+(19, 6),
+(18, 30),
+(18, 11),
+(17, 28),
+(18, 5);
