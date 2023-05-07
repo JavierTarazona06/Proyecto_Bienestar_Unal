@@ -63,11 +63,11 @@ CREATE TABLE IF NOT EXISTS Bienestar.PersonalSalud (
   salProfesion VARCHAR(45) NULL,
   salEspecializacion VARCHAR(45) NULL,
   salTipo VARCHAR(10) NOT NULL,
-  Ambulancia_id VARCHAR(6) NULL,
+  salAmbulancia VARCHAR(6) NULL,
   perID INT UNSIGNED NOT NULL,
   PRIMARY KEY (perID),
   CONSTRAINT fk_PersonalSalud_Ambulancia1
-    FOREIGN KEY (Ambulancia_id)
+    FOREIGN KEY (salAmbulancia)
     REFERENCES Bienestar.Ambulancia (idAmbulancia)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -124,13 +124,13 @@ CREATE INDEX fk_Urgencia_Persona1_idx ON Bienestar.Urgencia (perID ASC) VISIBLE;
 DROP TABLE IF EXISTS Bienestar.Incapacidad ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.Incapacidad (
+  IncapacidadID INT NOT NULL AUTO_INCREMENT,
   perID INT UNSIGNED NOT NULL,
   incFecha DATE NOT NULL,
   incEnfermedad VARCHAR(45) NOT NULL,
   incDias TINYINT NOT NULL,
   incConvalidada BIT NOT NULL,
-  incSoporteDireccion VARCHAR(32) NOT NULL,
-  PRIMARY KEY (perID),
+  PRIMARY KEY (IncapacidadID),
   CONSTRAINT fk_Incapacidad_Persona1
     FOREIGN KEY (perID)
     REFERENCES Bienestar.Persona (perID)
@@ -177,11 +177,11 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS Bienestar.Discapacidad ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.Discapacidad (
+  discapacidadID INT NOT NULL AUTO_INCREMENT,
   perID INT UNSIGNED NOT NULL,
   disNombre VARCHAR(45) NOT NULL,
-  disSoporteDireccion VARCHAR(32) NOT NULL,
   disVerificado BIT NOT NULL,
-  PRIMARY KEY (perID),
+  PRIMARY KEY (discapacidadID),
   CONSTRAINT fk_Discapacidad_Persona1
     FOREIGN KEY (perID)
     REFERENCES Bienestar.Persona (perID)
@@ -211,28 +211,27 @@ DROP TABLE IF EXISTS Bienestar.CitaMedica ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.CitaMedica (
   idCitaMedica INT NOT NULL,
-  Doctor INT NOT NULL,
+  doctorID INT UNSIGNED NOT NULL,
+  pacienteID INT UNSIGNED NULL,
   citFecha DATETIME NOT NULL,
   citEspecialidad VARCHAR(45) NOT NULL,
   citDiagnostico VARCHAR(80) NULL,
-  citCargo INT UNSIGNED NOT NULL,
-  perID INT UNSIGNED NULL,
   PRIMARY KEY (idCitaMedica),
-  CONSTRAINT fk_CitaMedica_Cargo1
-    FOREIGN KEY (citCargo)
-    REFERENCES Bienestar.Cargo (carID)
+  CONSTRAINT fk_CitaMedica_Persona1
+    FOREIGN KEY (pacienteID)
+    REFERENCES Bienestar.Persona (perID)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT fk_CitaMedica_Persona1
-    FOREIGN KEY (perID)
-    REFERENCES Bienestar.Persona (perID)
+  CONSTRAINT fk_CitaMedica_PersonalSalud1
+    FOREIGN KEY (doctorID)
+    REFERENCES Bienestar.PersonalSalud (perID)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_CitaMedica_Cargo1_idx ON Bienestar.CitaMedica (citCargo ASC) VISIBLE;
+CREATE INDEX fk_CitaMedica_Persona1_idx ON Bienestar.CitaMedica (pacienteID ASC) VISIBLE;
 
-CREATE INDEX fk_CitaMedica_Persona1_idx ON Bienestar.CitaMedica (perID ASC) VISIBLE;
+CREATE INDEX fk_CitaMedica_PersonalSalud1_idx ON Bienestar.CitaMedica (doctorID ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -550,17 +549,17 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table Bienestar.AntencionEnSalud
+-- Table Bienestar.AtencionEnSalud
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Bienestar.AntencionEnSalud ;
+DROP TABLE IF EXISTS Bienestar.AtencionEnSalud ;
 
-CREATE TABLE IF NOT EXISTS Bienestar.AntencionEnSalud (
+CREATE TABLE IF NOT EXISTS Bienestar.AtencionEnSalud (
+  AtencionEnSaludID INT NOT NULL AUTO_INCREMENT,
   perID INT UNSIGNED NOT NULL,
   ateFecha DATETIME NOT NULL,
-  ateSoporteDireccion VARCHAR(32) NOT NULL,
   ateVerificado BIT NOT NULL,
-  PRIMARY KEY (perID),
-  CONSTRAINT fk_AntencionEnSalud_Persona1
+  PRIMARY KEY (AtencionEnSaludID),
+  CONSTRAINT fk_AtencionEnSalud_Persona1
     FOREIGN KEY (perID)
     REFERENCES Bienestar.Persona (perID)
     ON DELETE NO ACTION
