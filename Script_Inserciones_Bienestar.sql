@@ -1677,7 +1677,7 @@ INSERT INTO asesoria(asID, asTipo, asArea, asFecha, asLugar, ProgramaID, Estudia
 (15, "Toma de decisiones en normas y trámites académico-administrativos", "Académica", "2023-03-05 11:00:00", "Salón 210", 8, 1, 59);
 
 INSERT INTO convocatoriapromotorconvivencia (convID, pcEstimuloEconomico, pcHorasRequeridas, pcDuracionVinculacion, pcCupos, pcDescripcion) VALUES
-(17, 580000, 7, "3 meses", 30, " Apoyar el desarrollo de herramientas virtuales, elaboración de piezas y estrategias comunicativas dirigidas a la comunidad."),
+(17, 580000, 7, "3 meses", 30, "Apoyar el desarrollo de herramientas virtuales, elaboración de piezas y estrategias comunicativas dirigidas a la comunidad."),
 (18, 580000, 5, "4 meses", 25, "Apoyar la planeación y ejecución de la Semana de Inducción."),
 (19, 580000, 8, "2 meses", 35, "Apoyar la planeación y ejecución de las actividades de los proyectos dirigidos a estudiantes de admisión especial: PAES, PEAMA y víctimas del conflicto armado.");
 
