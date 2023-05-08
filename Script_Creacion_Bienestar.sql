@@ -1266,10 +1266,10 @@ DROP TABLE IF EXISTS `Bienestar`.`ActividadAI` ;
 CREATE TABLE IF NOT EXISTS `Bienestar`.`ActividadAI` (
   `actID` INT NOT NULL,
   `actNombre` VARCHAR(45) NOT NULL,
-  `acTipo` VARCHAR(45) NOT NULL,
+  `actTipo` VARCHAR(45) NOT NULL,
   `actFecha` DATETIME NULL,
   `actLugar` VARCHAR(45) NULL,
-  `actDescripcion` VARCHAR(45) NOT NULL,
+  `actDescripcion` LONGTEXT NOT NULL,
   `ProgramaID` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`actID`),
   CONSTRAINT `fk_ActividadAI_Programa1`
@@ -1315,7 +1315,7 @@ DROP TABLE IF EXISTS `Bienestar`.`Asesoria` ;
 
 CREATE TABLE IF NOT EXISTS `Bienestar`.`Asesoria` (
   `asID` INT NOT NULL,
-  `asTipo` VARCHAR(45) NOT NULL,
+  `asTipo` MEDIUMTEXT NOT NULL,
   `asArea` VARCHAR(45) NOT NULL,
   `asFecha` DATETIME NOT NULL,
   `asLugar` VARCHAR(45) NOT NULL,
@@ -1418,6 +1418,7 @@ DROP TABLE IF EXISTS `Bienestar`.`ApoyoGP` ;
 CREATE TABLE IF NOT EXISTS `Bienestar`.`ApoyoGP` (
   `apID` INT NOT NULL,
   `apTipo` VARCHAR(45) NOT NULL,
+  `apValor` INT NOT NULL,
   `GrupoID` INT NOT NULL,
   PRIMARY KEY (`apID`),
   CONSTRAINT `fk_ApoyoGP_GrupoProyectoEstudiantil1`
