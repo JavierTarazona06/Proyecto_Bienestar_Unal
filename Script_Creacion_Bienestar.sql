@@ -780,7 +780,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   cucCupoMinimo TINYINT(30) NOT NULL,
   cucCupoMaximo TINYINT(30) NOT NULL,
   cucCategoria VARCHAR(60) NOT NULL,
-  cucNivel int,
+  cucNivel int ,
   Programa_progID INT UNSIGNED NOT NULL,
   PRIMARY KEY (curidCursoCultural, Programa_progID),
   CONSTRAINT fk_CursoCultural_Programa1
