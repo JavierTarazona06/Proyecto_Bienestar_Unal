@@ -3,19 +3,20 @@ select * from estudiante;
 select * from carrera;
 select * from area;
 select * from programa;
-select * from tiendabienestar;
-select * from producto;
-select * from factura;
-select * from factura_producto;
 select * from fallaalimentacion;
 select * from actividadcorresp;
 select * from convocatoria;
 select * from convocatoriagestionalimentaria;
 select * from convocatoriagestionalojamiento;
 select * from convocatoriagestioneconomica;
+select * from tiendabienestar;
+select * from factura;
+select * from producto;
+select * from factura_producto;
+select * from convocatoria;
 
-
-#Javier
+#----------------------------------------------------------------------
+#                                  Javier
 #----------------------------------------------------------------------
 
 #1
@@ -39,5 +40,43 @@ select count(fallAlID) as conteo,fallAlLugar from fallaalimentacion group by fal
 
 select count(conv_id),AVG(cgalCobertura),avg(cgalCosto),cgalLocalidadAlojamiento from convocatoriagestionalojamiento where cgalLocalidadAlojamiento in ('Ciudad Bolívar', 'Bosa', 'Kenedy', 'Tunjuelito', 'Antonio Nariño', 'Rafael Uribe Uribe', 'San Cristóbal', 'Usme', 'Puente Aranda', 'Los Mártires') group by cgalLocalidadAlojamiento;
 
+
+#Carlos
 #----------------------------------------------------------------------
+
+# 5. Consultar la cantidad de estudiantes que se presentan a convocatorias de selecciones deportivas agrupados por deporte.
+select count(idEst) from Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id) group by idEst;
+
+# 6. Consultar el promedio de horas de corresponsabilidad cumplidas por estudiantes que participaron en convocatorias de gestión alimentaria.
+select avg(horPendCorresp) from (Corresponsabilidad join (Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaGestionAlimentaria  using (conv_id)) using (conv_id)) using(idEst));
+
+# 7. Consultar la cantidad de estudiantes con fallas alimentarias que participaron en convocatorias a selecciones deportivas de fútbol o fútbol sala.
+select count(idEst) from (FallaAlimentacion join (Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id)) on (estID = idEst)) where convDeporte = "Futbol" or convDeporte = "Futbol Sala" group by convDeporte ;
+
+
 #----------------------------------------------------------------------
+#                                  Valeria
+#----------------------------------------------------------------------
+
+# 7. Consultar cuales fueron los incapacidades dadas durante la pandemia, cuantas ser dieron por cada una y la duración promedio de cada una.
+SELECT incEnfermedad AS tipo_incapacidad, COUNT(incEnfermedad) AS cantidad, SUM(incDias) AS promedio_dias 
+	FROM incapacidad WHERE '2019-12-30' < incFecha AND incFecha > '2021-12-30' GROUP BY incEnfermedad ORDER BY promedio_dias DESC;
+
+# 8. Consultar cual es la enfermedad más común y para dicha enfermedad ver cuales son las citas médicas más solicitadas.
+SELECT enfNombre AS enfermedad, COUNT(enfNombre) AS cantidad FROM enfermedad GROUP BY enfNombre ORDER BY cantidad DESC LIMIT 1;
+
+SELECT citEspecialidad AS tipo_cita, COUNT(citEspecialidad) AS cantidad_citas
+	FROM citamedica JOIN 
+	(SELECT perID FROM historiaclinica JOIN enfermedad ON perID=HistoriaClinicaID JOIN (
+	SELECT COUNT(enfNombre) AS cantidad, enfNombre FROM enfermedad GROUP BY enfNombre ORDER BY cantidad DESC LIMIT 1) 
+	AS max_enfermedad ON max_enfermedad.enfNombre = enfermedad.enfNombre) 
+	AS enfermos ON pacienteID=perID
+	GROUP BY (citEspecialidad);
+
+# 9. Para las personas con alguna discapacidad ver cuantos días de incapacidad han tenido y la cantidad de citas que han requerido, eso agrupado por el tipo de incapacidad.
+SELECT disNombre AS discapacidad, SUM(incDias) AS numero_dias_incapacitado, COUNT(idCitaMedica) AS cantidad_citas_medicas
+	FROM discapacidad NATURAL JOIN incapacidad JOIN citamedica ON pacienteID=perID GROUP BY (disNombre);
+
+
+
+

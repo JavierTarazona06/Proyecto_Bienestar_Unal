@@ -10,7 +10,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema Bienestar
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS Bienestar ;
+DROP SCHEMA IF EXISTS Bienestar;
 
 -- -----------------------------------------------------
 -- Schema Bienestar
@@ -423,7 +423,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGAI ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGAI (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
   GrupoArtisticoInstitucional_GAI_id INT NOT NULL,
   convGaiNombre VARCHAR(50) NOT NULL,
   convGaiDisciplina VARCHAR(45) NOT NULL,
@@ -441,7 +440,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGAI (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_ConvGAI_Convocatoria1_idx ON Bienestar.ConvocatoriaGAI (Convocatoria_conv_id ASC, Convocatoria_Programa_progNombre ASC) VISIBLE;
+CREATE INDEX fk_ConvGAI_Convocatoria1_idx ON Bienestar.ConvocatoriaGAI (Convocatoria_conv_id ASC) VISIBLE;
 
 CREATE INDEX fk_ConvocatoriaGAI_GrupoArtisticoInstitucional1_idx ON Bienestar.ConvocatoriaGAI (GrupoArtisticoInstitucional_GAI_id ASC) VISIBLE;
 
@@ -501,7 +500,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaSeleccion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaSeleccion (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
   convDeporte VARCHAR(45) NOT NULL,
   convLugar VARCHAR(50) NOT NULL,
   convHora TIME NOT NULL,
@@ -635,7 +633,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-#CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -775,7 +773,6 @@ DROP TABLE IF EXISTS Bienestar.CursoCultural ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   curidCursoCultural INT NOT NULL,
-  Programa_progNombre VARCHAR(70) NOT NULL,
   cucNombre VARCHAR(50) NOT NULL,
   cucObjetivo LONGTEXT NOT NULL,
   cucHorario VARCHAR(60) NOT NULL,
@@ -785,7 +782,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   cucCategoria VARCHAR(60) NOT NULL,
   cucNivel VARCHAR(45) NULL,
   Programa_progID INT UNSIGNED NOT NULL,
-  PRIMARY KEY (curidCursoCultural, Programa_progNombre, Programa_progID),
+  PRIMARY KEY (curidCursoCultural, Programa_progID),
   CONSTRAINT fk_CursoCultural_Programa1
     FOREIGN KEY (Programa_progID)
     REFERENCES Bienestar.Programa (progID)
@@ -817,12 +814,11 @@ DROP TABLE IF EXISTS Bienestar.CursoCultural_has_Inscripcion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural_has_Inscripcion (
   CursoCultural_curidCursoCultural INT NOT NULL,
-  CursoCultural_Programa_progNombre VARCHAR(70) NOT NULL,
   Inscripcion_Inscripcion INT NOT NULL,
-  PRIMARY KEY (CursoCultural_curidCursoCultural, CursoCultural_Programa_progNombre, Inscripcion_Inscripcion),
+  PRIMARY KEY (CursoCultural_curidCursoCultural, Inscripcion_Inscripcion),
   CONSTRAINT fk_CursoCultural_has_Inscripcion_CursoCultural1
-    FOREIGN KEY (CursoCultural_curidCursoCultural , CursoCultural_Programa_progNombre)
-    REFERENCES Bienestar.CursoCultural (curidCursoCultural , Programa_progNombre)
+    FOREIGN KEY (CursoCultural_curidCursoCultural)
+    REFERENCES Bienestar.CursoCultural (curidCursoCultural)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT fk_CursoCultural_has_Inscripcion_Inscripcion1
@@ -834,7 +830,7 @@ ENGINE = InnoDB;
 
 CREATE INDEX fk_CursoCultural_has_Inscripcion_Inscripcion1_idx ON Bienestar.CursoCultural_has_Inscripcion (Inscripcion_Inscripcion ASC) VISIBLE;
 
-CREATE INDEX fk_CursoCultural_has_Inscripcion_CursoCultural1_idx ON Bienestar.CursoCultural_has_Inscripcion (CursoCultural_curidCursoCultural ASC, CursoCultural_Programa_progNombre ASC) VISIBLE;
+CREATE INDEX fk_CursoCultural_has_Inscripcion_CursoCultural1_idx ON Bienestar.CursoCultural_has_Inscripcion (CursoCultural_curidCursoCultural ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -858,7 +854,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.Estudiante_Toma_Convocatoria (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-#CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC) VISIBLE;
 
 CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Estudiante_copy11_idx ON Bienestar.Estudiante_Toma_Convocatoria (idEst ASC) VISIBLE;
 
@@ -956,7 +952,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS Bienestar.TiendaBienestar ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.TiendaBienestar (
-  tieID INT ZEROFILL NOT NULL AUTO_INCREMENT,
+  tieID INT NOT NULL AUTO_INCREMENT,
   tieCiudad VARCHAR(45) NOT NULL DEFAULT 'Bogotá',
   tieDireccion VARCHAR(50) NOT NULL DEFAULT 'N.E',
   tieHorInicio TIME NOT NULL DEFAULT '08:00:00',
@@ -993,7 +989,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.Factura (
   factFecha DATE NOT NULL,
   factHora TIME NOT NULL DEFAULT '08:00:00',
   factDetalle VARCHAR(100) NOT NULL DEFAULT 'N:A',
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   clienteID INT UNSIGNED NOT NULL,
   PRIMARY KEY (factID),
   CONSTRAINT fk_Factura_copy1_TiendaBienestar_copy11
@@ -1036,7 +1032,7 @@ CREATE UNIQUE INDEX prodID_UNIQUE ON Bienestar.Producto (prodID ASC) VISIBLE;
 DROP TABLE IF EXISTS Bienestar.empleado_tiendaUN ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.empleado_tiendaUN (
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   empleadoID INT UNSIGNED NOT NULL,
   PRIMARY KEY (tieID, empleadoID),
   CONSTRAINT fk_TiendaBienestar_copy1_has_Persona_copy1_TiendaBienestar_co1
@@ -1088,7 +1084,7 @@ CREATE INDEX fk_Producto_copy1_has_Factura_copy1_Producto_copy11_idx ON Bienesta
 DROP TABLE IF EXISTS Bienestar.producto_tiendaUN ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.producto_tiendaUN (
-  tieID INT ZEROFILL NOT NULL,
+  tieID INT NOT NULL,
   prodID INT UNSIGNED NOT NULL,
   PRIMARY KEY (tieID, prodID),
   CONSTRAINT fk_TiendaBienestar_copy1_has_Producto_copy1_TiendaBienestar_c1
@@ -1270,10 +1266,10 @@ DROP TABLE IF EXISTS `Bienestar`.`ActividadAI` ;
 CREATE TABLE IF NOT EXISTS `Bienestar`.`ActividadAI` (
   `actID` INT NOT NULL,
   `actNombre` VARCHAR(45) NOT NULL,
-  `acTipo` VARCHAR(45) NOT NULL,
+  `actTipo` VARCHAR(45) NOT NULL,
   `actFecha` DATETIME NULL,
   `actLugar` VARCHAR(45) NULL,
-  `actDescripcion` VARCHAR(45) NOT NULL,
+  `actDescripcion` LONGTEXT NOT NULL,
   `ProgramaID` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`actID`),
   CONSTRAINT `fk_ActividadAI_Programa1`
@@ -1319,7 +1315,7 @@ DROP TABLE IF EXISTS `Bienestar`.`Asesoria` ;
 
 CREATE TABLE IF NOT EXISTS `Bienestar`.`Asesoria` (
   `asID` INT NOT NULL,
-  `asTipo` VARCHAR(45) NOT NULL,
+  `asTipo` MEDIUMTEXT NOT NULL,
   `asArea` VARCHAR(45) NOT NULL,
   `asFecha` DATETIME NOT NULL,
   `asLugar` VARCHAR(45) NOT NULL,
@@ -1422,6 +1418,7 @@ DROP TABLE IF EXISTS `Bienestar`.`ApoyoGP` ;
 CREATE TABLE IF NOT EXISTS `Bienestar`.`ApoyoGP` (
   `apID` INT NOT NULL,
   `apTipo` VARCHAR(45) NOT NULL,
+  `apValor` INT NOT NULL,
   `GrupoID` INT NOT NULL,
   PRIMARY KEY (`apID`),
   CONSTRAINT `fk_ApoyoGP_GrupoProyectoEstudiantil1`
