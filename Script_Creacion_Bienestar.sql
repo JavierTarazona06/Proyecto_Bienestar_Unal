@@ -423,7 +423,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaGAI ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGAI (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progNombre VARCHAR(70) NOT NULL,
   GrupoArtisticoInstitucional_GAI_id INT NOT NULL,
   convGaiNombre VARCHAR(50) NOT NULL,
   convGaiDisciplina VARCHAR(45) NOT NULL,
@@ -441,7 +440,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGAI (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX fk_ConvGAI_Convocatoria1_idx ON Bienestar.ConvocatoriaGAI (Convocatoria_conv_id ASC, Convocatoria_Programa_progNombre ASC) VISIBLE;
+CREATE INDEX fk_ConvGAI_Convocatoria1_idx ON Bienestar.ConvocatoriaGAI (Convocatoria_conv_id ASC) VISIBLE;
 
 CREATE INDEX fk_ConvocatoriaGAI_GrupoArtisticoInstitucional1_idx ON Bienestar.ConvocatoriaGAI (GrupoArtisticoInstitucional_GAI_id ASC) VISIBLE;
 
@@ -482,7 +481,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaCursoLibre ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaCursoLibre (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progID INT NOT NULL,
   curNombre VARCHAR(45) NOT NULL,
   curTipoCurso VARCHAR(45) NOT NULL,
   curCondicion VARCHAR(45) NOT NULL,
@@ -502,7 +500,6 @@ DROP TABLE IF EXISTS Bienestar.ConvocatoriaSeleccion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaSeleccion (
   Convocatoria_conv_id INT NOT NULL,
-  Convocatoria_Programa_progID INT NOT NULL,
   convDeporte VARCHAR(45) NOT NULL,
   convLugar VARCHAR(50) NOT NULL,
   convHora TIME NOT NULL,
@@ -636,7 +633,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.ConvocatoriaGestionAlojamiento (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-#CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_CvGesAlojamiento_Convocatoria1_idx ON Bienestar.ConvocatoriaGestionAlojamiento (conv_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -776,7 +773,6 @@ DROP TABLE IF EXISTS Bienestar.CursoCultural ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   curidCursoCultural INT NOT NULL,
-  Programa_progNombre VARCHAR(70) NOT NULL,
   cucNombre VARCHAR(50) NOT NULL,
   cucObjetivo LONGTEXT NOT NULL,
   cucHorario VARCHAR(60) NOT NULL,
@@ -786,7 +782,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural (
   cucCategoria VARCHAR(60) NOT NULL,
   cucNivel VARCHAR(45) NULL,
   Programa_progID INT UNSIGNED NOT NULL,
-  PRIMARY KEY (curidCursoCultural, Programa_progNombre, Programa_progID),
+  PRIMARY KEY (curidCursoCultural, Programa_progID),
   CONSTRAINT fk_CursoCultural_Programa1
     FOREIGN KEY (Programa_progID)
     REFERENCES Bienestar.Programa (progID)
@@ -818,12 +814,11 @@ DROP TABLE IF EXISTS Bienestar.CursoCultural_has_Inscripcion ;
 
 CREATE TABLE IF NOT EXISTS Bienestar.CursoCultural_has_Inscripcion (
   CursoCultural_curidCursoCultural INT NOT NULL,
-  CursoCultural_Programa_progNombre VARCHAR(70) NOT NULL,
   Inscripcion_Inscripcion INT NOT NULL,
-  PRIMARY KEY (CursoCultural_curidCursoCultural, CursoCultural_Programa_progNombre, Inscripcion_Inscripcion),
+  PRIMARY KEY (CursoCultural_curidCursoCultural, Inscripcion_Inscripcion),
   CONSTRAINT fk_CursoCultural_has_Inscripcion_CursoCultural1
-    FOREIGN KEY (CursoCultural_curidCursoCultural , CursoCultural_Programa_progNombre)
-    REFERENCES Bienestar.CursoCultural (curidCursoCultural , Programa_progNombre)
+    FOREIGN KEY (CursoCultural_curidCursoCultural)
+    REFERENCES Bienestar.CursoCultural (curidCursoCultural)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT fk_CursoCultural_has_Inscripcion_Inscripcion1
@@ -835,7 +830,7 @@ ENGINE = InnoDB;
 
 CREATE INDEX fk_CursoCultural_has_Inscripcion_Inscripcion1_idx ON Bienestar.CursoCultural_has_Inscripcion (Inscripcion_Inscripcion ASC) VISIBLE;
 
-CREATE INDEX fk_CursoCultural_has_Inscripcion_CursoCultural1_idx ON Bienestar.CursoCultural_has_Inscripcion (CursoCultural_curidCursoCultural ASC, CursoCultural_Programa_progNombre ASC) VISIBLE;
+CREATE INDEX fk_CursoCultural_has_Inscripcion_CursoCultural1_idx ON Bienestar.CursoCultural_has_Inscripcion (CursoCultural_curidCursoCultural ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -859,7 +854,7 @@ CREATE TABLE IF NOT EXISTS Bienestar.Estudiante_Toma_Convocatoria (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-#CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC, progNombre ASC) VISIBLE;
+#CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Convocatoria1_idx ON Bienestar.Estudiante_Toma_Convocatoria (conv_id ASC) VISIBLE;
 
 CREATE INDEX fk_Estudiante_copy1_has_Convocatoria_Estudiante_copy11_idx ON Bienestar.Estudiante_Toma_Convocatoria (idEst ASC) VISIBLE;
 

@@ -1479,6 +1479,8 @@ en madera con cámara de aire y/o linóleo.","Expresión Talentos","Trabajo de e
 en madera con cámara de aire y/o linóleo","Expresión Talentos","Trabajo de investigación, rescate y difusión de las manifestaciones folklóricas de distintas regiones colombianas. A través de un lenguaje moderno, valiéndose de recursos teatrales y de las artes escénicas, busca ser una expresión auténtica de la nación, y ofrece un trabajo profundamente enraizado en los valores del pueblo, en la rica tradición popular.
  En su repertorio involucra danzas y juegos coreográficos.",4);
  
+ 
+-- CARLOS:
 -- Insercion area de deportes:
 
 INSERT INTO Bienestar.Area 
@@ -1511,6 +1513,7 @@ INSERT INTO Bienestar.TorneoInterno VALUES (10110, '2023-1', 'Facultad de Cienci
 
 select * from Convocatoria;
 -- cursos libres
+
 INSERT INTO Bienestar.Convocatoria (conv_id, convNombre, convFechaApertura, convFechaCierre, convEstado, convPeriodo, Programa_progID)
 VALUES
 (201, 'Convocatoria Deporte 2021-1', '2021-01-01', '2021-01-31', 1, '2021-1', 1702),
@@ -1537,8 +1540,8 @@ INSERT INTO Bienestar.Convocatoria (conv_id, convNombre, convFechaApertura, conv
 (218, 'Convocatoria Deporte 2026-2', '2026-07-01', '2026-07-31', 0, '2026-2', 1703),
 (219, 'Convocatoria Deporte 2027-1', '2027-01-01', '2027-01-31', 0, '2027-1', 1703);
 
--- Inserciones convocatorias cursos libres:
 
+-- Inserciones convocatorias cursos libres:
 INSERT INTO Bienestar.ConvocatoriaCursoLibre (Convocatoria_conv_id, curNombre, curTipoCurso, curCondicion)
 VALUES
   (201, 'Fútbol', 'Deporte', 'Abierto'),
@@ -1553,34 +1556,17 @@ VALUES
   (200, 'Judo', 'Fitness', 'Abierto');
 
 
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (42,'Convocatoria curso de ajedrez','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (43,'Convocatoria curso de futbol sala','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (44,'Convocatoria curso de tenis','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (45,'Convocatoria curso de tenis de mesa','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (46,'Convocatoria curso de tejo','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (47,'Convocatoria curso de voleibol','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (48,'Convocatoria curso de futbol','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (49,'Convocatoria curso de basquetbol','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (50,'Convocatoria curso de yoga','2023-01-15','2023-02-1',1,1);
-insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,convEstado,Programa_progID) values (51,'Fomento Económico Estudiantes','2023-01-15','2023-02-1',1,1);
-
-
 select * from Convocatoria;
 
-
 -- Inserciones convocatorias selecciones deportivas:
-INSERT INTO Bienestar.ConvocatoriaSeleccion (Convocatoria_conv_id, Convocatoria_Programa_progID, convDeporte, convLugar, convHora) VALUES 
-(210, 1703, 'Futbol', 'Estadio', '15:00:00'),
-(211, 1703, 'Baloncesto', 'Cancha 2', '10:00:00'),
-(212, 1703, 'Tenis', 'Cancha de tenis 3', '08:00:00'),
-(213, 1703, 'Voleibol', 'Cancha 1', '14:00:00'),
-(214, 1703, 'Tenis de mesa', 'Estadio', '16:00:00'),
-(215, 1703, 'Karate', 'Polideportivo', '07:00:00'),
-(216, 1703, 'Judo', 'Polideportivo', '18:00:00'),
-(217, 1703, 'Futbol Sala', 'Cancha 2', '11:00:00'),
-(218, 1703, 'Ciclismo', 'Anillo vial', '20:00:00'),
-(219, 1703, 'Atletismo', 'Polideportivo', '09:00:00');
-
-
-
-
+INSERT INTO Bienestar.ConvocatoriaSeleccion (Convocatoria_conv_id, convDeporte, convLugar, convHora) VALUES 
+(210, 'Futbol', 'Estadio', '15:00:00'),
+(211,  'Baloncesto', 'Cancha 2', '10:00:00'),
+(212,  'Tenis', 'Cancha de tenis 3', '08:00:00'),
+(213,  'Voleibol', 'Cancha 1', '14:00:00'),
+(214,  'Tenis de mesa', 'Estadio', '16:00:00'),
+(215,  'Karate', 'Polideportivo', '07:00:00'),
+(216, 'Judo', 'Polideportivo', '18:00:00'),
+(217, 'Futbol Sala', 'Cancha 2', '11:00:00'),
+(218, 'Ciclismo', 'Anillo vial', '20:00:00'),
+(219, 'Atletismo', 'Polideportivo', '09:00:00');
