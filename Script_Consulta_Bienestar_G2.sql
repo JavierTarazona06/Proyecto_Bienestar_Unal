@@ -44,20 +44,14 @@ select count(conv_id),AVG(cgalCobertura),avg(cgalCosto),cgalLocalidadAlojamiento
 #Carlos
 #----------------------------------------------------------------------
 
-
-
-#5
-
--- 5. Consultar la cantidad de estudiantes que se presentan a convocatorias de selecciones deportivas agrupados por deporte.
+# 5. Consultar la cantidad de estudiantes que se presentan a convocatorias de selecciones deportivas agrupados por deporte.
 select count(idEst) from Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id) group by idEst;
 
--- 6. Consultar el promedio de horas de corresponsabilidad cumplidas por estudiantes que participaron en convocatorias de gestión alimentaria.
+# 6. Consultar el promedio de horas de corresponsabilidad cumplidas por estudiantes que participaron en convocatorias de gestión alimentaria.
 select avg(horPendCorresp) from (Corresponsabilidad join (Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaGestionAlimentaria  using (conv_id)) using (conv_id)) using(idEst));
 
--- 7. Consultar la cantidad de estudiantes con fallas alimentarias que participaron en convocatorias a selecciones deportivas de fútbol o fútbol sala.
-select count(idEst) from (FallaAlimentacion join (Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id)) on (estID = idEst)) where convDeporte = "futbol" or convDeporte = "fubol sala" group by convDeporte ;
-
--- where convDeporte = 'Futbol
+# 7. Consultar la cantidad de estudiantes con fallas alimentarias que participaron en convocatorias a selecciones deportivas de fútbol o fútbol sala.
+select count(idEst) from (FallaAlimentacion join (Estudiante_Toma_Convocatoria join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id)) on (estID = idEst)) where convDeporte = "Futbol" or convDeporte = "Futbol Sala" group by convDeporte ;
 
 
 #----------------------------------------------------------------------

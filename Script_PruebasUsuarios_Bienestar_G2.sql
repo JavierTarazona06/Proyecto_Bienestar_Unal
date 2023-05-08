@@ -69,3 +69,15 @@ select * from TorneoInterno;
 select * from vw_info_curso_libre_convocatoria;
 
 select * from vw_info_factura;
+
+
+# -----------------------------------  Pruebas bienestar deportes --------------------------------------------
+# distintos usuarios
+select * from TorneoInterno;
+select * from ConvocatoriaSeleccion;
+
+select * from vw_info_curso_libre_convocatoria;
+select * from vw_info_gai_convocatoria;
+select * from vw_info_seleccion_convocatoria;
+
+update TorneoInterno set torEstado = 0 where torEstado = 0 and torNombreTorneo = "Torneo de Futbol de la Facultad de Ciencias"; 
