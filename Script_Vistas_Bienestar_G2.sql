@@ -45,7 +45,7 @@ SELECT idCitaMedica AS cita, pacienteID AS paciente, salEspecializacion AS espec
 
 CREATE VIEW vw_doctor_procedimiento AS
 	SELECT idCitaMedica AS cita, pacienteID AS paciente, salEspecializacion AS especializacion, ordExamen AS procedimiento
-	FROM citamedica JOIN personalsalud ON (doctorID = perID) LEFT JOIN medicamentos ON (CitaMedica_id=idCitaMedica);
+	FROM citamedica JOIN personalsalud ON (doctorID = perID) LEFT JOIN ordenmedica ON (CitaMedica_id=idCitaMedica);
 
 
 # Ver las citas medicas disponibles
