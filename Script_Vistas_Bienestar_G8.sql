@@ -20,3 +20,24 @@ bienestar.convocatoria.convFechaApertura as FechaApertura, bienestar.convocatori
 from bienestar.convocatoria where bienestar.convocatoria.convEstado = 1 and (bienestar.convocatoria.Programa_progID = 3 or bienestar.convocatoria.Programa_progID = 4);
 
 select * from vw_convocatoriasCultura;
+
+-- Tomás ---------
+-- Creación vistas --
+-- Tabla para administradores
+drop view if exists vw_direcciónIparm ;
+create view vw_direcciónIparm as select 
+Infante_IdInfante as Infante, Grado, Estado,FechaIngreso,FechaEgreso  from inscripcióniparm;
+select * from vw_direcciónIparm;
+
+-- Vistas para mamá estudiante
+create view vw_userAna as select * from persona where perId=1;
+select * from vw_userAna;
+drop view if exists vw_childAna ;
+create view vw_childAna as select perId as IdInfante,perNombre as Nombre, perApellido as Apellido,InfanteEdad as Edad,
+ perDireccion as Direccion, perBarrio as Barrio,perCiudad, perTipoVivienda,perLocalidad,perEmail,
+ perEntidadSalud,perProcedencia,perSede,PerFacultad from 
+ persona join infante on(perId=IdInfante) where perId=1000;
+ 
+ create view vw_inscripChildAna as select * from inscripcióniparm where Infante_IdInfante=1000;
+ 
+ -- Tomás
