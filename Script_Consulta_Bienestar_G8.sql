@@ -15,3 +15,23 @@ select perNombre, perApellido, perEmail, perFacultad, pcHorasRequeridas, pcDurac
 
 #4 - Tipo de asesoria, fecha y lugar; nombre y correo de la persona y del asesor involucrados en la asesoria.
 select asTipo, asFecha, asLugar, persona.perNombre, persona.perApellido, persona.perEmail, asesor.perNombre as asesorNombre, asesor.perApellido as asesorApellido, asesor.perEmail as asesorEmail from (asesoria join persona on (asesoria.EstudianteID = persona.perID)) join persona as asesor on (asesoria.AsesorID = asesor.perID);
+
+#--------------------------------------
+#           Santiago 
+#--------------------------------------
+-- selección para ver que convocatorias estan activas para cada grupo artistico institucional
+select grupoartisticoinstitucional.gaiNombre,convocatoria.convNombre, convocatoria.convFechaApertura, convocatoria.convFechaCierre, convocatoria.convEstado 
+from (grupoartisticoinstitucional join convocatoriagai on grupoartisticoinstitucional.GAI_id = convocatoriagai.GrupoArtisticoInstitucional_GAI_id)
+join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id;  
+-- selección para ver el director y la displina de cada convocatoria, con su periodo
+select grupoartisticoinstitucional.gaiNombreDirector, grupoartisticoinstitucional.gaiDisciplina , convocatoria.convNombre, convocatoria.convPeriodo
+from (grupoartisticoinstitucional join convocatoriagai on grupoartisticoinstitucional.GAI_id = convocatoriagai.GrupoArtisticoInstitucional_GAI_id)
+join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id;
+-- seleccion para ver la disciplina y el tipo de los grupos artisticos institucionales de las convocatorias activas
+select grupoartisticoinstitucional.gaiNombre,grupoartisticoinstitucional.gaiDisciplina, grupoartisticoinstitucional.eveCulTipo
+from ((grupoartisticoinstitucional join convocatoriagai on grupoartisticoinstitucional.GAI_id = convocatoriagai.GrupoArtisticoInstitucional_GAI_id)
+join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id) where convocatoria.convEstado=1;
+-- selección para si hay una convocatoria activa para el grupo de Danzas folclóricas
+select grupoartisticoinstitucional.gaiNombre,convocatoria.convNombre,convocatoria.convEstado
+from ((grupoartisticoinstitucional join convocatoriagai on grupoartisticoinstitucional.GAI_id = convocatoriagai.GrupoArtisticoInstitucional_GAI_id)
+join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id) where grupoartisticoinstitucional.gaiNombre = "Danzas folclóricas";

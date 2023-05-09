@@ -1712,9 +1712,9 @@ INSERT INTO promotorconvivencia (ConvocatoriaID, EstudianteID) VALUES
 (19, 17),
 (18, 5);
 
-
 insert into convocatoria values 
-(777, "Convocatoria Curso Cultural", "2023-07-01", "2023-11-01",0,"2023-2",3);
+(777, "Convocatoria Grupo artisticio institucional", "2023-07-01", "2023-11-01",1,"2023-2",3),
+(778, "Convocatoria Curso cultural", "2023-07-01","2023-07-01",1,"2023-2",4);
 
 
 insert into convocatoriagai values
