@@ -17,3 +17,11 @@ update grupoartisticoinstitucional set gaiNombre="Danza folclórica" where gaiNo
 
 delete from grupoartisticoinstitucional where gaiNombre="Danza folclórica";
 delete from convocatoria where conv_id = 778;
+
+-- Tomas
+use bienestar;
+set SQL_SAFE_UPDATES=0;
+update InscripciónJardinInfantil set sala="Parvulitos" where sala="Parvulos";
+delete from infante where InfanteEdad<8 and InfanteEdad>3;
+delete from InscripciónIPARM where Grado in ("Tercero","Segundo");
+DELETE FROM IdInfante WHERE IdInfante NOT IN (SELECT MIN(InfanteEdad ) FROM tabla GROUP BY InfanteEdad );
