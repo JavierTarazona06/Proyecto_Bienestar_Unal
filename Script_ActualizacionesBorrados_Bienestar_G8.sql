@@ -24,4 +24,7 @@ set SQL_SAFE_UPDATES=0;
 update InscripciónJardinInfantil set sala="Parvulitos" where sala="Parvulos";
 delete from infante where InfanteEdad<8 and InfanteEdad>3;
 delete from InscripciónIPARM where Grado in ("Tercero","Segundo");
-DELETE FROM IdInfante WHERE IdInfante NOT IN (SELECT MIN(InfanteEdad ) FROM tabla GROUP BY InfanteEdad );
+update persona set perNombre=(select  hijo.perNombre as NombreHijo from persona as persona2
+ join infante on (persona2.perId=idPadre_o_Madre) join persona as hijo on(IdInfante=hijo.perId) where infante.idPadre_o_Madre=persona.perId) where perId IN (
+    SELECT idPadre_o_Madre
+    FROM infante);
