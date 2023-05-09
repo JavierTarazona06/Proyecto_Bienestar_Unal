@@ -51,7 +51,8 @@ select sum(precio) from (select count(prodID) as conteo,prodDetalle,sum(prodPrec
 	order by precio desc) 
 	as tbNew;
 
-#3. Consultar el número de fallas por restaurante en el presente semestre. Presentar al estudiante que tenga por lo menos 4. ¿Cuáles son? ¿Qué restaurante tiene más fallas?
+#3. Consultar el número de fallas por restaurante. Presentar al estudiante que tenga por lo menos 4.
+#¿Cuáles son? ¿Qué restaurante tiene más fallas?
 
 select count(estID),perNombre,perApellido 
 	from fallaalimentacion 
@@ -85,7 +86,7 @@ select count(idEst)
 	from Estudiante_Toma_Convocatoria 
 	join (Convocatoria 
 	join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) 
-	using (conv_id) group by idEst;
+	using (conv_id) group by convDeporte;
 
 # 6. Consultar el promedio de horas de corresponsabilidad cumplidas por estudiantes que participaron en convocatorias de gestión alimentaria.
 select avg(horPendCorresp) 
@@ -97,13 +98,43 @@ select avg(horPendCorresp)
 	 using(idEst));
 
 # 7. Consultar la cantidad de estudiantes con fallas alimentarias que participaron en convocatorias a selecciones deportivas de fútbol o fútbol sala.
-select count(idEst) 
-	from (FallaAlimentacion 
-	join (Estudiante_Toma_Convocatoria 
-	join (Convocatoria join ConvocatoriaSeleccion on (conv_id = Convocatoria_conv_id)) using (conv_id)) on (estID = idEst)) 
-	where convDeporte = "Futbol" or convDeporte = "Futbol Sala" 
-	group by convDeporte ;
 
+select distinct estID,convLugar,convDeporte 
+	from FallaAlimentacion 
+	join Estudiante_Toma_Convocatoria on (estID=idEst) 
+	join Convocatoria using (conv_id) 
+	join ConvocatoriaSeleccion on (conv_id=Convocatoria_conv_id) 
+	where lower(convDeporte)='futbol sala' or lower(convDeporte)='futbol';
+
+select count(estID),convDeporte
+	from 
+	(select distinct estID,convLugar,convDeporte 
+		from FallaAlimentacion 
+		join Estudiante_Toma_Convocatoria on (estID=idEst) 
+		join Convocatoria using (conv_id) 
+		join ConvocatoriaSeleccion on (conv_id=Convocatoria_conv_id) 
+		where lower(convDeporte)='futbol sala' or lower(convDeporte)='futbol') as tb_nw 
+	group by convDeporte;
+    
+select count(estID),convDeporte
+	from 
+	(select distinct estID,convLugar,convDeporte 
+		from FallaAlimentacion 
+		join Estudiante_Toma_Convocatoria on (estID=idEst) 
+		join Convocatoria using (conv_id) 
+		join ConvocatoriaSeleccion on (conv_id=Convocatoria_conv_id) 
+		where lower(convDeporte)='futbol sala' or lower(convDeporte)='futbol') as tb_nw 
+	group by convDeporte 
+    having count(estID)>2;
+    
+select count(estID)
+	from 
+	(select distinct estID,convLugar,convDeporte 
+		from FallaAlimentacion 
+		join Estudiante_Toma_Convocatoria on (estID=idEst) 
+		join Convocatoria using (conv_id) 
+		join ConvocatoriaSeleccion on (conv_id=Convocatoria_conv_id) 
+		where lower(convDeporte)='futbol sala' or lower(convDeporte)='futbol') as tb_nw;
 
 #----------------------------------------------------------------------
 #                                  Valeria
