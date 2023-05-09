@@ -244,7 +244,7 @@ GRANT ALL ON vw_doctor_procedimiento TO 'direccion_salud';
 grant select on Bienestar.TorneoInterno to 'estudiante'@'localhost';
 grant select on Bienestar.ConvocatoriaCursoLibre to 'estudiante'@'localhost';
 grant select on Bienestar.ConvocatoriaSeleccion to 'estudiante'@'localhost';
-grant select on Bienestar.GrupoAritisticoInstitucional to 'estudiante'@'localhost';
+grant select on Bienestar.grupoartisticoinstitucional to 'estudiante'@'localhost';
 
 grant select on Bienestar.CursoCultural to 'estudiante'@'localhost';
 grant select on Bienestar.CursoCultural_has_Inscripcion to 'estudiante'@'localhost';
@@ -260,7 +260,7 @@ grant select on vw_info_seleccion_convocatoria to 'estudiante'@'localhost';
 grant select on Bienestar.TorneoInterno to 'no_estudiante'@'localhost';
 grant select on Bienestar.ConvocatoriaCursoLibre to 'no_estudiante'@'localhost';
 grant select on Bienestar.ConvocatoriaSeleccion to 'no_estudiante'@'localhost';
-grant select on Bienestar.GrupoAritisticoInstitucional to 'no_estudiante'@'localhost';
+grant select on Bienestar.grupoartisticoinstitucional to 'no_estudiante'@'localhost';
 
 grant select on Bienestar.CursoCultural to 'no_estudiante'@'localhost';
 grant select on Bienestar.CursoCultural_has_Inscripcion to 'no_estudiante'@'localhost';
@@ -276,7 +276,7 @@ grant select on vw_info_seleccion_convocatoria to 'no_estudiante'@'localhost';
 grant all on Bienestar.TorneoInterno to 'secretaria'@'localhost';
 grant select, insert, update on Bienestar.ConvocatoriaCursoLibre to 'secretaria'@'localhost';
 grant select, insert, update on Bienestar.ConvocatoriaSeleccion to 'secretaria'@'localhost';
-grant select, insert, update on Bienestar.GrupoAritisticoInstitucional to 'secretaria'@'localhost';
+grant select, insert, update on Bienestar.grupoartisticoinstitucional to 'secretaria'@'localhost';
 
 grant select, insert, update on Bienestar.CursoCultural to 'secretaria'@'localhost';
 grant select, insert, update on Bienestar.CursoCultural_has_Inscripcion to 'secretaria'@'localhost';
@@ -333,7 +333,7 @@ grant all on vw_info_seleccion_convocatoria to 'direccion_deporte'@'localhost';
 grant all on Bienestar.CursoCultural to 'direccion_cultural'@'localhost';
 grant all on Bienestar.CursoCultural_has_Inscripcion to 'direccion_cultural'@'localhost';
 grant all on Bienestar.ConvocatoriaGAI to 'direccion_cultural'@'localhost';
-grant all on Bienestar.GrupoAritisticoInstitucional to 'direccion_cultural'@'localhost';
+grant all on Bienestar.grupoartisticoinstitucional to 'direccion_cultural'@'localhost';
 
 grant all on vw_info_gai_convocatoria to 'direccion_cultural'@'localhost';
 

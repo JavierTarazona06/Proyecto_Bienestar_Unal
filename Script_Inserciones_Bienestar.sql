@@ -1419,6 +1419,50 @@ INSERT INTO evaluacionfisica (CitaMedica_id, evaPeso, evaEstatura, evaRitmoCardi
 #------------------------------------------------------------------
 
 insert into bienestar.cursocultural values
+(1, "Salsa y merengue", "Propiciar un acercamiento a la danza - salsa a través del aprendizaje de una amplia variedad de estilos,
+ritmos y pasos de los subgéneros de la salsa y el merengue. Identificar y diferenciar los pasos para cada uno de los
+ritmos salseros como pachanga, mambo, boogaloo, son y chachachá, entre otros; y brindar herramientas de
+expresión corporal y de intercambio social.", "Lunes y miércoles de 2:00 a 4:00 p.m", "Estadio Alfonso López. Salón de Danzas", 25,30, "Expresión corporal y dancística", 1, 2),
+(2, "Salsa y merengue", "Propiciar un acercamiento a la danza - salsa a través del aprendizaje de una amplia variedad de estilos,
+ritmos y pasos de los subgéneros de la salsa y el merengue. Identificar y diferenciar los pasos para cada uno de los
+ritmos salseros como pachanga, mambo, boogaloo, son y chachachá, entre otros; y brindar herramientas de
+expresión corporal y de intercambio social.", "Martes y jueves de 4:00 a 6:00 p.m", "Estadio Alfonso López. Salón de Danzas", 25,30, "Expresión corporal y dancística", 2, 2),
+(3, "Danza contemporánea", "Permitir un acercamiento al lenguaje de la danza contemporánea a través de herramientas técnicas y de
+improvisación provenientes de diversas aproximaciones a la danza contemporánea y a técnicas somáticas. Se
+desarrollará mediante una actividad física rigurosa que permita experimentar la fluidez y entender la conexión
+entre las diferentes artes del cuerpo, la conexión con el espacio y la relación con el tiempo.", "Lunes y Miércoles de 4:00 a 6:00 p.m", 
+"Estadio Alfonso López. Salón de los Espejos (lunes) y Auditorio Colegio IPARM (Miércoles)",25,30,"Expresión corporal y dancística",null, 2),
+(4,"Danza Árabe", "Explorar y experimentar con los movimientos y técnicas de la danza árabe y conocer un poco del
+contexto en el cual ésta surge y se desarrolla. El taller mejora la relación con el cuerpo a nivel físico y emocional,
+ayuda a tomar conciencia sobre la postura e incrementa el estado físico.", "Lunes y Miércoles de 12:00 m. a 2:00 p.m", "Estadio Alfonso López. Salón de los Espejos",25,30, "Expresión corporal y dancística", 1, 2),
+(5, "Danza Africana", "Se propone como un espacio para conocer las danzas tradicionales africanas y su relación con las
+múltiples y diversas diásporas del continente africano. En el taller es fundamental estudiar la relación danzamúsica, (clave para una buena interpretación) conectar con el ritmo y tener un acercamiento a la tradición que
+cobija esta expresión. Por las características del taller la danza aquí se constituye como una herramienta de
+trabajo personal.", "Martes y Jueves de 5:00 a 7:00 p.m.","Jardín Infantil Salón Caminadores",25,30,"Expresión corparal y dancística", null, 2),
+(6, "Tango", "El tango-danza permite explorar e indagar en una escucha profunda, en una conciencia rítmica y musical
+y en el conocimiento detallado del propio cuerpo y del cuerpo del compañero/a. Dado que el tango se afinca en un
+contexto específico, resulta necesario adentrarse en su cultura y tradición. El abrazo, la conexión de los cuerpos, la
+búsqueda de la alineación, la postura corporal, la escucha musical y la fuerza expresiva del tango son algunos de
+los aspectos que se trabajarán durante el taller.", "Lunes y Martes de 5:00 a 7:00 p.m", "Edificio Archivo histórico (500 B) - Sala capacitaciones",25,30, "Expresión corporal y dancística",1,2),
+(7, "Música de gaitas y tambores", "El taller busca un acercamiento a los ritmos tradicionales de la Costa Caribe y de las Sabanas de Bolívar a
+través de la interpretación musical de instrumentos tradicionales como son las gaitas, maracas, guache y percusión
+(Tambora, alegre y llamador), y el estudio de algunos ritmos como son: cumbia, gaita corrida, puya, bullerengue,
+fandango, mapalé y chandé, entre otros", "Lunes y Miércoles de 4:00 a 6:00 p.m","Estadio Alfonso López - Exterior Salón 4",10,15, "Música", null, 2),
+(8, "Guitarra popular", "Desarrollar habilidades básicas para la interpretación y el acompañamiento de melodías populares, por
+medio de la guitarra y la voz, con técnicas de ejecución, apreciación musical, ensamble y proyección.",
+ "Martes y Jueves de 12:00 m. a 2:00 p.m","Edificio Cine y Televisión, salón 108",12,15, "Música", null, 2),
+(9, "Técnica vocal", "Propiciar un primer encuentro de los estudiantes con su voz y ayudarles en el reconocimiento de las
+características de su voz cantada a través de técnicas de postura corporal, respiración, vocalización, entonación y
+afinación para el canto individual y grupal.", "Martes y Jueves de 4:30 a 6: 30 p.m","Colegio IPARM Salón 30", 25,30, "Música",1,2),
+(10, "Técnica vocal", "Profundizar en el reconocimiento del aparato fonador y en la conciencia técnica de la voz cantada.
+También se explora las relaciones del canto grupal y la escucha colectiva. En este nivel se realiza un trabajo técnico
+más detallado de la postura corporal, la respiración, vocalización y entonación.", "Martes y Jueves de 6:30 a 8:30 p.m","Colegio IPARM Salón 30", 25,30, "Música",2,2),
+(11, "Formación actoral", "Introducir al conocimiento del trabajo del actor, sus herramientas, sus medios expresivos y los
+rudimentos técnicos de la actuación, mediante la auto observación, el acondicionamiento psico-físico y algunos
+juegos de improvisación.", "lunes de 4 a 6 p.m. y jueves de 4:30 a 6:30 p.m","Auditorio Colegio IPARM (lunes) y salón 18 del Colegio IPARM (jueves)",20,25,"Artes escénicas", 1,2);
+
+/*
+insert into bienestar.cursocultural values
 (1, "Curso Cultural", "Salsa y merengue", "Propiciar un acercamiento a la danza - salsa a través del aprendizaje de una amplia variedad de estilos,
 ritmos y pasos de los subgéneros de la salsa y el merengue. Identificar y diferenciar los pasos para cada uno de los
 ritmos salseros como pachanga, mambo, boogaloo, son y chachachá, entre otros; y brindar herramientas de
@@ -1460,8 +1504,7 @@ más detallado de la postura corporal, la respiración, vocalización y entonaci
 (11, "Curso Cultural", "Formación actoral", "Introducir al conocimiento del trabajo del actor, sus herramientas, sus medios expresivos y los
 rudimentos técnicos de la actuación, mediante la auto observación, el acondicionamiento psico-físico y algunos
 juegos de improvisación.", "lunes de 4 a 6 p.m. y jueves de 4:30 a 6:30 p.m","Auditorio Colegio IPARM (lunes) y salón 18 del Colegio IPARM (jueves)",20,25,"Artes escénicas", 1,2);
-
-
+*/
 
 insert into bienestar.grupoartisticoinstitucional values
 (1, "Mínimo 5 m fondo por 12 m de ancho","Teatro Experimental","Creación Experimental
@@ -1721,3 +1764,87 @@ insert into convocatoriagai values
 (777,1,"Teatro Experimental","Creación Experimental y Contemporánea","2023-07-07"),
 (777,2,"Danza contemporánea","Creación Experimental y Contemporánea","2023-07-09"),
 (777,3,"Danzas Folclóricas","Tradiciones y Culturas de Colombia","2023-07-08");
+
+-- Tomas
+use bienestar;
+
+insert into programa values(2080,"IPARM",6),(2081,"Jardin Infantil",6);
+
+
+
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1000,'Maria Paula','Rodriguez Mendoza','CL 120 s No. 81-31','Guayabal','Barranquilla','Apartaestudio','Otra','ARamírezM@unal.edu.co','Sura EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1001,'Jose Manuel','Pérez Vallejo','KR 125 j No. 43-65','Las Acacias','Barranquilla','Apartaestudio','Engativá','GPérezN@unal.edu.co','Colmedica','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1002,'Esteban Ricardo','García Ramírez','AK 159 i No. 15-54','La Estrella','Cartagena','Apartamento','Rafael Uribe Uribe','AGarcíaR@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1003,'Tomas Sebastián','Sánchez Beltrán','TV 72 h No. 43-30','San Antonio','Cartagena','Finca','Usaquén','RSánchezG@unal.edu.co','Colmedica','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1004,'Juan Andres','García Ramirez','AK 117 a No. 48-12','Campo Valdés','Ibagué','Finca','Chapinero','MGarcíaR@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1005,'Julian','Orozco Gómez','CL 20 e No. 82-16','El Rodeo','Ibagué','Casa','Puente Aranda','LTorresG@unal.edu.co','Famisanar','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1006,'Santiago Ernesto','Ramírez Fernández','AC 104 i No. 58-59','Loma de Los Bernal','Cali','Casa','Teusaquillo','SRamírezF@unal.edu.co','Nueva EPS','Ciencias Agrarias');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1007,'German','Álvarez Peña','TV 48 o No. 75-48','Santa Cruz','Cali','Apartaestudio','Suba','JÁlvarezR@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1008,'Laura Camila','Perez Jiménez','KR 127 b No. 3-38','El Centro','Cúcuta','Apartaestudio','Teusaquillo','NRuizJ@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1009,'Mariana','Suárez Rojas','CL 123 f No. 2-85','Manila','Barranquilla','Apartaestudio','Rafael Uribe Uribe','RSuárezP@unal.edu.co','Cafesalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1010,'Ricardo','Rojas Rubio','KR 20 t No. 46-45','Las Acacias','Villavicencio','Apartaestudio','Teusaquillo','ARojasM@unal.edu.co','Famisanar','');
+
+set SQL_SAFE_UPDATES=0;
+alter table infante add InfanteEdad int;
+insert into Infante values (1,1000,'T.I', 10);
+insert into Infante values (2,1001,'T.I', 9);
+insert into Infante values (122,1002,'T.I', 11);
+insert into Infante values (3,1003,'T.I', 15);
+insert into Infante values (4,1004,'T.I', 16);
+insert into Infante values (5,1005,'T.I', 12);
+insert into Infante values (6,1006,'T.I', 13);
+insert into Infante values (7,1007,'T.I', 7);
+insert into Infante values (8,1008,'T.I', 8);
+insert into Infante values (9,1009,'T.I', 6);
+
+
+
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1011,'Carla','López Mancuso','TV 112 b No. 3-81','Envigado','Bucaramanga','Apartaestudio','Bosa','LLópezD@unal.edu.co','Cafesalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1012,'Pablina','López Muñoz','AK 172 o No. 41-63','El Lido','Cúcuta','Apartamento','La Candelaria','ILópezM@unal.edu.co','Sura EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1013,'Dario','Romero Huelgas','TV 132 q No. 88-99','El Rodeo','Soacha','Finca','Engativá','DRomeroD@unal.edu.co','Aliansalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1014,'Manuela','Sotelo López','TV 146 t No. 29-4','Barrio Colombia','Cartagena','Casa','Rafael Uribe Uribe','MSilvaL@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1015,'Maria Fernanda','Forero Martínez','CL 141 p No. 48-86','La Floresta','Villavicencio','Casa','Bosa','MFernándezM@unal.edu.co','SaludTotal','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1016,'Mario Rodrigo','Martínez Sotelo','KR 36 g No. 5-66','Bello','Medellín','Apartaestudio','Puente Aranda','RMartínezS@unal.edu.co','Colmedica','Odontología');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1017,'Manuel','Reyes Muñoz','AC 23 i No. 19-80','Itagüí','Cartagena','Apartaestudio','Barrios Unidos','MReyesM@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1018,'Samuel Alejandro','Romero Ochoa','AC 63 r No. 57-23','Bello','Villavicencio','Casa','San Cristóbal','RRomeroT@unal.edu.co','Famisanar','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1019,'Maria Camila','Romero Duarte','AK 160 b No. 42-32','Bello','Villavicencio','Apartaestudio','Ciudad Bolívar','ARomeroR@unal.edu.co','Aliansalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1020,'Ignacio','Martínez Forero','TV 167 c No. 10-46','Barrio Colombia','Bogotá','Finca','Engativá','CMartínezF@unal.edu.co','Cafesalud','');
+
+insert into Infante values (10,1010,'T.I', 6);
+insert into Infante values (11,1011,'R.C', 2);
+insert into Infante values (12,1012,'R.C', 3);
+insert into Infante values (13,1013,'R.C', 4);
+insert into Infante values (14,1014,'R.C', 3);
+insert into Infante values (15,1015,'R.C', 2);
+insert into Infante values (16,1016,'T.I', 4);
+insert into Infante values (17,1017,'R.C', 2);
+insert into Infante values (18,1018,'R.C', 3);
+insert into Infante values (19,1019,'R.C', 4);
+insert into Infante values (20,1020,'R.C', 2);
+
+-- Inscripciones--
+insert into InscripciónIPARM values(1000,2080,'Quinto','Activo','2019-02-03','');
+insert into InscripciónIPARM values(1001,2080,'Cuarto','Activo','2016-02-03','');
+insert into InscripciónIPARM values(1002,2080,'Sexto','Activo','2014-02-03','');
+insert into InscripciónIPARM values(1003,2080,'Decimo','Activo','2010-02-03','');
+insert into InscripciónIPARM values(1004,2080,'Once','Activo','2009-02-03','');
+insert into InscripciónIPARM values(1005,2080 ,'Septimo','Activo','2013-02-03','');
+insert into InscripciónIPARM values(1006,2080 ,'Octavo','Activo','2012-02-03','');
+insert into InscripciónIPARM values(1007,2080 ,'Segundo','Activo','2022-02-03','');
+insert into InscripciónIPARM values(1008,2080 ,'Tercero','Activo','2021-02-03','');
+insert into InscripciónIPARM values(1009,2080 ,'Primero','Activo','2023-02-03','');
+insert into InscripciónIPARM values(1010,2080 ,'Primero','Activo','2023-02-03','');
+insert into InscripciónIPARM values(1011,2080 ,'Primero','Activo','2023-02-03','');
+
+
+insert into InscripciónJardinInfantil values(1012,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1013,'Pre-jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1014,'Jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1015,'Pre-jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1016,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1017,'Jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1018,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1019,'Pre-jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1020,'Jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1021,'Parvulos','2023-02-02',2081  ,'','Activo');
+-- TOmas
