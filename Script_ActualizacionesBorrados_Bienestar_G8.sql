@@ -9,3 +9,11 @@ delete from participacionactividadai where ActividadID=5;
 delete from actividadai where actNombre like "%Cultivando%";
 
 delete from asesoria where asTipo="Escuela de Padres";
+
+#--------------------------------------------------------------
+#                Santiago
+#--------------------------------------------------------------
+update grupoartisticoinstitucional set gaiNombre="Danza folclórica" where gaiNombre = "Danzas Folclóricas";
+
+delete from grupoartisticoinstitucional where gaiNombre="Danza folclórica";
+delete from convocatoria where conv_id = 778;
