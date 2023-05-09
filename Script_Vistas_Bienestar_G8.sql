@@ -19,6 +19,13 @@ create view vw_convocatoriasCultura as select bienestar.convocatoria.conv_id as 
 bienestar.convocatoria.convFechaApertura as FechaApertura, bienestar.convocatoria.convFechaCierre as FechaCierre 
 from bienestar.convocatoria where bienestar.convocatoria.convEstado = 1 and (bienestar.convocatoria.Programa_progID = 3 or bienestar.convocatoria.Programa_progID = 4);
 
+drop view if exists vw_cursosCulturales;
+create view vw_cursosCulturales as select bienestar.cursocultural.curidCursoCultural as cursoId, bienestar.cursocultural.cucNombre as Nombre, bienestar.cursocultural.cucHorario,
+bienestar.cursocultural.cucLugar as Horario, bienestar.cursocultural.cucCategoria as categoria, bienestar.cursocultural.cucObjetivo 
+from bienestar.cursocultural;
+
+select * from vw_cursosCulturales;
+
 select * from vw_convocatoriasCultura;
 
 -- Tomás ---------

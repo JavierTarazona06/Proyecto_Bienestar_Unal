@@ -34,3 +34,23 @@ grant select on convocatoriapromotorconvivencia to "estudiante"@"localhost";
 
 create user 'asesor'@'localhost' identified by 'root';
 grant all on asesoria to 'asesor'@'localhost';
+
+
+#------------------------------------------------------------------------------------
+#                       Santiago
+#------------------------------------------------------------------------------------
+create user "directorCultura"@"localhost" identified by "root";
+create user "normalUser"@"localhost" identified by "root";
+
+# directorCultura tiene los permisos para todas las tablas de la sección de cultura
+grant all on convocatoria to "directorCultura"@"localhost";
+grant all on convocatoriagai to "directorCultura"@"localhost";
+grant all on grupoartisticoinstitucional to "directorCultura"@"localhost";
+grant all on cursocultural to "directorCultura"@"localhost";
+grant all on cursocultural_has_inscripcion to "directorCultura"@"localhost";
+grant all on inscripcion to "directorCultura"@"localhost";
+
+# normalUser tiene permisos solo para consultar informacion de las tablas principales, no tiene acceso a las que conectan unas a otras
+grant all on vw_convocatoriaPorGAI to "normalUser"@"localhost";
+grant all on vw_convocatoriasCultura to "normalUser"@"localhost";
+grant all on vw_cursosCulturales to "normalUser"@"localhost";
