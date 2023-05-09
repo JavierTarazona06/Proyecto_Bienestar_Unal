@@ -53,7 +53,7 @@
 <div id="title-sect">
 <h1>Bienestar<br> Data Dictionay</h1>
 <p>
-<em>2023-05-07</em>
+<em>2023-05-08</em>
 </p>
 <p class="proj-desc">
 <em></em>
@@ -927,6 +927,19 @@
     <td></td>
 </tr>
 <tr>
+    <td>progID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
     <td>convNombre</td>
     <td>VARCHAR(70)</td>
     <td>&nbsp;</td>
@@ -991,19 +1004,6 @@
     <td></td>
     <td></td>
 </tr>
-<tr>
-    <td>Programa_progID</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
 <table id='ConvocatoriaCursoLibre'>
 <caption>ConvocatoriaCursoLibre</caption>
 <tr><td colspan='11'></td></tr>
@@ -1021,21 +1021,8 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>Convocatoria_conv_id</td>
+    <td>conv_id</td>
     <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Convocatoria_Programa_progNombre</td>
-    <td>VARCHAR(70)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -1104,19 +1091,6 @@
 <tr>
     <td>conv_id</td>
     <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>progNombre</td>
-    <td>VARCHAR(70)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -1303,19 +1277,6 @@
     <td></td>
 </tr>
 <tr>
-    <td>progNombre</td>
-    <td>VARCHAR(70)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
     <td>cgaComida</td>
     <td>ENUM('Desayuno', 'Almuerzo', 'Cena')</td>
     <td>&nbsp;</td>
@@ -1360,19 +1321,6 @@
 <tr>
     <td>conv_id</td>
     <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>progNombre</td>
-    <td>VARCHAR(70)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -1491,19 +1439,6 @@
     <td></td>
 </tr>
 <tr>
-    <td>progNombre</td>
-    <td>VARCHAR(70)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
     <td>cgeCobertura</td>
     <td>FLOAT</td>
     <td>&nbsp;</td>
@@ -1535,19 +1470,6 @@
 <tr>
     <td>conv_id</td>
     <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>progNombre</td>
-    <td>VARCHAR(70)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -1695,6 +1617,19 @@
     <th>Comment</th>
 </tr>
 <tr>
+    <td>conv_id</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
     <td>convDeporte</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
@@ -1733,32 +1668,6 @@
     <td></td>
     <td></td>
 </tr>
-<tr>
-    <td>Convocatoria_conv_id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Convocatoria_Programa_progID</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
 <table id='Corresponsabilidad'>
 <caption>Corresponsabilidad</caption>
 <tr><td colspan='11'></td></tr>
@@ -1776,7 +1685,7 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>idEst</td>
+    <td>Estudiante_estID</td>
     <td>INT</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
@@ -2262,7 +2171,7 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>idEst</td>
+    <td>est_ID</td>
     <td>INT</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
@@ -4005,6 +3914,19 @@
     <td></td>
 </tr>
 <tr>
+    <td>areID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
     <td>progNombre</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
@@ -4077,19 +3999,6 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Area_areID</td>
-    <td>INT</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
