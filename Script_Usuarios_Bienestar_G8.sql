@@ -31,3 +31,6 @@ create user 'estudiante'@'localhost' identified by 'root';
 grant select on vw_actividadesdisponiblesAI to "estudiante"@"localhost";
 grant select on vw_gruposproyectosest to "estudiante"@"localhost";
 grant select on convocatoriapromotorconvivencia to "estudiante"@"localhost";
+
+create user 'asesor'@'localhost' identified by 'root';
+grant all on asesoria to 'asesor'@'localhost';
