@@ -8,15 +8,15 @@ insert into convocatoria (conv_id,convNombre,convFechaApertura,convFechaCierre,c
 select * from convocatoriagestionalimentaria;
 insert into convocatoriagestionalimentaria values (5,'Cena','Comedor Central');
 select * from convocatoriagestionalimentaria;
-update convocatoriagestionalimentaria set cgaComida = Cena where cgaLugar = 'Comedor Central';
+update convocatoriagestionalimentaria set cgaComida = 'Cena' where cgaLugar = 'Comedor Central';
 
 select * from vw_info_estudiante;
-insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (1,'36','17','Ingeniería','73','Regular','0');
+insert into estudiante (estID,carreID,estEdad,estFacultad,estPBM,estTipoAdmision,estEsEgresado) values (45,'36','17','Ingeniería','73','Regular','0');
 update vw_info_estudiante set perDireccion='Dirección Modificada' where estID=4;
 select * from vw_info_estudiante;
 
 select * from vw_info_convocatoria_estudiante;
-delete from vw_info_convocatoria_estudiante;
+#delete from vw_info_convocatoria_estudiante;
 
 #Pruebas director bienestar economico
 
@@ -44,9 +44,9 @@ select * from actividadcorresp;
 
 SELECT * FROM citamedica;
 INSERT INTO citamedica (idCitaMedica, doctorID, citFecha, citEspecialidad) VALUES
-	(1008, 30, '2023-05-20 00:08:30', 'General'),
-    (1007, 70, '2023-05-20 00:09:30', 'Cardiologo'),
-    (1005, 50, '2023-05-20 00:10:30', 'Psicologia');
+	(1010, 30, '2023-05-20 00:08:30', 'General'),
+    (1011, 70, '2023-05-20 00:09:30', 'Cardiologo'),
+    (1012, 50, '2023-05-20 00:10:30', 'Psicologia');
 SELECT * FROM citamedica WHERE pacienteID IS NULL;
 
 DELETE FROM citamedica WHERE doctorID = 50 AND pacienteID IS NULL;
