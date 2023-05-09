@@ -56,7 +56,8 @@ UPDATE citamedica SET citFecha = '2023-05-20 00:11:30' WHERE doctorID = 70 AND p
 
 # ---------------------------------------------  No estudiante --------------------------------------------
 SELECT * FROM vw_citamedica_disponible;
-UPDATE citamedica SET pacienteID = 10 WHERE citFecha = '2023-05-20 00:08:30' AND citEspecialidad = 'General';
+DELETE FROM vw_citamedica_disponible WHERE doctorID = 50 AND pacienteID IS NULL;
+UPDATE vw_citamedica_disponible SET paciente = 10 WHERE fecha = '2023-05-20 00:08:30' AND especialidad = 'General';
 SELECT * FROM vw_citamedica_disponible;
 
 SELECT * FROM vw_doctor_procedimiento WHERE paciente = 10;
