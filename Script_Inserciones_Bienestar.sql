@@ -1721,3 +1721,87 @@ insert into convocatoriagai values
 (777,1,"Teatro Experimental","Creación Experimental y Contemporánea","2023-07-07"),
 (777,2,"Danza contemporánea","Creación Experimental y Contemporánea","2023-07-09"),
 (777,3,"Danzas Folclóricas","Tradiciones y Culturas de Colombia","2023-07-08");
+
+-- Tomas
+use bienestar;
+
+insert into programa values(2080,"IPARM",6),(2081,"Jardin Infantil",6);
+
+
+
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1000,'Maria Paula','Rodriguez Mendoza','CL 120 s No. 81-31','Guayabal','Barranquilla','Apartaestudio','Otra','ARamírezM@unal.edu.co','Sura EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1001,'Jose Manuel','Pérez Vallejo','KR 125 j No. 43-65','Las Acacias','Barranquilla','Apartaestudio','Engativá','GPérezN@unal.edu.co','Colmedica','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1002,'Esteban Ricardo','García Ramírez','AK 159 i No. 15-54','La Estrella','Cartagena','Apartamento','Rafael Uribe Uribe','AGarcíaR@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1003,'Tomas Sebastián','Sánchez Beltrán','TV 72 h No. 43-30','San Antonio','Cartagena','Finca','Usaquén','RSánchezG@unal.edu.co','Colmedica','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1004,'Juan Andres','García Ramirez','AK 117 a No. 48-12','Campo Valdés','Ibagué','Finca','Chapinero','MGarcíaR@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1005,'Julian','Orozco Gómez','CL 20 e No. 82-16','El Rodeo','Ibagué','Casa','Puente Aranda','LTorresG@unal.edu.co','Famisanar','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1006,'Santiago Ernesto','Ramírez Fernández','AC 104 i No. 58-59','Loma de Los Bernal','Cali','Casa','Teusaquillo','SRamírezF@unal.edu.co','Nueva EPS','Ciencias Agrarias');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1007,'German','Álvarez Peña','TV 48 o No. 75-48','Santa Cruz','Cali','Apartaestudio','Suba','JÁlvarezR@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1008,'Laura Camila','Perez Jiménez','KR 127 b No. 3-38','El Centro','Cúcuta','Apartaestudio','Teusaquillo','NRuizJ@unal.edu.co','Nueva EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1009,'Mariana','Suárez Rojas','CL 123 f No. 2-85','Manila','Barranquilla','Apartaestudio','Rafael Uribe Uribe','RSuárezP@unal.edu.co','Cafesalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1010,'Ricardo','Rojas Rubio','KR 20 t No. 46-45','Las Acacias','Villavicencio','Apartaestudio','Teusaquillo','ARojasM@unal.edu.co','Famisanar','');
+
+set SQL_SAFE_UPDATES=0;
+alter table infante add InfanteEdad int;
+insert into Infante values (1,1000,'T.I', 10);
+insert into Infante values (2,1001,'T.I', 9);
+insert into Infante values (122,1002,'T.I', 11);
+insert into Infante values (3,1003,'T.I', 15);
+insert into Infante values (4,1004,'T.I', 16);
+insert into Infante values (5,1005,'T.I', 12);
+insert into Infante values (6,1006,'T.I', 13);
+insert into Infante values (7,1007,'T.I', 7);
+insert into Infante values (8,1008,'T.I', 8);
+insert into Infante values (9,1009,'T.I', 6);
+
+
+
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1011,'Carla','López Mancuso','TV 112 b No. 3-81','Envigado','Bucaramanga','Apartaestudio','Bosa','LLópezD@unal.edu.co','Cafesalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1012,'Pablina','López Muñoz','AK 172 o No. 41-63','El Lido','Cúcuta','Apartamento','La Candelaria','ILópezM@unal.edu.co','Sura EPS','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1013,'Dario','Romero Huelgas','TV 132 q No. 88-99','El Rodeo','Soacha','Finca','Engativá','DRomeroD@unal.edu.co','Aliansalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1014,'Manuela','Sotelo López','TV 146 t No. 29-4','Barrio Colombia','Cartagena','Casa','Rafael Uribe Uribe','MSilvaL@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1015,'Maria Fernanda','Forero Martínez','CL 141 p No. 48-86','La Floresta','Villavicencio','Casa','Bosa','MFernándezM@unal.edu.co','SaludTotal','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1016,'Mario Rodrigo','Martínez Sotelo','KR 36 g No. 5-66','Bello','Medellín','Apartaestudio','Puente Aranda','RMartínezS@unal.edu.co','Colmedica','Odontología');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1017,'Manuel','Reyes Muñoz','AC 23 i No. 19-80','Itagüí','Cartagena','Apartaestudio','Barrios Unidos','MReyesM@unal.edu.co','Sanitas','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1018,'Samuel Alejandro','Romero Ochoa','AC 63 r No. 57-23','Bello','Villavicencio','Casa','San Cristóbal','RRomeroT@unal.edu.co','Famisanar','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1019,'Maria Camila','Romero Duarte','AK 160 b No. 42-32','Bello','Villavicencio','Apartaestudio','Ciudad Bolívar','ARomeroR@unal.edu.co','Aliansalud','');
+insert into persona (perID,perNombre,perApellido,perDireccion,perBarrio,perCiudad,perTipoVivienda,perLocalidad,perEmail,perEntidadSalud,perFacultad) values (1020,'Ignacio','Martínez Forero','TV 167 c No. 10-46','Barrio Colombia','Bogotá','Finca','Engativá','CMartínezF@unal.edu.co','Cafesalud','');
+
+insert into Infante values (10,1010,'T.I', 6);
+insert into Infante values (11,1011,'R.C', 2);
+insert into Infante values (12,1012,'R.C', 3);
+insert into Infante values (13,1013,'R.C', 4);
+insert into Infante values (14,1014,'R.C', 3);
+insert into Infante values (15,1015,'R.C', 2);
+insert into Infante values (16,1016,'T.I', 4);
+insert into Infante values (17,1017,'R.C', 2);
+insert into Infante values (18,1018,'R.C', 3);
+insert into Infante values (19,1019,'R.C', 4);
+insert into Infante values (20,1020,'R.C', 2);
+
+-- Inscripciones--
+insert into InscripciónIPARM values(1000,2080,'Quinto','Activo','2019-02-03','');
+insert into InscripciónIPARM values(1001,2080,'Cuarto','Activo','2016-02-03','');
+insert into InscripciónIPARM values(1002,2080,'Sexto','Activo','2014-02-03','');
+insert into InscripciónIPARM values(1003,2080,'Decimo','Activo','2010-02-03','');
+insert into InscripciónIPARM values(1004,2080,'Once','Activo','2009-02-03','');
+insert into InscripciónIPARM values(1005,2080 ,'Septimo','Activo','2013-02-03','');
+insert into InscripciónIPARM values(1006,2080 ,'Octavo','Activo','2012-02-03','');
+insert into InscripciónIPARM values(1007,2080 ,'Segundo','Activo','2022-02-03','');
+insert into InscripciónIPARM values(1008,2080 ,'Tercero','Activo','2021-02-03','');
+insert into InscripciónIPARM values(1009,2080 ,'Primero','Activo','2023-02-03','');
+insert into InscripciónIPARM values(1010,2080 ,'Primero','Activo','2023-02-03','');
+insert into InscripciónIPARM values(1011,2080 ,'Primero','Activo','2023-02-03','');
+
+
+insert into InscripciónJardinInfantil values(1012,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1013,'Pre-jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1014,'Jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1015,'Pre-jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1016,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1017,'Jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1018,'Parvulos','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1019,'Pre-jardin','2023-02-02',2081  ,'','Activo');
+insert into InscripciónJardinInfantil values(1020,'Jardin','2023-02-02', 2081 ,'','Activo');
+insert into InscripciónJardinInfantil values(1021,'Parvulos','2023-02-02',2081  ,'','Activo');
+-- TOmas
