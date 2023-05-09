@@ -51,12 +51,12 @@ CREATE VIEW vw_doctor_procedimiento AS
 # Ver las citas medicas disponibles
 DROP VIEW IF EXISTS vw_citamedica_disponible;
 
-SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor
+SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor, pacienteID AS paciente 
 	FROM citamedica JOIN personalsalud ON (perID=doctorID) NATURAL JOIN persona
 	WHERE pacienteID IS NULL;
 
 CREATE VIEW vw_citamedica_disponible AS
-	SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor
+	SELECT citFecha AS fecha, citEspecialidad AS especialidad, perNombre AS doctor, pacienteID AS paciente 
 	FROM citamedica JOIN personalsalud ON (perID=doctorID) NATURAL JOIN persona
 	WHERE pacienteID IS NULL;
 

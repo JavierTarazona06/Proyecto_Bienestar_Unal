@@ -1613,3 +1613,6 @@ INSERT INTO Bienestar.ConvocatoriaSeleccion (Convocatoria_conv_id, convDeporte, 
 (217, 'Futbol Sala', 'Cancha 2', '11:00:00'),
 (218, 'Ciclismo', 'Anillo vial', '20:00:00'),
 (219, 'Atletismo', 'Polideportivo', '09:00:00');
+
+insert into estudiante_toma_convocatoria values (9,210);
+insert into estudiante_toma_convocatoria values (13,217);
