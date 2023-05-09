@@ -35,3 +35,17 @@ join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id) 
 select grupoartisticoinstitucional.gaiNombre,convocatoria.convNombre,convocatoria.convEstado
 from ((grupoartisticoinstitucional join convocatoriagai on grupoartisticoinstitucional.GAI_id = convocatoriagai.GrupoArtisticoInstitucional_GAI_id)
 join convocatoria on convocatoriagai.Convocatoria_conv_id=convocatoria.conv_id) where grupoartisticoinstitucional.gaiNombre = "Danzas folclóricas";
+
+-- Tomas
+-- Muestra la carrera y el nombre de los padres universitarios  cuyos hijos esten en el grado primero del IPARM
+select perNombre as NombrePadreMadre,perFacultad as Facultad from persona join infante 
+on (perId=idPadre_o_Madre) join inscripcióniparm on(IdInfante=Infante_IdInfante) where Grado="Primero";
+ 
+ 
+ -- Muestra el nombre de los estudiantes y de sus hijos(solamente si tienen)
+ select persona.perNombre as NombrePariente, hijo.perNombre as NombreHijo from persona 
+ join infante on (perId=idPadre_o_Madre) join persona as hijo on(IdInfante=hijo.perId);
+ 
+ -- Numero de estudiantes que tienen hijos en párvulos
+ select count(perId) as estudiantes from persona join infante 
+on (perId=idPadre_o_Madre) join inscripciónjardininfantil on(IdInfante=Infante_idInfante) where Sala="Parvulos"
