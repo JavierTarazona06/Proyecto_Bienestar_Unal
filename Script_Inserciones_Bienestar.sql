@@ -1711,3 +1711,13 @@ INSERT INTO promotorconvivencia (ConvocatoriaID, EstudianteID) VALUES
 (18, 12),
 (19, 17),
 (18, 5);
+
+
+insert into convocatoria values 
+(777, "Convocatoria Curso Cultural", "2023-07-01", "2023-11-01",0,"2023-2",3);
+
+
+insert into convocatoriagai values
+(777,1,"Teatro Experimental","Creación Experimental y Contemporánea","2023-07-07"),
+(777,2,"Danza contemporánea","Creación Experimental y Contemporánea","2023-07-09"),
+(777,3,"Danzas Folclóricas","Tradiciones y Culturas de Colombia","2023-07-08");
