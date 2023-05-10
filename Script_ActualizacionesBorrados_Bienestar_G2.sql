@@ -51,7 +51,7 @@ delete from Convocatoria where conv_id = 222;
 
 select * from ConvocatoriaSeleccion;
 update ConvocatoriaSeleccion set convDeporte = 'Tiro con arco' where Convocatoria_conv_id = 211;
-delete from Convocatoria where convDeporte = 'Tiro con arco';
+delete from ConvocatoriaSeleccion where convDeporte = 'Tiro con arco';
 
 select * from ConvocatoriaSeleccion;
 update ConvocatoriaSeleccion set convDeporte = 'Ping pong' where Convocatoria_conv_id = 212;

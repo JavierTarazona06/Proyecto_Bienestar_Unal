@@ -220,6 +220,9 @@ FLUSH PRIVILEGES;
 drop user if exists 'juanEstudiante'@'localhost';
 create user 'juanEstudiante'@'localhost' identified by 'root@1234';
 grant 'estudiante'@'localhost' to 'juanEstudiante'@'localhost';
+set default role 'estudiante'@'localhost' to 'juanEstudiante'@'localhost';
+#set role  default to user
+
 
 SHOW GRANTS FOR 'juanEstudiante'@'localhost';
 
