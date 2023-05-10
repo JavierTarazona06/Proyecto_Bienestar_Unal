@@ -1846,5 +1846,3 @@ insert into InscripciónJardinInfantil values(1017,'Jardin','2023-02-02',2081  ,
 insert into InscripciónJardinInfantil values(1018,'Parvulos','2023-02-02', 2081 ,'','Activo');
 insert into InscripciónJardinInfantil values(1019,'Pre-jardin','2023-02-02',2081  ,'','Activo');
 insert into InscripciónJardinInfantil values(1020,'Jardin','2023-02-02', 2081 ,'','Activo');
-insert into InscripciónJardinInfantil values(1021,'Parvulos','2023-02-02',2081  ,'','Activo');
--- TOmas
