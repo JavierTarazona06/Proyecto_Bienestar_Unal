@@ -25,7 +25,3 @@ set SQL_SAFE_UPDATES=0;
 delete from InscripciónIPARM where Grado in ("Tercero","Segundo");
 update InscripciónJardinInfantil set sala="Parvulitos" where sala="Parvulos";
 -- Cambia el nombre de los papas por el de sus hijos
-update persona set perNombre=(select  hijo.perNombre as NombreHijo from persona as persona2
- join infante on (persona2.perId=idPadre_o_Madre) join persona as hijo on(IdInfante=hijo.perId) where infante.idPadre_o_Madre=persona.perId) where perId IN (
-    SELECT idPadre_o_Madre
-    FROM infante);
