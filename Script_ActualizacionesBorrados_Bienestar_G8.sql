@@ -15,7 +15,6 @@ delete from asesoria where asTipo="Escuela de Padres";
 #--------------------------------------------------------------
 update grupoartisticoinstitucional set gaiNombre="Danza folclórica" where gaiNombre = "Danzas Folclóricas";
 
-delete from grupoartisticoinstitucional where gaiNombre="Danza folclórica";
 delete from convocatoria where conv_id = 778;
 
 #----------------------------------------------------------------
