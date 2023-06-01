@@ -10,4 +10,4 @@ CREATE ROLE 'no_estudiante'@'localhost';
 CREATE ROLE 'direccion_cultura'@'localhost';
 CREATE ROLE 'direccion_integracion'@'localhost';
 CREATE ROLE 'direccion_unidadEspecial'@'localhost';
-CREATE ROLE 'administrador'@'localhost';
+CREATE ROLE 'administrador'@'localhost'; 
