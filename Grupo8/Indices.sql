@@ -16,7 +16,20 @@ CREATE INDEX idx_idPersona ON infante (IdInfante);
 -- varios procedimientos para relacionar al infante con sus padres
 CREATE INDEX idx_idPadre ON infante (idPadre_o_Madre);
 
+# index para facilitar las busquedas por el nombre de las actividades
+create index idx_actAINombre on ActividadAI(actNombre);
+# Index para facilitar las busquedas por la fecha de las actividades
+create index idx_actAIFecha on ActividadAI(actFecha);
+# Index para facilitar las busquedas por la fecha de la asesoria;
+create index idx_asesFecha on Asesoria(asFecha);
+# index para facilitar las busquedas por el nombre de los proyectos estudiantiles
+create index idx_proestNombre on ProyectoEstudiantil(peNombre);
 
+
+drop index idx_actAINombre on ActividadAI;
+drop index idx_actAIFecha on ActividadAI;
+drop index idx_asesFecha on Asesoria;
+drop index idx_proestNombre on ProyectoEstudiantil;
 drop INDEX idx_idPadre on infante;
 drop INDEX idx_idPersona on infante;
 drop index idx_cucNombre on cursocultural;

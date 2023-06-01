@@ -58,4 +58,36 @@ END //
 
 DELIMITER ;
 
+#La siguiente función retorna el número de participantes de alguna actividad
+DELIMITER $$
+
+CREATE FUNCTION fc_cantParticipantes(actID INT)  RETURNS INT READS SQL DATA DETERMINISTIC
+BEGIN
+	DECLARE participantes INT;
+	SET participantes = (SELECT COUNT(EstudianteID) FROM ParticipacionActividadAI WHERE ActividadID = actID);
+	
+    RETURN participantes;
+END $$
+
+DELIMITER ;
+
+#El siguiente procedimiento retorna las actividades que se realizaron (o realizarán) en un intervalo de fechas
+DELIMITER $$
+CREATE PROCEDURE pa_fecharangoActAI(fecha_min DATETIME, fecha_max DATETIME)
+BEGIN
+	SELECT * FROM actividadai where actFecha >= fecha_min AND actFecha <= fecha_max;
+END $$
+DELIMITER ;
+
+
+#El siguiente procedimiento retorna las asesorías que se realizaron en un intervalo de fechas
+DELIMITER $$
+CREATE PROCEDURE pa_fecharangoAsesoria(fecha_min DATETIME, fecha_max DATETIME)
+BEGIN
+	SELECT * FROM asesoria where asFecha >= fecha_min AND asFecha <= fecha_max;
+END $$
+DELIMITER ;
+
+
+
 
