@@ -1,5 +1,6 @@
-select * from grupoartisticoinstitucional;
-select * from cursocultural;
+#-----------------------------------------------------------------------
+# Indices
+#-----------------------------------------------------------------------
 
 # index para facilitar las busquedas por el nombre del curso
 create index idx_cucNombre on cursocultural(cucNombre);
