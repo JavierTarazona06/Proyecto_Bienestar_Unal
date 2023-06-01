@@ -1,3 +1,11 @@
+#------------------------------------------------------------------------------------------
+#         Procedimientos
+#-----------------------------------------------------------------------------------------
+
+
+#----------------------------------------------------------------------------------------
+#             Santiago
+#----------------------------------------------------------------------------------------
 #Se crea un procedimento para cambiar el estado de las convocatorias que ya caducaron
 Drop procedure if exists actualizarEstadoConvocatoria;
 DELIMITER //
@@ -58,6 +66,61 @@ END //
 
 DELIMITER ;
 
+#--------------------------------------------------------------------------------------------------------
+#                  Tomás
+#--------------------------------------------------------------------------------------------------------
+drop  procedure if exists sp_estudiante_ver_informacion_hijo;
+
+DELIMITER $$
+CREATE PROCEDURE sp_estudiante_ver_informacion_hijo(IN p_username VARCHAR(255))
+BEGIN
+  
+    DECLARE student_id INT;
+    
+    SET student_id = CAST(SUBSTRING_INDEX(p_username, '@', 1) AS unsigned);
+    
+    -- Verificar si el estudiante tiene hijos
+    IF (SELECT COUNT(*) FROM Infante WHERE idPadre_o_Madre = student_id) > 0 THEN
+        -- Obtener información de los hijos del estudiante actual
+        SELECT perNombre, InfanteEdad
+        FROM Infante join persona on(IdInfante=perId)
+        WHERE idPadre_o_Madre = student_id;
+    ELSE
+        SELECT 'No tienes hijos registrados.';
+    END IF;
+    
+    
+END;
+$$
+DELIMITER ;
+
+grant execute on PROCEDURE sp_estudiante_ver_informacion_hijo to "estudiante";
+-- Procedimiento para rol estudiante que muestra la inscripcion de su hijo al iparm, si tiene
+DELIMITER $$
+CREATE PROCEDURE sp_estudiante_ver_registroIparm_hijo(IN p_username VARCHAR(255))
+BEGIN
+  
+    DECLARE student_id INT;
+    
+    SET student_id = CAST(SUBSTRING_INDEX(p_username, '@', 1) AS unsigned);
+    
+    -- Verificar si el estudiante tiene hijos
+    IF (SELECT COUNT(*) FROM inscripcióniparm join infante on(Infante_IdInfante=IdInfante) WHERE idPadre_o_Madre = student_id) > 0 THEN
+        -- Obtener información de los hijos del estudiante actual
+        SELECT *
+        FROM inscripcióniparm join infante on(Infante_IdInfante=IdInfante)
+        WHERE idPadre_o_Madre = student_id;
+    ELSE
+        SELECT 'No tienes hijos inscritos en el iparm';
+    END IF;
+END;
+$$
+DELIMITER ;
+grant execute on PROCEDURE sp_estudiante_ver_registroIparm_hijo to "estudiante";
+
+#----------------------------------------------------------
+#            Sebastian
+#---------------------------------------------------------
 #La siguiente función retorna el número de participantes de alguna actividad
 DELIMITER $$
 
@@ -71,7 +134,7 @@ END $$
 
 DELIMITER ;
 
-#El siguiente procedimiento retorna las actividades que se realizaron (o realizarán) en un intervalo de fechas
+#El siguiente procedimiento muestra las actividades que se realizaron (o realizarán) en un intervalo de fechas
 DELIMITER $$
 CREATE PROCEDURE pa_fecharangoActAI(fecha_min DATETIME, fecha_max DATETIME)
 BEGIN
@@ -80,14 +143,10 @@ END $$
 DELIMITER ;
 
 
-#El siguiente procedimiento retorna las asesorías que se realizaron en un intervalo de fechas
+#El siguiente procedimiento muestra las asesorías que se realizaron en un intervalo de fechas
 DELIMITER $$
 CREATE PROCEDURE pa_fecharangoAsesoria(fecha_min DATETIME, fecha_max DATETIME)
 BEGIN
 	SELECT * FROM asesoria where asFecha >= fecha_min AND asFecha <= fecha_max;
 END $$
 DELIMITER ;
-
-
-
-
