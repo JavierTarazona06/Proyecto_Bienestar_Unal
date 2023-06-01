@@ -19,6 +19,7 @@ BEGIN
     WHERE convFechaCierre < fecha_actual;
 END //
 DELIMITER ;
+grant execute on PROCEDURE actualizarEstadoConvocatoria to "administrador";
 
 #El siguiente proceso elimina el programa de Grupo Artistico institucional y todas las convocatorias relacionadas.
 #Este proceso puede ser util para hacer modificaciones a todo el programa sin perder la información de los grupos artisticos
@@ -37,6 +38,7 @@ BEGIN
     
 END //
 DELIMITER ;
+grant execute on PROCEDURE eliminarProgramaGAI to "administrador";
 
 #El siguiente procedimiento muestra la convocatoria que se repete más veces, lo cual puede ser interesante para un estudiante que busca entrar a un programa de manera más segura
 drop procedure if exists contarElementos;
@@ -65,6 +67,8 @@ BEGIN
 END //
 
 DELIMITER ;
+grant execute on PROCEDURE contarElementos to "administrador";
+grant execute on PROCEDURE contarElementos to "estudiante";
 
 #--------------------------------------------------------------------------------------------------------
 #                  Tomás
@@ -93,7 +97,7 @@ BEGIN
 END;
 $$
 DELIMITER ;
-
+grant execute on PROCEDURE sp_estudiante_ver_informacion_hijo to "administrador";
 grant execute on PROCEDURE sp_estudiante_ver_informacion_hijo to "estudiante";
 -- Procedimiento para rol estudiante que muestra la inscripcion de su hijo al iparm, si tiene
 DELIMITER $$
@@ -117,6 +121,7 @@ END;
 $$
 DELIMITER ;
 grant execute on PROCEDURE sp_estudiante_ver_registroIparm_hijo to "estudiante";
+grant execute on PROCEDURE sp_estudiante_ver_registroIparm_hijo to "administrador";
 
 #----------------------------------------------------------
 #            Sebastian
@@ -133,6 +138,7 @@ BEGIN
 END $$
 
 DELIMITER ;
+grant execute on PROCEDURE fc_cantParticipantes to "administrador";
 
 #El siguiente procedimiento muestra las actividades que se realizaron (o realizarán) en un intervalo de fechas
 DELIMITER $$
@@ -141,6 +147,7 @@ BEGIN
 	SELECT * FROM actividadai where actFecha >= fecha_min AND actFecha <= fecha_max;
 END $$
 DELIMITER ;
+grant execute on PROCEDURE pa_fecharangoActAI to "administrador";
 
 
 #El siguiente procedimiento muestra las asesorías que se realizaron en un intervalo de fechas
@@ -150,3 +157,4 @@ BEGIN
 	SELECT * FROM asesoria where asFecha >= fecha_min AND asFecha <= fecha_max;
 END $$
 DELIMITER ;
+grant execute on PROCEDURE pa_fecharangoAsesoria to "administrador";
