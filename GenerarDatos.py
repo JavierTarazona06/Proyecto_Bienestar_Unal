@@ -49,9 +49,6 @@ def estudiante_tomaConv():
         print(f"insert into estudiante_toma_convocatoria values ({random.randint(1,30)},{random.randint(1,15)});") #est,conv_id
 
 
-estudiante_tomaConv()
-
-
 class Persona:
     def __init__(self) -> None:
         nombre1 = nombres[random.randint(0,200)%30]
@@ -95,6 +92,7 @@ restaurantes = ['Comedor central', 'Hemeroteca', 'Odontología', 'Agronomía', '
 def crear_fallas_alimen():
     for i in range(0,20):
         print(f"insert into fallaalimentacion (estID,fallAlcgaComida,fallAlLugar,fallAlFecha) values ({random.randint(1,30)},'{comidas[random.randint(0,2)]}','{restaurantes[random.randint(0,8)]}','2023-0{random.randint(2,6)}-{random.randint(0,30)}');")
+
 
 
 carreras_unal = [
@@ -266,16 +264,44 @@ def factura_producto():
         df.to_csv(f, header=False, index=False)
 
 
+def eliminar_parte_texto() -> str:
+    lines = []
+    while True:
+        line = input()
+        if line:
+            lines.append(line)
+        else:
+            break
+    
+    for msg in lines:
 
+        msg1 = msg[1] + msg[2]
+        msg = msg[3:]
 
-'''
-with open('datos.csv', 'w', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerow(['header1', 'header2', 'header3']) # agregar encabezados de columna
+        if msg[0] != ",":
+            msg1 += msg[0]
+            msg = msg[1:]
 
-data = {'header1': ['value1', 'value2', 'value3'], 'header2': ['value4', 'value5', 'value6'], 'header3': ['value7', 'value8', 'value9']}
-df = pd.DataFrame(data)
+        if msg[0] != ",":
+            msg1 += msg[0]
+            msg = msg[1:]
 
-with open('file.csv', 'a', newline='') as f:
-    df.to_csv(f, header=False, index=True)
-    '''
+        msg1 += msg[0] + msg[1] + "1010101" + msg[2] + msg[3] + msg[4] + msg[5] + "1010101" + msg[6]
+        msg = msg[7:]
+
+        if msg[0] != ",":
+            msg1 += msg[0]
+            msg = msg[1:]
+
+        if msg[0] != ",":
+            msg1 += msg[0]
+            msg = msg[1:]
+        
+        msg1 += msg
+
+        print(msg1)
+
+        
+        #print("(1010101" + str(msg[2:]))
+
+eliminar_parte_texto()
